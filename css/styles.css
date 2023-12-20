@@ -1,4 +1,4 @@
-/* Reset de estilos para eliminar márgenes y rellenos predeterminados */
+
 body, h1, h2, p, img {
     margin: 0;
     padding: 0;
@@ -24,7 +24,7 @@ main {
 }
 
 .about-me {
-    text-align: center;
+
     margin-top: 20px;
 }
 .fin{
@@ -32,15 +32,36 @@ main {
     margin-top: 20px;
 }
 ul{
-    list-style: none;
+    list-style: circle;
 }
 
 footer {
     text-align: center;
-    padding: 10px 0;
+    padding: 5px 0;
     background-color: #333;
     color: #fff;
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+#github{
+    width: 45px;
+}
+
+.github-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: #333; /* Cambia el color del texto si es necesario */
+}
+
+.image-container {
+    margin-bottom: 5px; /* Espacio entre la imagen y el texto */
+}
+
+.text-container {
+    font-size: 14px;
+    color: white; /* Estilo del texto (ajusta según sea necesario) */
 }
