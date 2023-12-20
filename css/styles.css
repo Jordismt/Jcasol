@@ -27,11 +27,12 @@ main {
     text-align: center;
     margin-top: 20px;
 }
-
-.about-me img {
-    width: 200px;
-    border-radius: 50%;
+.fin{
+    text-align: center;
     margin-top: 20px;
+}
+ul{
+    list-style: none;
 }
 
 footer {
