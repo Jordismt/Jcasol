@@ -1,7 +1,9 @@
-
-body, h1, h2, p, img {
+body, h1, h2, p, img, ul, li {
     margin: 0;
     padding: 0;
+}
+.list_other{
+    list-style: circle;
 }
 
 body {
@@ -19,20 +21,79 @@ header {
 }
 
 main {
-    width: 80%;
-    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
-.about-me {
-
-    margin-top: 20px;
+.card {
+    cursor: pointer;
+    width: 700px;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+    perspective: 1000px;
 }
-.fin{
+
+.card:hover {
+    transform: rotateY(180deg);
+}
+
+.card-content,
+.hidden-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start; /* Ajustamos el contenido para que empiece desde la parte superior */
+    overflow-y: auto; /* Agregamos un desplazamiento vertical si el contenido excede el tamaño de la tarjeta */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card-content h2 {
+    margin-bottom: 10px;
+}
+
+.card .hidden-content {
+    transform: rotateY(180deg);
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    color: white;
+    background-color: #333;
+    box-sizing: border-box;
+}
+
+.card.is-flipped .hidden-content {
+    display: flex;
+    opacity: 1;
+}
+
+.card.is-flipped .card-content {
+    visibility: hidden;
+}
+
+ul {
+    list-style: none; /* Quitamos los estilos de lista predeterminados */
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+.fin {
     text-align: center;
     margin-top: 20px;
-}
-ul{
-    list-style: circle;
 }
 
 footer {
@@ -44,7 +105,8 @@ footer {
     bottom: 0;
     width: 100%;
 }
-#github{
+
+#github {
     width: 45px;
 }
 
@@ -54,14 +116,14 @@ footer {
     align-items: center;
     text-align: center;
     text-decoration: none;
-    color: #333; /* Cambia el color del texto si es necesario */
+    color: #333;
 }
 
 .image-container {
-    margin-bottom: 5px; /* Espacio entre la imagen y el texto */
+    margin-bottom: 5px;
 }
 
 .text-container {
     font-size: 14px;
-    color: white; /* Estilo del texto (ajusta según sea necesario) */
+    color: white;
 }

@@ -8,79 +8,103 @@
 </head>
 <body>
     <header>
-        <h1>Jordi Casanova Solanes</h1>
+        <h1>Jordi Casanova Solanes <br> Desarrollador Web y Multiplataforma</h1>
     </header>
     <main>
-        <section class="about-me">
-            <h2>Sobre mí</h2>
-            <h3>Estudié:</h3>
-            
-            <ul>
-                <li>ESO (Educación Secundaria Obligatoria)</li>
-                <li>CFGM SMX (Ciclo Formativo de Grado Medio de Sistemas Microinformáticos y Redes)</li>
-                <li>CFGS DAM(Ciclo Formativo de Grado Superior de Desarrollo de Aplicaciones Multiplataforma)</li>
-                <li>CFGS DAW (Ciclo Formativo de Grado Superior de Desarrollo de Aplicaciones Web)</li>
-                <li>1r año de CFGS ASIX(Administracion de sistemas informaticos y redes)</li>
-                <li>Curso de especificación de Ciberseguridad</li>
-            </ul>
-            <hr>
-            <h3>Tecnologías:</h3>
-            <ul>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>JavaScript</li>
-                <li>Java</li>
-                <li>Python</li>
-                <li>Dart</li>
-                <li>Javascript, NodeJs</li>
-            </ul>
-            <hr>
-            <h3>Frameworks y librerias:</h3>
-            <ul>
-                <li>Flet</li>
-                <li>PySide6(QT)</li>
-                <li>Flutter</li>
-                <li>Spring, SpringBoot, Spring Cloud</li>
-                <li>React</li>
-                <li>Hibernate</li>
-            </ul>
-            <hr>
-            <h3>Bases de Datos:</h3>
-            <ul>
-                <li>MySql</li>
-                <li>PostgreSql</li>
-                <li>ObjectDB</li>
-                <li>MongoDB</li>
-            </ul>
-            <hr>
-            <h4>Otros datos de interes:</h4>
-            <ul>
-                <li>Conocimientos en VSCode, Neatbeans, Eclipse</li>
-                <li>Conocimientos de Git y Github</li>
-                <li>Conocimiento con ERPs (Odoo)</li>
-                <li>Conocimiento de Wordpress, Joomla</li>
-                <li>Conocimiento en Office</li>
-            </ul>
-           <br>
-           <hr>
+        <section class="card" onmouseenter="showList(this)" onmouseleave="hideList(this)">
+
+            <div class="card-content">
+                <h2>Sobre mí</h2>
+                <br><br><br><br><br><br>
+                <p>Hover para más detalles</p>
+            </div>
+            <div class="hidden-content">
+                <ul>
+                    <li>ESO (Educación Secundaria Obligatoria)</li>
+                    <li>CFGM SMX (Ciclo Formativo de Grado Medio de Sistemas Microinformáticos y Redes)</li>
+                    <li>CFGS DAM(Ciclo Formativo de Grado Superior de Desarrollo de Aplicaciones Multiplataforma)</li>
+                    <li>CFGS DAW (Ciclo Formativo de Grado Superior de Desarrollo de Aplicaciones Web)</li>
+                    <li>1r año de CFGS ASIX(Administracion de sistemas informaticos y redes)</li>
+                    <li>Curso de especificación de Ciberseguridad</li>
+                </ul>
+                <h3>Tecnologías:</h3>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript, NodeJs</li>
+                    <li>Java</li>
+                    <li>Python</li>
+                    <li>Dart</li>
+                    <li>Kotlin</li>
+                    <li>C#</li>
+                    <li>Unity</li>
+                </ul>
+
+                <h3>Frameworks y librerias</h3>
+
+                <ul>
+                    <li>Flet</li>
+                    <li>PySide6</li>
+                    <li>Flutter</li>
+                    <li>Spring, Spring Boot</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+
+                <h3>Bases de datos</h3>
+                <ul>
+                    <li>MySql</li>
+                    <li>PostgreSQL</li>
+                    <li>ObjectDB</li>
+                    <li>MongoDB</li>
+                </ul>
+
+                <h3>
+                    Conocimientos de:
+                </h3>
+                <ul>
+                    <li>Git, GitHub</li>
+                    <li>ERP(Odoo)</li>
+                    <li>ORM (Hibernate)</li>
+                    <li>Docker</li>
+                    <li>Kubernetes</li>
+                    <li>AndroidStudio</li>
+                    <li>Wordpress</li>
+                    <li>Linux, Windows</li>
+                </ul>
+                <br>
+                <br>
+                <h3>
+                    Otros datos de interes:
+                </h3>
+                <ul>
+                    <li class="list_other">Carnet de conducir B</li>
+                    <li class="list_other">Lenguas:
+                        <ul>
+                            <li>Valenciano (nativo)</li>
+                            <li>Castellano</li>
+                            <li>Ingles (medio-bajo)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </section>
-        <br>
-        <hr>
-        <br>
     </main>
     <footer>
         <section class="fin">
             <a href="https://github.com/Jordismt/Jordi_Personal.git" target="_blank" class="github-link">
                 <div class="image-container">
-                    <img src="./img/logo.png" id="github" alt="Proyectos realizados">
+                    <img src="./img/logo_github.png" id="github" alt="Proyectos realizados">
                 </div>
                 <div class="text-container">
                     Ver mis proyectos en GitHub
                 </div>
             </a>
-            
+         
         </section>
-        <p>&copy; 2023 - Jordi Casanova Solanes</p>
+        <p>&copy; 2024 - Jordi Casanova Solanes</p>
     </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
