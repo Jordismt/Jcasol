@@ -19,14 +19,15 @@ body, h1, h2, p, img, ul, li {
     padding: 5px 10px; 
     margin: 0 10px;
     text-decoration: none; 
-    color: #333; 
+    color: #fff; 
+    background-color: #333;
     transition: border-color 0.3s ease; 
 }
 
 .menu a:hover {
     border-color: #555; 
-    background-color: #333;
-    color:  white;
+    background-color: #fff;
+    color:  #333;
     padding: 7px 13px;
 }
 
@@ -85,7 +86,8 @@ main {
 }
 
 .volver_atras{
-    color: #333;
+    background-color: #333;
+    color: #fff;
     border: 2px solid #333;
     border-radius: 20px;
     text-decoration: none;
@@ -95,8 +97,8 @@ main {
 
 }
 .volver_atras:hover{
-    background-color: #333;
-    color: white;
+    background-color: #fff;
+    color: #333;
     padding: 7px 12px;
 }
 .card {
