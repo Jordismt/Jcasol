@@ -1,9 +1,37 @@
 body, h1, h2, p, img, ul, li {
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
-.list_other{
-    list-style: circle;
+.list_other li{
+    list-style: none;
+}
+.language_list li{
+    list-style: square;
+}
+.menu {
+    text-align: center;
+}
+
+.menu a {
+    border: 2px solid #333; 
+    border-radius: 20px; 
+    padding: 5px 10px; 
+    margin: 0 10px;
+    text-decoration: none; 
+    color: #333; 
+    transition: border-color 0.3s ease; 
+}
+
+.menu a:hover {
+    border-color: #555; 
+    background-color: #333;
+    color:  white;
+    padding: 7px 13px;
+}
+
+.quien_soy{
+    text-align: center;
 }
 
 body {
@@ -19,14 +47,58 @@ header {
     text-align: center;
     padding: 1rem 0;
 }
-
+.img_telf{
+    width: 50px;
+    color: white;
+}
+.img_mail{
+    width: 50px;
+    text-decoration: none;
+    color: white;
+}
 main {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
 }
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.scroll-to-top {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: #555;
+}
+
+.volver_atras{
+    color: #333;
+    border: 2px solid #333;
+    border-radius: 20px;
+    text-decoration: none;
+    margin: auto;
+    padding: 5px 10px;
+    transition: border-color 0.3s ease; /* Agrega una transición suave al color del borde */
+
+}
+.volver_atras:hover{
+    background-color: #333;
+    color: white;
+    padding: 7px 12px;
+}
 .card {
     cursor: pointer;
     width: 700px;
@@ -38,9 +110,16 @@ main {
     transition: transform 0.5s ease-in-out;
     perspective: 1000px;
 }
+.card h1,h2,h3{
+    text-align: center;
+}
 
 .card:hover {
     transform: rotateY(180deg);
+}
+
+.card-content{
+    align-items: center;
 }
 
 .card-content,
@@ -51,8 +130,8 @@ main {
     backface-visibility: hidden;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: start; /* Ajustamos el contenido para que empiece desde la parte superior */
+    align-items: rigth;
+    justify-content: start; 
     overflow-y: auto; /* Agregamos un desplazamiento vertical si el contenido excede el tamaño de la tarjeta */
     padding: 20px;
     box-sizing: border-box;
@@ -82,7 +161,7 @@ main {
 }
 
 ul {
-    list-style: none; /* Quitamos los estilos de lista predeterminados */
+    list-style: circle;
     padding: 0;
     margin: 0;
 }
@@ -91,39 +170,30 @@ ul li {
     margin-bottom: 8px;
 }
 
-.fin {
-    text-align: center;
-    margin-top: 20px;
-}
-
 footer {
     text-align: center;
-    padding: 5px 0;
+    padding: 20px;
     background-color: #333;
     color: #fff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
 }
 
-#github {
-    width: 45px;
-}
-
-.github-link {
+.fin {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    text-align: center;
-    text-decoration: none;
-    color: #333;
+    margin-bottom: 10px;
 }
 
-.image-container {
-    margin-bottom: 5px;
+.fin a {
+    margin: 0 10px;
 }
 
-.text-container {
-    font-size: 14px;
-    color: white;
+#github, .img_mail, .img_telf {
+    width: 50px; 
+    margin: 0 5px;
 }
+
+#github:hover, .img_mail:hover, .img_telf:hover {
+    opacity: 0.6; 
+}
+

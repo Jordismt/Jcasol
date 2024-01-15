@@ -9,3 +9,4 @@ function showList(element) {
 function hideList(element) {
     element.classList.remove('is-flipped');
 }
+
