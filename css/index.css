@@ -1,0 +1,296 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0d0d0d;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden; /* Evitar scroll horizontal */
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 3em;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00c3ff;
+}
+
+.section {
+    padding: 50px 0;
+}
+
+.container h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.container p {
+    font-size: 1.2em;
+    line-height: 1.8;
+}
+
+.project-slider {
+    display: flex;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    margin-top: 30px;
+    padding: 0 10px;
+}
+
+.project-item {
+    flex: 0 0 auto;
+    width: 300px;
+    height: 250px;
+    background-color: #00c3ff;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 195, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+.project-item img {
+    width: 100%; /* Ajusta el ancho de la imagen para que ocupe todo el espacio disponible */
+    height: 100%; /* Ajusta la altura de la imagen para que ocupe todo el espacio disponible */
+    object-fit: cover; /* Escala la imagen para que cubra todo el contenedor manteniendo la relación de aspecto */
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.project-item:hover img {
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen al hacer hover */
+}
+
+.project-item::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+}
+
+.project-item:hover::after {
+    opacity: 1; /* Muestra el texto al hacer hover */
+}
+.project-item:last-child {
+    margin-right: 0;
+}
+
+.project-item:hover {
+    background-color: #0077b3;
+    box-shadow: 0 12px 24px rgba(0, 195, 255, 0.4);
+}
+
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-top: 100px;
+}
+
+footer p {
+    font-size: 1.2em;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    text-align: center;
+    margin: 20px;
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-10px);
+}
+
+.contact-item img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    filter: grayscale(80%);
+    transition: filter 0.3s ease;
+}
+
+.contact-item:hover img {
+    filter: none;
+}
+
+.contact-item p {
+    margin-top: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.contact-item:hover p {
+    color: #00c3ff;
+}
+
+.section + .container {
+    margin-top: 100px; /* Añade un margen superior al primer elemento .container después de .section */
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para la sección "Sobre mí" */
+#sobre-mi .container {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#sobre-mi h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+#sobre-mi p {
+    color: #ccc;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+#sobre-mi .skills {
+    margin-top: 40px;
+}
+
+.item-list{
+    margin-left: 5%;
+}
+
+#sobre-mi .skills-title {
+    color: #fff;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+#sobre-mi .skills-list {
+    list-style: none;
+    padding-left: 20px;
+}
+
+#sobre-mi .skills-list li {
+    margin-bottom: 10px;
+}
+
+#sobre-mi .skills-list strong {
+    color: #00c3ff;
+}
+
+#sobre-mi .about-passion {
+    font-style: italic;
+    color: #bbb;
+    margin-top: 30px;
+}
+
+#sobre-mi .about-contact {
+    font-weight: bold;
+    color: #fff;
+    margin-top: 30px;
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #333;
+    color: #ccc;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-top: 100px;
+}
+
+footer p {
+    font-size: 1.2em;
+}
+
+/* Estilos generales */
+a {
+    color: #00c3ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
