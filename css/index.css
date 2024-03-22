@@ -294,3 +294,7 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+hr{
+    border-color: #00c3ff;
+}
