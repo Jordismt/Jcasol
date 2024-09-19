@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Página principal -->
+  <url>
+    <loc>https://jordismt.github.io/Jcasol/</loc>
+    <lastmod>2024-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Sección Sobre Mí -->
+  <url>
+    <loc>https://jordismt.github.io/Jcasol/#sobre-mi</loc>
+    <lastmod>2024-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Sección Proyectos -->
+  <url>
+    <loc>https://jordismt.github.io/Jcasol/#proyectos</loc>
+    <lastmod>2024-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Sección Blog -->
+  <url>
+    <loc>https://jordismt.github.io/Jcasol/#blog</loc>
+    <lastmod>2024-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Sección Contacto -->
+  <url>
+    <loc>https://jordismt.github.io/Jcasol/#contacto</loc>
+    <lastmod>2024-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Página de contacto directo -->
+  <url>
+    <loc>https://jordismt.github.io/Jcasol/#contacto</loc>
+    <lastmod>2024-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
