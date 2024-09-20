@@ -33,3 +33,5 @@ Para visualizar el portafolio en tu máquina local, sigue estos pasos:
    git clone https://github.com/Jordismt/portfolio.git
 
 2.Inicia el index.html
+
+La pàgina del repositori està disponible en línia a: [https://Jordismt.github.io/Jcasol](https://Jordismt.github.io/Jcasol)
