@@ -34,4 +34,4 @@ Para visualizar el portafolio en tu máquina local, sigue estos pasos:
 
 2.Inicia el index.html
 
-La pàgina del repositori està disponible en línia a: [https://Jordismt.github.io/Jcasol](https://Jordismt.github.io/Jcasol)
+La pàgina del repositori està disponible en línia a: [Portfolio Jordi Casanova Solanes](https://Jordismt.github.io/Jcasol)
