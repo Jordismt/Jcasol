@@ -9,201 +9,219 @@
     <meta name="keywords" content="Portafolio, Desarrollo Web, Multiplataforma, Full Stack, DevOps, Jordi Casanova">
     <meta name="author" content="Jordi Casanova Solanes">
     <title>Portfolio de Jordi Casanova</title>
-    
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/kTc0UQfWR1Dd2NUn0DwHdcSVtzuOFxWDlN1dXwXboZZ+ni6pR5RR5/wm1Fs7gShtqKqkfvkAowa+A==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    
-    <!-- CSS propio -->
-    <link rel="stylesheet" href="./css/index.css">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Favicon -->
     <link rel="icon" href="./img/logo.png" type="image/png">
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Animations (AOS.js for scroll effects) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" />
 </head>
 
 <body>
-    <!-- Header -->
-    <header>
+    <!-- Secciones del cuerpo -->
+    <header class="bg-primary text-white py-3" data-aos="fade-down">
         <div class="container">
-            <nav>
-                <div class="logo">
-                    <h1><a href="#">Jordi Casanova</a></h1>
+            <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+                <a class="navbar-brand" href="#">Jordi Casanova</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre Mí</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#cv">Descargar CV</a></li>
+                    </ul>
                 </div>
-                <ul class="nav-links">
-                    <li><a href="#sobre-mi">Sobre Mí</a></li>
-                    <li><a href="#proyectos">Proyectos</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
             </nav>
         </div>
     </header>
+    
+      
 
-    <!-- Sección "Sobre Mí" -->
-    <section id="sobre-mi">
+    <section id="sobre-mi" class="py-5" data-aos="fade-up">
         <div class="container">
-            <div class="about-header">
-                <h2>Sobre Mí</h2>
-                <p class="intro">👋🏼 ¡Hola! Soy Jordi, un desarrollador web y multiplataforma apasionado por la creación de soluciones innovadoras.</p>
-                <p class="intro">✅ Especializado en aplicaciones móviles y sitios web, siempre en busca de nuevos retos para crecer como profesional.</p>
+            <div class="text-center mb-5">
+                <h2 class="section-heading text-primary">Sobre Mí</h2>
+                <p class="lead">👋🏼 ¡Hola! Soy Jordi, un desarrollador web y multiplataforma apasionado por la creación de soluciones innovadoras.</p>
             </div>
 
-            <div class="about-content">
-                <div class="about-section">
-                    <h3>Estudios</h3>
-                    <ul class="study-list">
-                        <li>ESO</li>
-                        <li>CFGM Sistemas Microinformáticos y Redes</li>
-                        <li>1r Año ASIX</li>
-                        <li>CFGS Desarrollo de Aplicaciones Multiplataforma (DAM)</li>
-                        <li>CFGS Desarrollo de Aplicaciones Web (DAW)</li>
-                    </ul>
-                </div>
-
-                <div class="about-section">
-                    <h3>Conocimientos</h3>
-                    <ul class="skills-list">
-                        <li><strong>Frontend:</strong> HTML, CSS, JavaScript, Python (PySide6, PyQt6, PyGame), Flutter, Dart, Kotlin</li>
-                        <li><strong>Backend:</strong> Java (SpringBoot, Hibernate), NodeJS, Python, PHP</li>
-                        <li><strong>Bases de Datos:</strong> MySQL, PostgreSQL, MongoDB, ObjectDB</li>
-                        <li><strong>Otros:</strong> Docker, Linux, Windows, Git, Odoo, Apache, LAMPP</li>
-                    </ul>
-                </div>
-            </div>
-
-            <p class="passion">💡 Disfruto del diseño web, creando interfaces atractivas y funcionales.</p>
-        </div>
-    </section>
-
-
-    <!-- Sección "Proyectos" -->
-    <section id="proyectos">
-        <div class="container">
-            <h2>Proyectos</h2>
-            <p>Todos mis proyectos están disponibles en <a href="https://github.com/Jordismt" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
-            <div class="project-grid">
-                <div class="project-item">
-                    <a href="#" target="_blank">
-                        <img src="./img/img-kcal.png" alt="App Registro Calorías (NodeJS, Flutter)">
-                        <div class="project-info">
-                            <h3>App Registro Calorías</h3>
-                            <p>Una aplicación para el seguimiento de calorías y dieta, desarrollada con NodeJS y Flutter.</p>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <h3 class="text-center text-primary">Estudios</h3>
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li>ESO</li>
+                                <li>CFGM Sistemas Microinformáticos y Redes</li>
+                                <li>1r Año ASIX</li>
+                                <li>CFGS Desarrollo de Aplicaciones Multiplataforma (DAM)</li>
+                                <li>CFGS Desarrollo de Aplicaciones Web (DAW)</li>
+                            </ul>
                         </div>
-                    </a>
+                    </div>
                 </div>
-                <div class="project-item">
-                    <a href="https://jordismt.github.io/GeneraBD_Jcasol/">
-                        <img src="./img/logo_generabd.png" alt="Generador de BD (HTML,CSS, JavaScript)">
-                        <div class="project-info">
-                            <h3>Generador de Bases de Datos</h3>
-                            <p>Generador de Bases de Datos automàtico</p>
+
+                <div class="col-lg-6 mb-4">
+                    <h3 class="text-center text-primary">Conocimientos</h3>
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li><strong>Frontend:</strong> HTML, CSS, JavaScript, Flutter, Dart, Kotlin, Vue.js, Bootstrap, SCSS</li>
+                                <li><strong>Backend:</strong> Java, NodeJS, Python, PHP, Symfony, ExpressJS</li>
+                                <li><strong>Bases de Datos:</strong> MySQL, PostgreSQL, MongoDB</li>
+                                <li><strong>Otros:</strong> Docker, Git, Linux, Windows, Bash, Jenkins</li>
+                            </ul>
                         </div>
-                    </a>
-                </div>
-                <!-- Añade más proyectos aquí -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección "Servicios" -->
-    <section id="servicios">
-        <div class="container">
-            <h2>Servicios</h2>
-            <div class="services-list">
-                <div class="service-item">
-                    <h3>Desarrollo Web</h3>
-                    <p>Creación de sitios web personalizados utilizando las últimas tecnologías y buenas prácticas.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Desarrollo Multiplataforma</h3>
-                    <p>Creación de aplicaciones personalizadas utilizando las tecnologías mas modernas</p>
-                </div>
-                <div class="service-item">
-                    <h3>Diseño UI/UX</h3>
-                    <p>Diseño de interfaces atractivas y funcionales, enfocadas en la experiencia del usuario.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Lógica de Programación</h3>
-                    <p>Te enseño de forma fácil y practica los fundamentos de la Programación</p>
-                </div>
-                <!-- Añade más servicios aquí -->
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Sección "Blog" -->
-    <section id="blog">
-        <div class="container">
-            <h2>Blog(Proximamente)</h2>
-            <p>En mi blog, comparto artículos sobre desarrollo web, tecnologías emergentes y mis experiencias en el campo.</p>
-            <div class="blog-posts">
-                <article class="blog-post">
-                    <img src="./img/blog1.jpg" alt="Cómo Elegir el Framework de Frontend Adecuado">
-                    <div class="blog-content">
-                        <h3><a href="#">Cómo Elegir el Framework de Frontend Adecuado</a></h3>
-                        <p>En este artículo, exploro las opciones disponibles y cómo tomar una decisión informada para tu próximo proyecto.</p>
                     </div>
-                </article>
-                <article class="blog-post">
-                    <img src="./img/blog2.jpg" alt="Tendencias en Desarrollo Web para 2024">
-                    <div class="blog-content">
-                        <h3><a href="#">Tendencias en Desarrollo Web para 2024</a></h3>
-                        <p>Descubre las tendencias más importantes en el desarrollo web que dominarán el próximo año.</p>
+                </div>
+            </div>
+
+            <p class="text-center lead text-muted">💡 Disfruto creando interfaces atractivas y funcionales para una experiencia de usuario única.</p>
+        </div>
+    </section>
+
+    <section id="proyectos" class="bg-light py-5" data-aos="fade-up">
+        <div class="container">
+            <h2 class="text-center text-primary mb-4">Proyectos(PROXIMAMENTE)</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card shadow-lg">
+                        <img src="./img/img-kcal.png" class="card-img-top" alt="App Registro Calorías">
+                        <div class="card-body">
+                            <h5 class="card-title">App Registro Calorías</h5>
+                            <p class="card-text">Una aplicación para el seguimiento de calorías y dieta, desarrollada con NodeJS y Flutter.</p>
+                        </div>
                     </div>
-                </article>
-                <!-- Añade más entradas de blog aquí -->
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card shadow-lg">
+                        <img src="./img/logo_generabd.png" class="card-img-top" alt="Generador de BD">
+                        <div class="card-body">
+                            <h5 class="card-title">Generador de Bases de Datos</h5>
+                            <p class="card-text">Generador de Bases de Datos automático, optimizado para proyectos rápidos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="https://github.com/Jordismt" target="_blank" class="btn btn-primary">Ver más proyectos en GitHub</a>
             </div>
         </div>
     </section>
 
-
-    <!-- Sección "Descargar CV" -->
-    <section id="cv">
+    <section id="blog" class="py-5" data-aos="fade-up">
         <div class="container">
-            <h2>Currículum</h2>
-            <p>Descarga mi currículum para obtener más detalles sobre mi experiencia y habilidades.</p>
-            <a href="./docs/Jordi Casanova Solanes_CV.pdf" class="btn" download>Descargar CV</a>
+            <h2 class="text-center text-primary mb-4">Blog</h2>
+            <p class="text-center lead">En este blog compartiré mis experiencias, consejos y conocimientos sobre desarrollo web, programación, y tecnología en general.</p>
+            <div class="text-center">
+                <a href="#" target="_blank" class="btn btn-primary">Visitar el Blog(PROXIMAMENTE)</a>
+            </div>
         </div>
     </section>
 
-
-    <!-- Sección "Contacto" -->
-    <section id="contacto">
+    <section id="contacto" class="bg-primary text-white py-5" data-aos="fade-up">
         <div class="container">
-            <h2>Contacto</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <a href="mailto:jodocasol2002@gmail.com" aria-label="Email">
-                        <img src="./img/mail.png" alt="Email" class="contact-icon">
+            <h2 class="text-center mb-4">Contacto</h2>
+            <div class="row contact-info">
+                <div class="col-md-4 mb-4 contact-item">
+                    <a href="mailto:jodocasol2002@gmail.com" class="text-white">
+                        <i class="fas fa-envelope fa-3x mb-2"></i>
+                        <p>jodocasol2002@gmail.com</p>
                     </a>
-                    <p>jodocasol2002@gmail.com</p>
                 </div>
-                <div class="contact-item">
-                    <a href="tel:+34620711972" aria-label="Teléfono">
-                        <img src="./img/phone.png" alt="Teléfono" class="contact-icon">
+                <div class="col-md-4 mb-4 contact-item">
+                    <a href="tel:+34620711972" class="text-white">
+                        <i class="fas fa-phone fa-3x mb-2"></i>
+                        <p>(+34) 620 711 972</p>
                     </a>
-                    <p>(+34) 620 711 972</p>
                 </div>
-                <div class="contact-item">
-                    <a href="https://github.com/Jordismt" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                        <img src="./img/github.png" alt="GitHub" class="contact-icon">
+                <div class="col-md-4 mb-4 contact-item">
+                    <a href="https://github.com/Jordismt" target="_blank" class="text-white">
+                        <i class="fab fa-github fa-3x mb-2"></i>
+                        <p>Mi GitHub</p>
                     </a>
-                    <p><a href="https://github.com/Jordismt" target="_blank" rel="noopener noreferrer">Mi GitHub</a></p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cv" class="bg-light py-5" data-aos="fade-up">
+        <div class="container">
+            <h2 class="text-center text-primary mb-4">Descargar CV</h2>
+            <div class="text-center">
+                <a href="./docs/Jordi Casanova Solanes_CV.pdf" class="btn btn-primary" download>Descargar mi CV en PDF</a>
             </div>
         </div>
     </section>
     
-
-    <!-- Footer -->
-    <footer>
+    <footer class="bg-dark text-white py-5">
         <div class="container">
-            <p>&copy; 2024 Jordi Casanova Solanes. Todos los derechos reservados.</p>
+            <div class="row">
+                <!-- Logo o Branding -->
+                <div class="col-md-4 mb-4">
+                    <h4 class="font-weight-bold">Jordi Casanova</h4>
+                    <p class="text-muted">Desarrollador Web & Multiplataforma</p>
+                </div>
+                
+                <!-- Enlaces útiles -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="font-weight-bold">Enlaces útiles</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#sobre-mi" class="text-muted">Sobre Mí</a></li>
+                        <li><a href="#proyectos" class="text-muted">Proyectos</a></li>
+                        <li><a href="#blog" class="text-muted">Blog</a></li>
+                        <li><a href="#contacto" class="text-muted">Contacto</a></li>
+                        <li><a href="#cv" class="text-muted">Descargar CV</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Redes sociales -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="font-weight-bold">Sígueme</h5>
+                    <div class="d-flex justify-content-start">
+                        <a href="https://github.com/Jordismt" class="text-muted mr-3" target="_blank">
+                            <i class="fab fa-github fa-2x"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jcasoldev/" class="text-muted mr-3" target="_blank">
+                            <i class="fab fa-linkedin fa-2x"></i>
+                        </a>
+                        <a href="https://twitter.com/Jcasol_DEV" class="text-muted mr-3" target="_blank">
+                            <i class="fab fa-twitter fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <p class="text-muted">&copy; 2025 Jordi Casanova Solanes. Todos los derechos reservados.</p>
+            </div>
         </div>
     </footer>
     
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
