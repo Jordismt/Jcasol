@@ -19,10 +19,8 @@ El portafolio está compuesto por las siguientes secciones principales:
 
 El sitio ha sido desarrollado utilizando las siguientes tecnologías y herramientas:
 
-- **HTML5** y **CSS3** para la estructura y el estilo de la página.
-- **JavaScript** para interactividad.
-- **Font Awesome** para iconos.
-- **Google Fonts** para tipografías.
+- **HTML5+Bootstrap** y **SCSS** para la estructura y el estilo de la página.
+
 
 ## Instalación
 
