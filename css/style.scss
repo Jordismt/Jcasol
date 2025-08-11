@@ -189,15 +189,97 @@ header {
 // -------------------------------------
 // 📱 Responsive
 // -------------------------------------
-@media (max-width: 768px) {
-  .navbar-brand {
-    font-size: 1.5rem;
+// Ajustes responsive adicionales
+
+// Ajustes para pantallas muy pequeñas (iPhone 15: 390px de ancho aproximadamente)
+@media (max-width: 400px) {
+  body {
+    padding-top: 60px; // menos padding para móviles pequeños
   }
-  .navbar-nav .nav-link {
-    font-size: 1rem;
-    padding: 8px 12px;
+
+  header {
+    padding: 15px 10px;
+
+    .navbar-brand {
+      font-size: 1.3rem;
+
+      img {
+        height: 70px; // reducir tamaño logo para móviles pequeños
+      }
+    }
+
+    .navbar-nav .nav-link {
+      font-size: 0.9rem;
+      padding: 6px 8px;
+    }
+  }
+
+  // Sobre mí
+  #sobre-mi {
+    padding: 40px 15px;
+
+    .about-header {
+      h2 {
+        font-size: 2rem;
+      }
+      .intro {
+        font-size: 1.1rem;
+      }
+    }
+
+    .about-content {
+      flex-direction: column;
+      gap: 20px;
+
+      .about-section {
+        flex: 1 1 100%;
+        padding: 20px;
+        border-radius: 12px;
+      }
+    }
+  }
+
+  // Proyectos
+  #proyectos {
+    padding: 40px 15px;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    .project-grid {
+      flex-direction: column;
+      gap: 20px;
+
+      .project-card {
+        width: 100%;
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  // Footer
+  footer {
+    padding: 20px 10px;
+    font-size: 0.8rem;
   }
 }
+
+// Ajustes para tablets y pantallas medias
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+
+  .project-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 
 // -------------------------------------
 // 👤 Sobre Mí

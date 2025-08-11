@@ -123,13 +123,58 @@ header {
     transform: scale(1); }
   50% {
     transform: scale(1.05); } }
-@media (max-width: 768px) {
-  .navbar-brand {
-    font-size: 1.5rem; }
+@media (max-width: 400px) {
+  body {
+    padding-top: 60px; }
 
-  .navbar-nav .nav-link {
-    font-size: 1rem;
-    padding: 8px 12px; } }
+  header {
+    padding: 15px 10px; }
+    header .navbar-brand {
+      font-size: 1.3rem; }
+      header .navbar-brand img {
+        height: 70px; }
+    header .navbar-nav .nav-link {
+      font-size: 0.9rem;
+      padding: 6px 8px; }
+
+  #sobre-mi {
+    padding: 40px 15px; }
+    #sobre-mi .about-header h2 {
+      font-size: 2rem; }
+    #sobre-mi .about-header .intro {
+      font-size: 1.1rem; }
+    #sobre-mi .about-content {
+      flex-direction: column;
+      gap: 20px; }
+      #sobre-mi .about-content .about-section {
+        flex: 1 1 100%;
+        padding: 20px;
+        border-radius: 12px; }
+
+  #proyectos {
+    padding: 40px 15px; }
+    #proyectos h2 {
+      font-size: 2rem;
+      margin-bottom: 30px; }
+    #proyectos .project-grid {
+      flex-direction: column;
+      gap: 20px; }
+      #proyectos .project-grid .project-card {
+        width: 100%;
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: auto; }
+
+  footer {
+    padding: 20px 10px;
+    font-size: 0.8rem; } }
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column; }
+
+  .project-grid {
+    flex-direction: column;
+    align-items: center; } }
 #sobre-mi {
   background: #E3F2FD;
   padding: 80px 0; }
