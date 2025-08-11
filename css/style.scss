@@ -1,144 +1,290 @@
-// Paleta de colores
-$primary-color: #007BFF;  // Azul principal
-$secondary-color: #0056b3; // Azul oscuro
-$tertiary-color: #E3F2FD;  // Azul suave
-$accent-color: #0099CC;    // Acento (azul más claro)
-$background-color: #f8f9fa;  // Fondo general
-$text-color: #333333;      // Texto principal
-$white: #ffffff;           // Blanco
+// -------------------------------------
+// 🎨 Paleta de colores
+// -------------------------------------
+$primary: #007BFF;
+$secondary: #004a99;
+$tertiary: #E3F2FD;
+$accent: #00b8ff;
+$bg: #f8f9fa;
+$text: #222;
+$white: #fff;
 
-// Tipografía
-$font-family-base: 'Roboto', sans-serif;
-$font-family-heading: 'Montserrat', sans-serif;
+// -------------------------------------
+// 🔤 Tipografías
+// -------------------------------------
+$font-base: 'Roboto', sans-serif;
+$font-head: 'Montserrat', sans-serif;
 
-// Reset básico
+// -------------------------------------
+// 🔄 Reset + Box-sizing
+// -------------------------------------
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-// Reseteo de márgenes para que el header no sobrepase contenido
+// -------------------------------------
+// ✨ Mixins animaciones
+// -------------------------------------
+@mixin transition($props...) {
+  transition: $props 0.3s ease;
+}
+
+@mixin shadow($color, $blur: 10px, $spread: 0px) {
+  box-shadow: 0 0 $blur $spread $color;
+}
+
+// -------------------------------------
+// 📄 Body base
+// -------------------------------------
 body {
-    font-family: $font-family-base;
-    background-color: $background-color;
-    color: $text-color;
-    line-height: 1.6;
-    padding-top: 70px; // Añade suficiente espacio para que el contenido no quede oculto debajo del header fijo.
-    scroll-behavior: smooth; // Para suavizar el desplazamiento.
-  }
-// Enlaces
+  font-family: $font-base;
+  background: $bg;
+  color: $text;
+  line-height: 1.6;
+  padding-top: 80px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// -------------------------------------
+// 🔗 Enlaces con microinteracción
+// -------------------------------------
 a {
-  color: $primary-color;
+  color: $primary;
   text-decoration: none;
-  transition: all 0.3s ease;
+  position: relative;
+  @include transition(color 0.35s cubic-bezier(0.4, 0, 0.2, 1));
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: $accent;
+    @include transition(width 0.3s ease);
+  }
 
   &:hover {
-    color: $accent-color;
-    text-decoration: underline;
+    color: $accent;
+    &::after {
+      width: 100%;
+    }
   }
 }
 
-// Cabecera (Header)
+// -------------------------------------
+// 🏔 Header con glass + animación
+// -------------------------------------
 header {
-    background-color: $primary-color; /* Asegúrate de que estas variables estén definidas en tu archivo SCSS */
-    color: $white;
-    padding: 20px 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    position: sticky; /* Si prefieres sticky en lugar de fixed */
-    top: 0;
-    width: 100%;
-    z-index: 9999;
-    overflow: visible;
-  
-    .navbar {
-      padding-left: 0;
-      padding-right: 0;
-  
-      .navbar-nav {
-        margin-left: auto; /* Esto alinea los enlaces a la derecha */
-      }
-    }
-  
-    .navbar-brand {
-      font-weight: bold;
-      font-size: 1.8rem;
-      color: $white;
-    }
-  
-    .navbar-nav .nav-link {
-      color: $white;
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 8px 15px;
-  
-      &:hover {
-        color: $tertiary-color;
-      }
-    }
-  }
-  
-  // Para los dispositivos pequeños, cambiamos el tamaño de la fuente de la navbar:
-  @media (max-width: 768px) {
-    .navbar-brand {
-      font-size: 1.6rem; /* Reducir tamaño de la marca */
-    }
-  
-    .navbar-nav .nav-link {
-      font-size: 0.9rem; /* Reducir tamaño de los enlaces */
-      padding: 6px 10px; /* Reducir el padding de los enlaces */
-    }
-  }
-  
-  
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  padding: 20px 0;
+  color: $white;
+  background: linear-gradient(120deg, lighten($primary, 15%), $primary, $secondary);
+  background-size: 300% 300%;
+  animation: gradientMove 8s ease infinite;
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(0, 123, 255, 0.85);
+  background-blend-mode: overlay;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.18);
+  transform-style: preserve-3d;
 
-// Sección "Sobre Mí"
+  .navbar {
+    padding: 0;
+    .navbar-nav {
+      margin-left: auto;
+    }
+  }
+
+  .navbar-brand {
+    font-weight: 700;
+    font-size: 1.9rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: $white;
+    letter-spacing: 0.02em;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.3);
+
+    img {
+      height: 90px;
+      width: auto;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.35));
+      animation: float 4s ease-in-out infinite, glow 3s ease-in-out infinite alternate;
+      @include transition(transform, filter);
+
+      &:hover {
+        transform: scale(1.1) rotate(2deg);
+        filter: drop-shadow(0 8px 20px rgba(0,0,0,0.5));
+      }
+    }
+  }
+
+  .navbar-nav .nav-link {
+    color: $white;
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 10px 18px;
+    position: relative;
+    @include transition(color, transform);
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -6px; left: 0;
+      width: 0;
+      height: 3px;
+      border-radius: 3px;
+      background: $accent;
+      box-shadow: 0 0 10px $accent;
+      @include transition(width);
+    }
+
+    &:hover {
+      color: $accent;
+      transform: translateY(-3px);
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// -------------------------------------
+// 🔑 Animaciones clave
+// -------------------------------------
+@keyframes gradientMove {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes glow {
+  0% { filter: drop-shadow(0 0 7px rgba(255,255,255,0.35)); }
+  100% { filter: drop-shadow(0 0 18px rgba(255,255,255,0.85)); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+// -------------------------------------
+// 📱 Responsive
+// -------------------------------------
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+  .navbar-nav .nav-link {
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+}
+
+// -------------------------------------
+// 👤 Sobre Mí
+// -------------------------------------
 #sobre-mi {
-  background-color: $tertiary-color;
-  padding: 60px 0;
+  background: $tertiary;
+  padding: 80px 0;
+
+  [data-aos] {
+    opacity: 0;
+    transition: opacity 0.9s ease;
+  }
+
+  [data-aos].aos-animate {
+    opacity: 1;
+  }
 
   .about-header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 
     h2 {
-      font-size: 2.5rem;
-      color: $primary-color;
-      margin-bottom: 15px;
+      font-family: $font-head;
+      font-size: 2.7rem;
+      color: $primary;
+      margin-bottom: 20px;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      text-shadow: 0 1px 5px rgba($primary, 0.25);
     }
 
     .intro {
-      font-size: 1.2rem;
-      color: $secondary-color;
-      margin-bottom: 10px;
+      font-size: 1.3rem;
+      color: $secondary;
+      font-weight: 500;
+      margin-bottom: 15px;
     }
   }
 
   .about-content {
     display: flex;
-    justify-content: space-between;
-    gap: 30px;
     flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
 
     .about-section {
       flex: 1 1 45%;
-      background-color: $white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin-bottom: 20px;
+      background: $white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      margin-bottom: 25px;
+      cursor: default;
+      @include transition(transform, box-shadow);
+
+      &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+      }
 
       h3 {
-        color: $primary-color;
-        margin-bottom: 15px;
+        color: $primary;
+        margin-bottom: 20px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
       }
 
       ul {
-        list-style-type: none;
-        padding: 0;
+        list-style: none;
+        padding-left: 0;
 
         li {
-          margin-bottom: 8px;
+          position: relative;
+          padding-left: 18px;
+          margin-bottom: 12px;
+          font-weight: 500;
+          line-height: 1.5;
+          color: darken($text, 10%);
+
+          &::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+            color: $accent;
+            line-height: 1;
+          }
         }
       }
     }
@@ -146,174 +292,123 @@ header {
 
   .passion {
     text-align: center;
-    font-size: 1.2rem;
     font-style: italic;
-    color: $accent-color;
+    font-size: 1.3rem;
+    color: $accent;
+    margin-top: 20px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
   }
 }
 
-// Sección "Proyectos"
+// -------------------------------------
+// 💼 Proyectos
+// -------------------------------------
 #proyectos {
-  background-color: $background-color;
-  padding: 60px 0;
+  background: $bg;
+  padding: 80px 0;
 
   h2 {
-    font-size: 2.5rem;
+    font-family: $font-head;
+    font-size: 2.8rem;
     text-align: center;
-    color: $primary-color;
-    margin-bottom: 30px;
+    color: $primary;
+    margin-bottom: 40px;
+    letter-spacing: 0.04em;
+    font-weight: 700;
   }
 
   .project-grid {
     display: flex;
-    justify-content: space-between;
-    gap: 30px;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
 
-    .project-item {
-      background-color: $white;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
+    .project-card {
+      background: $white;
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.09);
+      width: 320px;
+      overflow: hidden;
+      cursor: pointer;
+      @include transition(transform, box-shadow);
 
       &:hover {
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-      }
-
-      a {
-        display: block;
-        text-align: center;
-        padding: 15px;
-        text-decoration: none;
+        transform: translateY(-12px);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.15);
       }
 
       img {
-        max-width: 100%;
-        border-radius: 8px;
-        margin-bottom: 15px;
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        @include transition(transform 0.45s ease);
+
+        &:hover {
+          transform: scale(1.1);
+        }
       }
 
       .project-info {
-        color: $primary-color;
-        
+        padding: 20px;
+
         h3 {
-          font-size: 1.3rem;
           font-weight: 700;
+          color: $secondary;
           margin-bottom: 10px;
+          font-family: $font-head;
         }
 
         p {
-          color: $text-color;
+          color: darken($text, 15%);
           font-size: 1rem;
+          line-height: 1.5;
+          margin-bottom: 15px;
         }
-      }
-    }
-  }
-}
 
-// Sección de "Contacto"
-#contacto {
-    background-color: $primary-color;
-    color: $white;
-    padding: 60px 0;
-  
-    h2 {
-      font-size: 2.5rem;
-      text-align: center;
-      margin-bottom: 30px;
-    }
-  
-    .contact-info {
-      display: flex;
-      justify-content: space-around;
-      gap: 30px;
-      flex-wrap: wrap;
-  
-      .contact-item {
-        text-align: center;
-        transition: transform 0.3s ease;
-  
-        i {
-          transition: transform 0.3s ease;
-          color: $white; // Color de iconos
-  
-          &:hover {
-            transform: scale(1.2); // Aumenta el tamaño del icono al pasar el ratón
-          }
-        }
-  
-        p {
-          font-size: 1.2rem;
-          margin-top: 10px;
-        }
-  
-        &:hover {
-          transform: translateY(-5px); // Sube ligeramente al hacer hover
-        }
-  
-        a {
+        .btn-view {
+          display: inline-block;
+          background: $primary;
           color: $white;
-          text-decoration: none;
-          transition: color 0.3s ease;
-  
+          padding: 10px 18px;
+          border-radius: 8px;
+          font-weight: 600;
+          text-transform: uppercase;
+          box-shadow: 0 6px 15px rgba($primary, 0.45);
+          cursor: pointer;
+          @include transition(background-color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease);
+
           &:hover {
-            color: $accent-color; // Cambia el color al pasar el ratón
+            background: $accent;
+            box-shadow: 0 12px 28px rgba($accent, 0.7);
+            transform: scale(1.05);
           }
         }
       }
     }
   }
-  
+}
 
-// Footer
-// Footer Profesional
+// -------------------------------------
+// 🦶 Footer
+// -------------------------------------
 footer {
-    background-color: #222222; // Fondo oscuro para un toque elegante
-    color: #ffffff;
+  background: $secondary;
+  color: $white;
+  padding: 30px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  box-shadow: inset 0 2px 8px rgba(255,255,255,0.15);
 
-    .container {
-        max-width: 1140px; // Limitamos el ancho del contenido
+  a {
+    color: lighten($accent, 15%);
+    font-weight: 600;
+    @include transition(color);
+
+    &:hover {
+      color: $accent;
+      text-decoration: underline;
     }
-
-    h4 {
-        font-size: 1.5rem;
-        font-weight: bold;
-    }
-
-    h5 {
-        font-size: 1.2rem;
-        font-weight: bold;
-        margin-bottom: 15px;
-    }
-
-    ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    a {
-        color: #999999;
-        text-decoration: none;
-        transition: color 0.3s ease;
-
-        &:hover {
-            color: #007BFF; // Azul suave para enlaces al pasar el ratón
-        }
-    }
-
-    .fab {
-        color: #999999;
-        transition: color 0.3s ease;
-        
-        &:hover {
-            color: #007BFF; // Iconos con el mismo efecto al pasar el ratón
-        }
-    }
+  }
 }
-
-// Ajuste de márgenes y alineación en los enlaces y redes sociales
-footer .d-flex a {
-    margin-right: 20px;
-}
-
