@@ -383,6 +383,97 @@ header {
   }
 }
 
+// 🚀 Sección Conocimientos
+#conocimientos {
+  background: linear-gradient(120deg, lighten($primary, 45%), lighten($secondary, 40%));
+  padding: 80px 0;
+  color: $white;
+
+  h2 {
+    font-family: $font-head;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: $white;
+    margin-bottom: 15px;
+  }
+
+  p.lead {
+    font-size: 1.2rem;
+    color: lighten($secondary, 20%);
+  }
+
+  h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+  }
+
+  // 🎨 Skills
+  .skill {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
+    padding: 20px 15px;
+    text-align: center;
+    width: 120px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+
+    img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-bottom: 10px;
+      filter: drop-shadow(0 2px 5px rgba(0,0,0,0.4));
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: black;
+    }
+
+    &:hover {
+      transform: translateY(-8px);
+      background: rgba($primary, 0.15);
+      box-shadow: 0 10px 25px rgba($primary, 0.5);
+
+      img {
+        transform: scale(1.15) rotate(5deg);
+        filter: drop-shadow(0 4px 12px rgba($accent, 0.7));
+      }
+
+      p {
+        color: $accent;
+      }
+    }
+  }
+
+  // Responsive
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 2.2rem;
+    }
+
+    .skill {
+      width: 100px;
+      padding: 15px 10px;
+
+      img {
+        width: 50px;
+        height: 50px;
+      }
+
+      p {
+        font-size: 0.85rem;
+      }
+    }
+  }
+}
+
+
+
 // -------------------------------------
 // 💼 Proyectos
 // -------------------------------------
@@ -495,6 +586,103 @@ header {
         height: 180px;
       }
     }
+  }
+}
+// Sobre Mí — versión mejorada
+#sobre-mi {
+  background: linear-gradient(180deg, $tertiary 0%, lighten($bg, 6%) 100%);
+  padding: 80px 0;
+  color: $text;
+
+  .section-heading {
+    font-family: $font-head;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: $primary;
+    margin-bottom: 8px;
+  }
+
+  .lead {
+    color: darken($text, 10%);
+    font-size: 1.05rem;
+    margin-bottom: 28px;
+  }
+
+  .brand-avatar {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba($white, 0.95), rgba($white, 0.85));
+    padding: 18px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08), inset 0 -6px 18px rgba($primary, 0.03);
+    transition: transform 0.45s cubic-bezier(.2,.9,.3,1), box-shadow 0.3s ease;
+    margin: 0 auto;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+      filter: drop-shadow(0 6px 16px rgba($primary, 0.12));
+      transition: transform 0.45s ease, filter 0.35s ease;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    &:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+      img { transform: rotate(3deg) scale(1.03); }
+    }
+  }
+
+  p {
+    font-size: 1rem;
+    color: darken($text, 6%);
+  }
+
+  .skill-badges {
+    .badge-pill {
+      display: inline-block;
+      background: rgba($primary, 0.08);
+      color: $secondary;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+      transition: transform 0.2s ease, background 0.2s ease;
+
+      &:hover {
+        transform: translateY(-4px);
+        background: rgba($accent, 0.14);
+        color: $primary;
+      }
+    }
+  }
+
+  .btn {
+    font-weight: 700;
+    border-radius: 8px;
+    @include transition(transform, box-shadow);
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba($primary, 0.18);
+    }
+  }
+
+  // Responsive tweaks
+  @media (max-width: 768px) {
+    padding: 50px 0;
+
+    .brand-avatar {
+      width: 150px;
+      height: 150px;
+      padding: 12px;
+    }
+
+    .section-heading { font-size: 2rem; }
   }
 }
 
