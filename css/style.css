@@ -268,8 +268,11 @@ header {
       border-radius: 18px;
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
       width: 320px;
+      height: 420px;
       overflow: hidden;
       cursor: pointer;
+      display: flex;
+      flex-direction: column;
       transition: transform, box-shadow 0.3s ease; }
       #proyectos .project-grid .project-card:hover {
         transform: translateY(-12px);
@@ -282,7 +285,11 @@ header {
         #proyectos .project-grid .project-card img:hover {
           transform: scale(1.1); }
       #proyectos .project-grid .project-card .project-info {
-        padding: 20px; }
+        padding: 20px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; }
         #proyectos .project-grid .project-card .project-info h3 {
           font-weight: 700;
           color: #004a99;
@@ -292,7 +299,8 @@ header {
           color: black;
           font-size: 1rem;
           line-height: 1.5;
-          margin-bottom: 15px; }
+          margin-bottom: 15px;
+          flex: 1; }
         #proyectos .project-grid .project-card .project-info .btn-view {
           display: inline-block;
           background: #007BFF;
@@ -303,12 +311,22 @@ header {
           text-transform: uppercase;
           box-shadow: 0 6px 15px rgba(0, 123, 255, 0.45);
           cursor: pointer;
+          text-align: center;
           transition: background-color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease 0.3s ease; }
           #proyectos .project-grid .project-card .project-info .btn-view:hover {
             background: #00b8ff;
             box-shadow: 0 12px 28px rgba(0, 184, 255, 0.7);
             transform: scale(1.05); }
 
+@media (max-width: 768px) {
+  #proyectos .project-grid {
+    flex-direction: column;
+    align-items: center; }
+    #proyectos .project-grid .project-card {
+      width: 90%;
+      height: auto; }
+      #proyectos .project-grid .project-card img {
+        height: 180px; } }
 footer {
   background: #004a99;
   color: #fff;

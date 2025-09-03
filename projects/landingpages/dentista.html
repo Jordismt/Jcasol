@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sonrisa Perfecta - Clínica Dental</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /* RESET */
+  * {margin:0;padding:0;box-sizing:border-box;font-family:'Roboto',sans-serif;}
+  body {background:#f0f8ff;color:#333;scroll-behavior:smooth;}
+  a{text-decoration:none;color:inherit;}
+
+  /* HEADER */
+  header {
+    background:#0b3d91;color:white;
+    padding:20px 40px;display:flex;justify-content:space-between;align-items:center;
+    position:sticky;top:0;z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,0.3);
+  }
+  header.scrolled {background:#111721;}
+  header h1 {font-size:1.8rem;color:#00bfff;}
+  nav a {margin-left:25px;font-weight:500;transition:color 0.3s;}
+  nav a:hover {color:#00bfff;}
+
+  /* HERO */
+  .hero {
+    display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+    height:90vh;background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+    color:white;padding:0 20px;position:relative;overflow:hidden;
+  }
+  .hero h2 {font-size:3rem;margin-bottom:20px;text-shadow:2px 2px 8px rgba(0,0,0,0.5);}
+  .hero p {font-size:1.2rem;margin-bottom:30px;}
+  .hero a {
+    background:linear-gradient(90deg,#00bfff,#1e90ff);
+    padding:15px 35px;border-radius:50px;font-weight:bold;transition:all 0.3s;
+  }
+  .hero a:hover {transform:scale(1.05);}
+  .hero h2 {
+  animation: fadeInUp 1s ease forwards;
+}
+
+.hero p {
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+.hero a {
+  animation: fadeInUp 1.4s ease forwards;
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+  /* SERVICIOS */
+  .services {
+    padding:80px 40px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+  }
+  .service-card {
+    background:#fff;border-radius:15px;overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .service-card:hover {transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,0.2);}
+  .service-card img {width:100%;height:200px;object-fit:cover;}
+  .service-card h3 {margin:15px 0 10px;text-align:center;color:#0b3d91;}
+  .service-card p {padding:0 15px 15px;font-size:0.9rem;color:#555;text-align:center;}
+  .service-card button {
+    display:block;margin:0 auto 15px;
+    background:linear-gradient(90deg,#00bfff,#1e90ff);
+    color:white;border:none;padding:10px 25px;border-radius:25px;
+    cursor:pointer;transition:all 0.3s ease;
+  }
+  .service-card button:hover {transform:scale(1.05);}
+
+  /* SOBRE NOSOTROS */
+  .about {
+    background:linear-gradient(135deg,#0b3d91,#1e90ff);color:white;padding:80px 40px;text-align:center;
+  }
+  .about h2 {font-size:2.5rem;margin-bottom:20px;color:#00ffff;}
+  .about p {max-width:800px;margin:0 auto;font-size:1.1rem;line-height:1.6;}
+
+  /* CONTACTO */
+  .contact {padding:80px 40px;background:#f0f8ff;text-align:center;}
+  .contact h2 {font-size:2.5rem;margin-bottom:20px;color:#0b3d91;}
+  .contact form {max-width:600px;margin:0 auto;display:flex;flex-direction:column;gap:15px;}
+  .contact input,.contact textarea {
+    padding:15px;border-radius:10px;border:1px solid #ccc;font-size:1rem;resize:none;transition:all 0.3s;
+  }
+  .contact input:focus,.contact textarea:focus {border-color:#1e90ff;box-shadow:0 0 10px rgba(30,144,255,0.3);}
+  .contact button {
+    padding:15px;border-radius:50px;border:none;background:linear-gradient(90deg,#00bfff,#1e90ff);
+    color:white;font-weight:bold;cursor:pointer;transition:all 0.3s;
+  }
+  .contact button:hover {transform:scale(1.05);}
+
+  /* FOOTER */
+  footer {background:#0b3d91;color:#fff;padding:40px;text-align:center;}
+  footer a {color:#00ffff;margin:0 10px;transition:color 0.3s;}
+  footer a:hover {color:#1e90ff;}
+  footer p {margin-top:20px;font-size:0.9rem;}
+
+  /* RESPONSIVE */
+  @media(max-width:768px){
+    .hero h2{font-size:2rem;}
+    .about h2,.contact h2{font-size:2rem;}
+    .services{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Sonrisa Perfecta</h1>
+  <nav>
+    <a href="#services">Servicios</a>
+    <a href="#about">Sobre Nosotros</a>
+    <a href="#contact">Contacto</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Tu sonrisa, nuestra prioridad</h2>
+  <p>Atención dental profesional para toda la familia</p>
+  <a href="#services">Reservar Cita</a>
+</section>
+
+<section class="services" id="services">
+  <div class="service-card">
+    <img src="https://plus.unsplash.com/premium_photo-1681966962522-546f370bc98e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Limpieza Dental">
+    <h3>Limpieza Dental</h3>
+    <p>Elimina placa y sarro, mantén tu boca sana y fresca</p>
+    <button>Reservar</button>
+  </div>
+  <div class="service-card">
+    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1468&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Blanqueamiento">
+    <h3>Blanqueamiento</h3>
+    <p>Sonríe con confianza con nuestro tratamiento seguro y efectivo</p>
+    <button>Reservar</button>
+  </div>
+  <div class="service-card">
+    <img src="https://images.unsplash.com/photo-1670250492416-570b5b7343b1?q=80&w=1025&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ortodoncia">
+    <h3>Ortodoncia</h3>
+    <p>Corregimos la alineación de tus dientes con la última tecnología</p>
+    <button>Reservar</button>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <h2>Sobre Nosotros</h2>
+  <p>En Sonrisa Perfecta contamos con un equipo de dentistas altamente capacitados, comprometidos con tu salud bucal. Nuestro objetivo es ofrecer atención personalizada y tratamientos modernos en un ambiente cómodo y seguro para toda la familia.</p>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Contacto</h2>
+  <form>
+    <input type="text" placeholder="Nombre" required>
+    <input type="email" placeholder="Correo electrónico" required>
+    <textarea rows="5" placeholder="Tu mensaje o reserva" required></textarea>
+    <button type="submit">Enviar Mensaje</button>
+  </form>
+</section>
+
+<footer>
+  <div>
+    <a href="#">Facebook</a> |
+    <a href="#">Instagram</a> |
+    <a href="#">Twitter</a>
+  </div>
+  <p>&copy; 2025 Sonrisa Perfecta. Todos los derechos reservados.</p>
+</footer>
+<script>
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
+</body>
+</html>
