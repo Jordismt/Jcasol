@@ -232,9 +232,7 @@ header {
 
 // Ajustes para pantallas muy pequeñas (iPhone 15: 390px de ancho aproximadamente)
 @media (max-width: 400px) {
-  body {
-    padding-top: 60px; // menos padding para móviles pequeños
-  }
+
 
   header {
     padding: 15px 10px;
