@@ -152,6 +152,7 @@ header {
     transform: scale(1.05); } }
 @media (max-width: 400px) {
   header {
+    z-index: 9999999;
     padding: 15px 10px; }
     header .navbar-brand {
       font-size: 1.3rem; }
