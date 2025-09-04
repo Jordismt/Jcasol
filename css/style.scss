@@ -124,6 +124,19 @@ header {
       }
     }
   }
+    .navbar-brand .brand-text {
+      display: flex;
+      flex-direction: column; /* Apila nombre y subtítulo verticalmente */
+      line-height: 1.2;
+  }
+
+  .navbar-brand .brand-subtitle {
+      font-size: 0.9rem;   /* más pequeño que el nombre */
+      font-weight: 400;
+      color: lighten($white, 20%); /* color más suave que el nombre */
+      margin-top: 2px;
+  }
+
 
   // Navegación
   .navbar-nav {

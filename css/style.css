@@ -67,6 +67,18 @@ header {
       header .navbar-brand img:hover {
         transform: scale(1.1) rotate(2deg);
         filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.5)); }
+  header .navbar-brand .brand-text {
+    display: flex;
+    flex-direction: column;
+    /* Apila nombre y subtítulo verticalmente */
+    line-height: 1.2; }
+  header .navbar-brand .brand-subtitle {
+    font-size: 0.9rem;
+    /* más pequeño que el nombre */
+    font-weight: 400;
+    color: white;
+    /* color más suave que el nombre */
+    margin-top: 2px; }
   header .navbar-nav {
     margin-left: auto; }
     header .navbar-nav .nav-link {
