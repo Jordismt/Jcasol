@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,112 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sonrisa Perfecta - Clínica Dental</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  /* RESET */
-  * {margin:0;padding:0;box-sizing:border-box;font-family:'Roboto',sans-serif;}
-  body {background:#f0f8ff;color:#333;scroll-behavior:smooth;}
-  a{text-decoration:none;color:inherit;}
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="dentista.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  /* HEADER */
-  header {
-    background:#0b3d91;color:white;
-    padding:20px 40px;display:flex;justify-content:space-between;align-items:center;
-    position:sticky;top:0;z-index:1000;
-    box-shadow:0 2px 10px rgba(0,0,0,0.3);
-  }
-  header.scrolled {background:#111721;}
-  header h1 {font-size:1.8rem;color:#00bfff;}
-  nav a {margin-left:25px;font-weight:500;transition:color 0.3s;}
-  nav a:hover {color:#00bfff;}
-
-  /* HERO */
-  .hero {
-    display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
-    height:90vh;background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
-    color:white;padding:0 20px;position:relative;overflow:hidden;
-  }
-  .hero h2 {font-size:3rem;margin-bottom:20px;text-shadow:2px 2px 8px rgba(0,0,0,0.5);}
-  .hero p {font-size:1.2rem;margin-bottom:30px;}
-  .hero a {
-    background:linear-gradient(90deg,#00bfff,#1e90ff);
-    padding:15px 35px;border-radius:50px;font-weight:bold;transition:all 0.3s;
-  }
-  .hero a:hover {transform:scale(1.05);}
-  .hero h2 {
-  animation: fadeInUp 1s ease forwards;
-}
-
-.hero p {
-  animation: fadeInUp 1.2s ease forwards;
-}
-
-.hero a {
-  animation: fadeInUp 1.4s ease forwards;
-}
-
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-  /* SERVICIOS */
-  .services {
-    padding:80px 40px;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-  }
-  .service-card {
-    background:#fff;border-radius:15px;overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    transition:transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .service-card:hover {transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,0.2);}
-  .service-card img {width:100%;height:200px;object-fit:cover;}
-  .service-card h3 {margin:15px 0 10px;text-align:center;color:#0b3d91;}
-  .service-card p {padding:0 15px 15px;font-size:0.9rem;color:#555;text-align:center;}
-  .service-card button {
-    display:block;margin:0 auto 15px;
-    background:linear-gradient(90deg,#00bfff,#1e90ff);
-    color:white;border:none;padding:10px 25px;border-radius:25px;
-    cursor:pointer;transition:all 0.3s ease;
-  }
-  .service-card button:hover {transform:scale(1.05);}
-
-  /* SOBRE NOSOTROS */
-  .about {
-    background:linear-gradient(135deg,#0b3d91,#1e90ff);color:white;padding:80px 40px;text-align:center;
-  }
-  .about h2 {font-size:2.5rem;margin-bottom:20px;color:#00ffff;}
-  .about p {max-width:800px;margin:0 auto;font-size:1.1rem;line-height:1.6;}
-
-  /* CONTACTO */
-  .contact {padding:80px 40px;background:#f0f8ff;text-align:center;}
-  .contact h2 {font-size:2.5rem;margin-bottom:20px;color:#0b3d91;}
-  .contact form {max-width:600px;margin:0 auto;display:flex;flex-direction:column;gap:15px;}
-  .contact input,.contact textarea {
-    padding:15px;border-radius:10px;border:1px solid #ccc;font-size:1rem;resize:none;transition:all 0.3s;
-  }
-  .contact input:focus,.contact textarea:focus {border-color:#1e90ff;box-shadow:0 0 10px rgba(30,144,255,0.3);}
-  .contact button {
-    padding:15px;border-radius:50px;border:none;background:linear-gradient(90deg,#00bfff,#1e90ff);
-    color:white;font-weight:bold;cursor:pointer;transition:all 0.3s;
-  }
-  .contact button:hover {transform:scale(1.05);}
-
-  /* FOOTER */
-  footer {background:#0b3d91;color:#fff;padding:40px;text-align:center;}
-  footer a {color:#00ffff;margin:0 10px;transition:color 0.3s;}
-  footer a:hover {color:#1e90ff;}
-  footer p {margin-top:20px;font-size:0.9rem;}
-
-  /* RESPONSIVE */
-  @media(max-width:768px){
-    .hero h2{font-size:2rem;}
-    .about h2,.contact h2{font-size:2rem;}
-    .services{grid-template-columns:1fr;}
-  }
-</style>
 </head>
 <body>
 
@@ -118,66 +17,241 @@
   <h1>Sonrisa Perfecta</h1>
   <nav>
     <a href="#services">Servicios</a>
+    <a href="#benefits">Beneficios</a>
+    <a href="#team">Equipo</a>
+    <a href="#pricing">Precios</a>
+    <a href="#faq">FAQ</a>
+    <a href="#testimonials">Testimonios</a>
     <a href="#about">Sobre Nosotros</a>
     <a href="#contact">Contacto</a>
   </nav>
 </header>
 
-<section class="hero">
+<!-- HERO -->
+<section class="hero" data-aos="fade-up">
   <h2>Tu sonrisa, nuestra prioridad</h2>
   <p>Atención dental profesional para toda la familia</p>
   <a href="#services">Reservar Cita</a>
 </section>
 
+<!-- BENEFICIOS -->
+<section class="benefits" id="benefits">
+  <h2 data-aos="fade-up">¿Por qué elegirnos?</h2>
+  <div class="benefit-list">
+    <div class="benefit" data-aos="zoom-in">
+      <h3>✅ Atención Personalizada</h3>
+      <p>Cada paciente recibe un plan de tratamiento adaptado a sus necesidades.</p>
+    </div>
+    <div class="benefit" data-aos="zoom-in" data-aos-delay="100">
+      <h3>🦷 Tecnología Avanzada</h3>
+      <p>Equipos modernos para ofrecerte precisión y comodidad.</p>
+    </div>
+    <div class="benefit" data-aos="zoom-in" data-aos-delay="200">
+      <h3>👨‍⚕️ Expertos Certificados</h3>
+      <p>Profesionales con años de experiencia en odontología.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
 <section class="services" id="services">
-  <div class="service-card">
-    <img src="https://plus.unsplash.com/premium_photo-1681966962522-546f370bc98e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Limpieza Dental">
+  <div class="service-card" data-aos="fade-up">
+    <img src="https://plus.unsplash.com/premium_photo-1681966962522-546f370bc98e?q=80&w=1170" alt="Limpieza Dental">
     <h3>Limpieza Dental</h3>
-    <p>Elimina placa y sarro, mantén tu boca sana y fresca</p>
+    <p>Elimina placa y sarro, mantén tu boca sana y fresca.</p>
     <button>Reservar</button>
   </div>
-  <div class="service-card">
-    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1468&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Blanqueamiento">
+  <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1468" alt="Blanqueamiento">
     <h3>Blanqueamiento</h3>
-    <p>Sonríe con confianza con nuestro tratamiento seguro y efectivo</p>
+    <p>Sonríe con confianza con nuestro tratamiento seguro y efectivo.</p>
     <button>Reservar</button>
   </div>
-  <div class="service-card">
-    <img src="https://images.unsplash.com/photo-1670250492416-570b5b7343b1?q=80&w=1025&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ortodoncia">
+  <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+    <img src="https://images.unsplash.com/photo-1670250492416-570b5b7343b1?q=80&w=1025" alt="Ortodoncia">
     <h3>Ortodoncia</h3>
-    <p>Corregimos la alineación de tus dientes con la última tecnología</p>
+    <p>Corrige la alineación de tus dientes con la última tecnología.</p>
     <button>Reservar</button>
   </div>
 </section>
 
+<!-- TESTIMONIOS -->
+<section class="testimonials" id="testimonials">
+  <h2 data-aos="fade-up">Lo que dicen nuestros pacientes</h2>
+  <div class="testimonial-list">
+    <div class="testimonial" data-aos="fade-up">
+      <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Paciente 1">
+      <p>"El mejor trato que he recibido en una clínica dental. 100% recomendados."</p>
+      <div class="stars">★★★★★</div>
+      <strong>- Ana López</strong>
+    </div>
+    <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Paciente 2">
+      <p>"Mi sonrisa cambió por completo gracias a su tratamiento de ortodoncia."</p>
+      <div class="stars">★★★★★</div>
+      <strong>- Carlos Gómez</strong>
+    </div>
+    <div class="testimonial" data-aos="fade-up" data-aos-delay="200">
+      <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Paciente 3">
+      <p>"Profesionales muy atentos y un ambiente súper cómodo."</p>
+      <div class="stars">★★★★★</div>
+      <strong>- Laura Fernández</strong>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPO -->
+<section class="team" id="team">
+  <h2 data-aos="fade-up">Nuestro Equipo</h2>
+  <div class="team-list">
+
+    <div class="member" data-aos="zoom-in">
+      <img src="https://randomuser.me/api/portraits/men/20.jpg" alt="Doctor 1">
+      <h3>Dr. José Martínez</h3>
+      <div class="badge">Ortodoncia</div>
+      <p>Más de 10 años de experiencia ayudando a mejorar sonrisas.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <div class="member" data-aos="zoom-in" data-aos-delay="100">
+      <img src="https://randomuser.me/api/portraits/women/30.jpg" alt="Doctora 2">
+      <h3>Dra. María Pérez</h3>
+      <div class="badge">Odontología General</div>
+      <p>Experta en prevención y cuidado dental para toda la familia.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <div class="member" data-aos="zoom-in" data-aos-delay="200">
+      <img src="https://randomuser.me/api/portraits/women/50.jpg" alt="Doctora 3">
+      <h3>Dra. Sofía Ramírez</h3>
+      <div class="badge">Estética Dental</div>
+      <p>Apasionada por transformar sonrisas con los últimos tratamientos.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- PLANES -->
+<section class="pricing" id="pricing">
+  <h2 data-aos="fade-up">Planes y Precios</h2>
+  <div class="plans">
+    <div class="plan" data-aos="fade-up">
+      <h3>Básico</h3>
+      <p>$50 / consulta</p>
+      <ul>
+        <li>Chequeo general</li>
+        <li>Limpieza básica</li>
+      </ul>
+      <button>Elegir</button>
+    </div>
+    <div class="plan" data-aos="fade-up" data-aos-delay="100">
+      <h3>Estándar</h3>
+      <p>$120 / mes</p>
+      <ul>
+        <li>Limpiezas trimestrales</li>
+        <li>Blanqueamiento</li>
+      </ul>
+      <button>Elegir</button>
+    </div>
+    <div class="plan" data-aos="fade-up" data-aos-delay="200">
+      <h3>Premium</h3>
+      <p>$250 / mes</p>
+      <ul>
+        <li>Tratamientos completos</li>
+        <li>Atención prioritaria</li>
+      </ul>
+      <button>Elegir</button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <h2 data-aos="fade-up">Preguntas Frecuentes</h2>
+  <div class="faq-item" data-aos="fade-up">
+    <h3>¿Aceptan seguros dentales?</h3>
+    <p>Sí, trabajamos con la mayoría de seguros médicos.</p>
+  </div>
+  <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+    <h3>¿Ofrecen financiamiento?</h3>
+    <p>Contamos con planes de pago flexibles adaptados a tus necesidades.</p>
+  </div>
+  <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+    <h3>¿Duele el blanqueamiento dental?</h3>
+    <p>No, nuestros tratamientos son indoloros y seguros.</p>
+  </div>
+</section>
+
+<!-- SOBRE NOSOTROS -->
 <section class="about" id="about">
-  <h2>Sobre Nosotros</h2>
-  <p>En Sonrisa Perfecta contamos con un equipo de dentistas altamente capacitados, comprometidos con tu salud bucal. Nuestro objetivo es ofrecer atención personalizada y tratamientos modernos en un ambiente cómodo y seguro para toda la familia.</p>
+  <h2 data-aos="fade-up">Sobre Nosotros</h2>
+  <p data-aos="fade-up" data-aos-delay="100">
+    En <strong>Sonrisa Perfecta</strong>, combinamos experiencia, tecnología y un trato humano para
+    cuidar la salud bucal de toda tu familia. Nuestra misión es ofrecerte la mejor atención en un ambiente cálido y de confianza.
+  </p>
 </section>
 
+<!-- CONTACTO -->
 <section class="contact" id="contact">
-  <h2>Contacto</h2>
-  <form>
+  <h2 data-aos="fade-up">Contáctanos</h2>
+  <form data-aos="fade-up" data-aos-delay="100">
     <input type="text" placeholder="Nombre" required>
-    <input type="email" placeholder="Correo electrónico" required>
-    <textarea rows="5" placeholder="Tu mensaje o reserva" required></textarea>
-    <button type="submit">Enviar Mensaje</button>
+    <input type="email" placeholder="Correo" required>
+    <textarea rows="5" placeholder="Mensaje"></textarea>
+    <button type="submit">Enviar</button>
   </form>
+  <div class="map" data-aos="fade-up" data-aos-delay="200">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.086264254137!2d-122.41941508468144!3d37.774929779759654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085814c5e8c9e2f%3A0xf9d72a94a5b8b8f6!2sCl%C3%ADnica%20Dental!5e0!3m2!1ses!2s!4v1700000000000!5m2!1ses!2s"
+      width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
 </section>
 
+<!-- CTA FINAL -->
+<section class="cta-final" data-aos="fade-up">
+  <h2>¿Listo para tu nueva sonrisa?</h2>
+  <a href="#contact">Agenda tu cita ahora</a>
+</section>
+
+<!-- FOOTER -->
 <footer>
   <div>
     <a href="#">Facebook</a> |
     <a href="#">Instagram</a> |
-    <a href="#">Twitter</a>
+    <a href="#">WhatsApp</a>
   </div>
-  <p>&copy; 2025 Sonrisa Perfecta. Todos los derechos reservados.</p>
+  <p>&copy; 2024 Sonrisa Perfecta. Todos los derechos reservados.</p>
 </footer>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    // Header scroll effect
-    window.addEventListener('scroll', () => {
-      document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
+  AOS.init();
+
+  // Header scroll effect
+  window.addEventListener('scroll',()=>{
+    document.querySelector('header').classList.toggle('scrolled',window.scrollY>50)
+  });
+
+  // FAQ toggle
+  document.querySelectorAll('.faq-item h3').forEach(item=>{
+    item.addEventListener('click',()=>{
+      item.parentElement.classList.toggle('active');
     });
-  </script>
+  });
+</script>
 </body>
 </html>

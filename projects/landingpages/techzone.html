@@ -5,166 +5,89 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TechZone - Tienda de PCs</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  /* RESET */
-  * {margin:0;padding:0;box-sizing:border-box;font-family:'Roboto',sans-serif;}
-  body {background:#f4f4f9;color:#333;scroll-behavior:smooth;}
-  a{text-decoration:none;color:inherit;}
-  
-  /* HEADER */
-  header {
-    background:#0d1117;color:white;
-    padding:20px 40px;display:flex;justify-content:space-between;align-items:center;
-    position:sticky;top:0;z-index:1000;
-    box-shadow:0 2px 10px rgba(0,0,0,0.3);
-    transition: all 0.3s;
-  }
-  header.scrolled {background:#111721;}
-  header h1 {font-size:1.8rem;color:#ff6a00;}
-  nav a {margin-left:25px;font-weight:500;transition:color 0.3s;}
-  nav a:hover {color:#ff6a00;}
-  
-  /* HERO */
-  .hero {
-    display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
-    height:90vh;background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-    color:white;padding:0 20px;position:relative;overflow:hidden;
-  }
-  .hero h2 {
-    font-size:3rem;margin-bottom:20px;text-shadow:2px 2px 8px rgba(0,0,0,0.7);
-    animation:fadeInUp 1s ease forwards;
-  }
-  .hero p {
-    font-size:1.2rem;margin-bottom:30px;animation:fadeInUp 1.2s ease forwards;
-  }
-  .hero a {
-    background:linear-gradient(90deg,#ff6a00,#ee0979);
-    padding:15px 35px;border-radius:50px;font-weight:bold;transition:all 0.3s;
-    animation:fadeInUp 1.4s ease forwards;
-  }
-  .hero a:hover {transform:scale(1.05);}
-  
-  /* SECCIÓN DE PRODUCTOS */
-  .products {
-    padding:80px 40px;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-  }
-  .product-card {
-    background:#fff;border-radius:15px;overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position:relative;
-  }
-  .product-card:hover {transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,0.2);}
-  .product-card img {width:100%;height:200px;object-fit:cover;}
-  .product-card h3 {margin:15px 0 10px;text-align:center;color:#0d1117;}
-  .product-card p {padding:0 15px 15px;font-size:0.9rem;color:#555;text-align:center;}
-  .product-card button {
-    display:block;margin:0 auto 15px;
-    background:linear-gradient(90deg,#ff6a00,#ee0979);
-    color:white;border:none;padding:10px 25px;border-radius:25px;
-    cursor:pointer;transition:all 0.3s ease;
-  }
-  .product-card button:hover {transform:scale(1.05);}
-  
-  /* SOBRE NOSOTROS */
-  .about {
-    background:linear-gradient(135deg,#0d1117,#111721);color:white;padding:80px 40px;text-align:center;
-  }
-  .about h2 {font-size:2.5rem;margin-bottom:20px;color:#ff6a00;}
-  .about p {max-width:800px;margin:0 auto;font-size:1.1rem;line-height:1.6;}
-  
-  /* CONTACTO */
-  .contact {
-    padding:80px 40px;background:#f4f4f9;text-align:center;
-  }
-  .contact h2 {font-size:2.5rem;margin-bottom:20px;color:#ff6a00;}
-  .contact form {max-width:600px;margin:0 auto;display:flex;flex-direction:column;gap:15px;}
-  .contact input,.contact textarea {
-    padding:15px;border-radius:10px;border:1px solid #ccc;font-size:1rem;resize:none;transition:all 0.3s;
-  }
-  .contact input:focus,.contact textarea:focus {border-color:#ff6a00;box-shadow:0 0 10px rgba(255,106,0,0.3);}
-  .contact button {
-    padding:15px;border-radius:50px;border:none;background:linear-gradient(90deg,#ff6a00,#ee0979);
-    color:white;font-weight:bold;cursor:pointer;transition:all 0.3s;
-  }
-  .contact button:hover {transform:scale(1.05);}
-  
-  /* FOOTER */
-  footer {background:#0d1117;color:#ccc;padding:40px;text-align:center;}
-  footer a {color:#ff6a00;margin:0 10px;transition:color 0.3s;}
-  footer a:hover {color:#ee0979;}
-  footer p {margin-top:20px;font-size:0.9rem;}
-  
-  /* ANIMACIONES */
-  @keyframes fadeInUp {
-    0% {opacity:0;transform:translateY(20px);}
-    100% {opacity:1;transform:translateY(0);}
-  }
-  
-  /* RESPONSIVE */
-  @media(max-width:768px){
-    .hero h2{font-size:2rem;}
-    .about h2,.contact h2{font-size:2rem;}
-    .products{grid-template-columns:1fr;}
-  }
-</style>
+<link rel="stylesheet" href="techzone.css">
 </head>
 <body>
 
 <header>
   <h1>TechZone</h1>
   <nav>
-    <a href="#productos">Productos</a>
-    <a href="#about">Sobre Nosotros</a>
-    <a href="#contact">Contacto</a>
+    <div class="menu-toggle" id="mobile-menu">
+      <span></span><span></span><span></span>
+    </div>
+    <ul class="nav-list">
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#about">Sobre Nosotros</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
   </nav>
 </header>
 
 <section class="hero">
   <h2>Encuentra tu PC ideal</h2>
   <p>Las mejores configuraciones y accesorios para gamers y profesionales</p>
-  <a href="#productos">Ver productos</a>
+  <a href="#productos" class="cta-btn">Ver productos</a>
+</section>
+
+<section class="filters">
+  <button class="filter-btn active" data-category="all">Todos</button>
+  <button class="filter-btn" data-category="gamer">Gamer</button>
+  <button class="filter-btn" data-category="office">Oficina</button>
+  <button class="filter-btn" data-category="creative">Creativo</button>
+  <button class="filter-btn" data-category="compact">Compacta</button>
 </section>
 
 <section class="products" id="productos">
-  <div class="product-card">
-    <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&q=80" alt="PC Gamer">
+  <div class="product-card" data-category="gamer">
+    <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&q=80" alt="PC Gamer Alpha">
     <h3>PC Gamer Alpha</h3>
     <p>Procesador i7, 16GB RAM, RTX 3070 – Ideal para juegos AAA</p>
-    <button>Comprar</button>
+    <button class="open-modal">Comprar</button>
   </div>
-  <div class="product-card">
-    <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=800&q=80" alt="PC Oficina">
+  <div class="product-card" data-category="office">
+    <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=800&q=80" alt="PC Oficina Beta">
     <h3>PC Oficina Beta</h3>
-    <p>Procesador i5, 8GB RAM – Perfecta para tareas diarias y trabajo remoto</p>
-    <button>Comprar</button>
+    <p>Procesador i5, 8GB RAM – Perfecta para tareas diarias</p>
+    <button class="open-modal">Comprar</button>
   </div>
-  <div class="product-card">
-    <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&q=80" alt="PC Creativo">
+  <div class="product-card" data-category="creative">
+    <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&q=80" alt="PC Creativo Gamma">
     <h3>PC Creativo Gamma</h3>
-    <p>Procesador i9, 32GB RAM, RTX 3080 – Para diseño gráfico y edición de video</p>
-    <button>Comprar</button>
+    <p>Procesador i9, 32GB RAM, RTX 3080 – Para diseño gráfico y edición</p>
+    <button class="open-modal">Comprar</button>
   </div>
-  <div class="product-card">
-    <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&q=80" alt="PC Gamer Pro">
+  <div class="product-card" data-category="gamer">
+    <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&q=80" alt="PC Gamer Pro Delta">
     <h3>PC Gamer Pro Delta</h3>
-    <p>Procesador i9, 64GB RAM, RTX 4090 – Rendimiento extremo para gaming y streaming</p>
-    <button>Comprar</button>
+    <p>Procesador i9, 64GB RAM, RTX 4090 – Gaming y streaming extremo</p>
+    <button class="open-modal">Comprar</button>
   </div>
-  <div class="product-card">
-    <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&q=80" alt="PC Compacta">
+  <div class="product-card" data-category="compact">
+    <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&q=80" alt="PC Compacta Epsilon">
     <h3>PC Compacta Epsilon</h3>
-    <p>Procesador i5, 16GB RAM – Ideal para espacios pequeños y oficina moderna</p>
-    <button>Comprar</button>
+    <p>Procesador i5, 16GB RAM – Ideal para espacios pequeños</p>
+    <button class="open-modal">Comprar</button>
   </div>
 </section>
 
+<!-- Modal mejorado -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <img id="modal-img" src="" alt="Producto">
+    <h3 id="modal-title">Producto</h3>
+    <p id="modal-desc">Descripción detallada</p>
+    <div class="modal-buttons">
+      <button id="add-cart">Agregar al carrito</button>
+      <button class="close">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+
 <section class="about" id="about">
   <h2>Sobre Nosotros</h2>
-  <p>En TechZone nos apasiona la tecnología y queremos ofrecerte los mejores equipos y accesorios para que tu experiencia como gamer, diseñador o profesional sea la mejor. Nuestro equipo está formado por expertos en hardware y software, y nos dedicamos a crear soluciones personalizadas que se ajusten a tus necesidades.</p>
+  <p>En TechZone nos apasiona la tecnología y queremos ofrecerte los mejores equipos y accesorios. Nuestro equipo de expertos en hardware y software crea soluciones personalizadas que se ajustan a tus necesidades.</p>
 </section>
 
 <section class="contact" id="contact">
@@ -178,7 +101,7 @@
 </section>
 
 <footer>
-  <div>
+  <div class="social-links">
     <a href="#">Facebook</a> |
     <a href="#">Twitter</a> |
     <a href="#">Instagram</a>
@@ -187,11 +110,68 @@
 </footer>
 
 <script>
-  // Header scroll effect
-  window.addEventListener('scroll', () => {
-    document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
-  });
-</script>
 
+  // Header scroll
+window.addEventListener('scroll', () => {
+  document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Mobile menu toggle
+const mobileMenu = document.getElementById('mobile-menu');
+const navList = document.querySelector('.nav-list');
+mobileMenu.addEventListener('click', () => {
+  navList.classList.toggle('active');
+});
+
+// Filter products
+const filterBtns = document.querySelectorAll('.filter-btn');
+const productCards = document.querySelectorAll('.product-card');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const category = btn.getAttribute('data-category');
+    productCards.forEach(card => {
+      if(category === 'all' || card.getAttribute('data-category') === category) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+// Modal
+const modal = document.getElementById('modal');
+const modalTitle = document.getElementById('modal-title');
+const modalDesc = document.getElementById('modal-desc');
+const closeModal = document.querySelector('.close');
+
+document.querySelectorAll('.open-modal').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const card = btn.parentElement;
+    document.getElementById('modal-img').src = card.querySelector('img').src;
+    document.getElementById('modal-title').textContent = card.querySelector('h3').textContent;
+    document.getElementById('modal-desc').textContent = card.querySelector('p').textContent;
+    modal.style.display = 'flex';
+  });
+});
+
+// Cerrar modal con todos los botones
+document.querySelectorAll('.close').forEach(el => {
+  el.addEventListener('click', () => modal.style.display = 'none');
+});
+window.addEventListener('click', e => {
+  if(e.target === modal) modal.style.display = 'none';
+});
+
+
+closeModal.addEventListener('click', () => modal.style.display = 'none');
+window.addEventListener('click', e => {
+  if(e.target === modal) modal.style.display = 'none';
+});
+
+</script>
 </body>
 </html>
