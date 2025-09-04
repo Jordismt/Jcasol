@@ -9,4 +9,4 @@ Allow: /
 
 # Opcional: bloquear archivos innecesarios (mapas CSS, imágenes que no son críticas)
 Disallow: /css/*.map
-Disallow: /img/*.PNG
+
