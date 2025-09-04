@@ -1,0 +1,12 @@
+# robots.txt para GitHub Pages de Jordi Casanova
+
+# Indica la ubicación del sitemap
+Sitemap: https://jordismt.github.io/Jcasol/sitemap.xml
+
+# Permitir que todos los bots accedan a todo
+User-agent: *
+Allow: /
+
+# Opcional: bloquear archivos innecesarios (mapas CSS, imágenes que no son críticas)
+Disallow: /css/*.map
+Disallow: /img/*.PNG
