@@ -81,10 +81,25 @@ a {
 header {
   position: sticky;
   top: 0;
-  width: 100%;
-  z-index: 9999999;
-  padding: 18px 0;
-  color: $white;
+  z-index: 9999;
+  transform: translateZ(0);
+  backdrop-filter: blur(14px) saturate(200%);
+  -webkit-backdrop-filter: blur(14px) saturate(200%);
+
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, lighten($primary, 20%), $primary, $secondary);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  z-index: -1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px) saturate(200%);
+}
+
+
 
   // Gradiente animado más suave y dinámico
   background: linear-gradient(120deg, lighten($primary, 20%), $primary, $secondary);

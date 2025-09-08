@@ -35,10 +35,10 @@ a {
 header {
   position: sticky;
   top: 0;
-  width: 100%;
-  z-index: 9999999;
-  padding: 18px 0;
-  color: #fff;
+  z-index: 9999;
+  transform: translateZ(0);
+  backdrop-filter: blur(14px) saturate(200%);
+  -webkit-backdrop-filter: blur(14px) saturate(200%);
   background: linear-gradient(120deg, #66b0ff, #007BFF, #004a99);
   background-size: 400% 400%;
   animation: gradientMove 12s ease infinite;
@@ -48,6 +48,16 @@ header {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
   transform-style: preserve-3d;
   transition: padding 0.3s ease; }
+  header header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, #66b0ff, #007BFF, #004a99);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+    z-index: -1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px) saturate(200%); }
   header .navbar-brand {
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
