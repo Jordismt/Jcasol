@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Look&Luxe | Caravana Peluquera</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- AOS (Animate on Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<button id="themeToggle" class="theme-toggle" aria-label="Alternar modo oscuro">🌙</button>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Look&Luxe</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+      aria-controls="navMenu" aria-expanded="false" aria-label="Alternar navegación">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+        <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#horario">Horario & Ruta</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero d-flex align-items-center" id="inicio">
+  <div class="overlay"></div>
+  <picture class="hero-media" aria-hidden="true">
+    <source srcset="https://picsum.photos/1400/900?image=1069" media="(min-width:1200px)">
+    <img src="https://picsum.photos/900/600?random=20" alt="Caravana Look&Luxe" class="img-fluid rounded-3 shadow-lg">
+  </picture>
+  <div class="hero-content text-center" data-aos="fade-up">
+    <h1 class="display-4">Look&amp;Luxe</h1>
+    <p class="lead mb-4">La caravana que trae estilo, confort y lujo donde estés</p>
+    <div class="d-flex justify-content-center gap-3">
+      <a href="#contacto" class="btn btn-primary btn-lg">Reserva tu cita</a>
+      <a href="#horario" class="btn btn-outline-light btn-lg">Ver ruta</a>
+    </div>
+  </div>
+</header>
+
+<!-- Servicios -->
+<section id="servicios" class="py-6">
+  <div class="container">
+    <div class="row align-items-center mb-4">
+      <div class="col-md-8">
+        <h2 data-aos="fade-right">Servicios premium</h2>
+        <p class="text-muted" data-aos="fade-right" data-aos-delay="100">
+          Cortes, lavados, recogidos, trenzas y coloración, todo en nuestra caravana equipada.
+        </p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <!-- Cada tarjeta con imagen confiable de picsum -->
+      <div class="col-md-4" data-aos="zoom-in">
+        <article class="card service-card h-100 shadow-sm">
+          <img src="https://picsum.photos/seed/corte/800/450" class="card-img-top" alt="Corte de cabello">
+          <div class="card-body">
+            <h5 class="card-title">Cortes de Cabello</h5>
+            <p>Cortes modernos y personalizados que realzan tu estilo.</p>
+          </div>
+          <div class="card-footer"><small class="text-muted">Desde 18€</small></div>
+        </article>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+        <article class="card service-card h-100 shadow-sm">
+          <img src="https://picsum.photos/seed/lavado/800/450" class="card-img-top" alt="Lavados y tratamientos">
+          <div class="card-body">
+            <h5>Lavados &amp; Tratamientos</h5>
+            <p>Relajantes y reparadores con productos profesionales.</p>
+          </div>
+          <div class="card-footer"><small class="text-muted">Desde 12€</small></div>
+        </article>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+        <article class="card service-card h-100 shadow-sm">
+          <img src="https://picsum.photos/seed/recogido/800/450" class="card-img-top" alt="Recogidos elegantes">
+          <div class="card-body">
+            <h5>Recogidos</h5>
+            <p>Peinados sofisticados para bodas y eventos.</p>
+          </div>
+          <div class="card-footer"><small class="text-muted">Desde 25€</small></div>
+        </article>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in">
+        <article class="card service-card h-100 shadow-sm">
+          <img src="https://picsum.photos/seed/trenzas/800/450" class="card-img-top" alt="Trenzas creativas">
+          <div class="card-body">
+            <h5>Trenzas</h5>
+            <p>Diseños creativos y cómodos para cualquier ocasión.</p>
+          </div>
+          <div class="card-footer"><small class="text-muted">Desde 20€</small></div>
+        </article>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+        <article class="card service-card h-100 shadow-sm">
+          <img src="https://picsum.photos/seed/color/800/450" class="card-img-top" alt="Coloración profesional">
+          <div class="card-body">
+            <h5>Coloración</h5>
+            <p>Color vibrante y duradero con técnicas de última generación.</p>
+          </div>
+          <div class="card-footer"><small class="text-muted">Desde 35€</small></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Productos -->
+<section id="productos" class="py-6 bg-light">
+  <div class="container">
+    <h2 class="mb-4" data-aos="fade-right">Productos destacados</h2>
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="card product-card h-100 shadow-sm">
+          <img src="https://picsum.photos/seed/extensiones/600/400" class="card-img-top" alt="Extensiones">
+          <div class="card-body">
+            <h5>Extensiones</h5>
+            <p>De alta calidad, varios tonos y texturas.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card product-card h-100 shadow-sm">
+          <img src="https://picsum.photos/seed/pelucas/600/400" class="card-img-top" alt="Pelucas">
+          <div class="card-body">
+            <h5>Pelucas</h5>
+            <p>Estilos naturales y modernos.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card product-card h-100 shadow-sm">
+          <img src="https://picsum.photos/seed/cremas/600/400" class="card-img-top" alt="Cremas capilares">
+          <div class="card-body">
+            <h5>Cremas capilares</h5>
+            <p>Nutrición profunda y brillo intenso.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card product-card h-100 shadow-sm">
+          <img src="https://picsum.photos/seed/aceites/600/400" class="card-img-top" alt="Aceites">
+          <div class="card-body">
+            <h5>Aceites</h5>
+            <p>Hidratación natural y suavidad duradera.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Horario & Ruta -->
+<section id="horario" class="py-6">
+  <div class="container">
+    <h2 data-aos="fade-right">Horario & Ruta</h2>
+    <p>Lunes a Viernes: 10:00 – 20:00 | Sábados: 09:00 – 22:00</p>
+    <p class="text-muted">La caravana se mueve por ferias, eventos y mercados. Consulta nuestras redes sociales para la ubicación diaria.</p>
+  </div>
+</section>
+
+<!-- Nosotros -->
+<section id="about" class="py-6 bg-light">
+  <div class="container">
+    <h2 data-aos="fade-right">Sobre Nosotros</h2>
+    <p>Look&Luxe es un proyecto itinerante que acerca la experiencia de un salón de lujo a tu localidad, con un equipo de estilistas profesionales y equipamiento de última generación.</p>
+  </div>
+</section>
+
+<!-- Contacto -->
+<section id="contacto" class="py-6">
+  <div class="container">
+    <h2 data-aos="fade-right">Contacto</h2>
+    <form id="contactForm" class="row g-3">
+      <div class="col-md-6">
+        <label class="form-label">Nombre</label>
+        <input id="name" class="form-control" required>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Email o Teléfono</label>
+        <input id="contactInfo" class="form-control" required>
+      </div>
+      <div class="col-12">
+        <label class="form-label">Mensaje</label>
+        <textarea class="form-control" rows="4"></textarea>
+      </div>
+      <div class="col-12">
+        <button class="btn btn-primary">Enviar</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Chatbot -->
+<div id="chatbot">
+  <button id="chatToggle" class="chat-toggle" aria-expanded="false" aria-label="Abrir chat">💬</button>
+  <div id="chatWindow" class="chat-window" aria-hidden="true">
+    <div class="chat-header d-flex justify-content-between align-items-center">
+      <span>Look&Luxe Bot</span>
+      <button id="chatClose" class="btn-close" aria-label="Cerrar"></button>
+    </div>
+    <div id="chatBody" class="chat-body"></div>
+    <form id="chatForm" class="chat-form">
+      <input id="chatInput" type="text" placeholder="Escribe tu mensaje…" class="form-control" />
+      <button class="btn btn-primary" type="submit">Enviar</button>
+    </form>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="script.js"></script>
+<script>AOS.init();</script>
+</body>
+</html>
