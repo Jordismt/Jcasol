@@ -1,890 +1,452 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="es" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <!-- SEO Básico -->
-  <title>Jordi Casanova | Desarrollador Full Stack Web y Móvil</title>
-  <meta name="description" content="Portfolio de Jordi Casanova, desarrollador Full Stack especializado en aplicaciones web y móviles. Experiencia en NodeJS, Vue.js, Flutter, SpringBoot y más.">
-  <meta name="keywords" content="Portafolio, Desarrollo Web, Multiplataforma, Full Stack, DevOps, Jordi Casanova, Web developer, Desarrollador Full Stack">
-  <meta name="author" content="Jordi Casanova Solanes">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://jordismt.github.io/Jcasol/">
+    <title>Jordi Casanova | Desarrollador Full Stack MEVN & Mobile</title>
+    <meta name="title" content="Jordi Casanova | Desarrollador Full Stack MEVN & Mobile">
+    <meta name="description" content="Portfolio de Jordi Casanova. Especialista en Stack MEVN (MongoDB, Express, Vue, Node), Flutter y arquitecturas escalables. De Simat al mundo.">
+    <meta name="keywords" content="Jordi Casanova, Desarrollador Full Stack, MEVN stack, Vue.js, Node.js, Flutter, Desarrollo Web Valencia, DAM, DAW, Portfolio Programador">
+    <meta name="author" content="Jordi Casanova Solanes">
+    <link rel="canonical" href="https://jordismt.github.io/Jcasol/">
 
-  <!-- Open Graph / Redes Sociales -->
-  <meta property="og:title" content="Portfolio de Jordi Casanova - Desarrollador Full Stack" />
-  <meta property="og:description" content="Desarrollador Full Stack especializado en NodeJS, Vue.js, Flutter y más." />
-  <meta property="og:image" content="./img/logo_jcasol.png" />
-  <meta property="og:url" content="https://jordismt.github.io/Jcasol/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="es_ES" />
-  <meta property="og:site_name" content="Jordi Casanova Portfolio" />
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jordismt.github.io/Jcasol/">
+    <meta property="og:title" content="Jordi Casanova | Desarrollador Full Stack">
+    <meta property="og:description" content="Explora mis proyectos web y móviles. Especialista en crear soluciones digitales de alto impacto.">
+    <meta property="og:image" content="https://jordismt.github.io/Jcasol/img/logo_jcasol.png">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Portfolio de Jordi Casanova - Desarrollador Full Stack">
-  <meta name="twitter:description" content="Desarrollador Full Stack especializado en NodeJS, Vue.js, Flutter y más.">
-  <meta name="twitter:image" content="./img/logo_jcasol.png">
-  <meta name="twitter:site" content="@JcasolDEV">
-  <meta name="twitter:creator" content="@JcasolDEV">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://jordismt.github.io/Jcasol/">
+    <meta property="twitter:title" content="Jordi Casanova | Desarrollador Full Stack">
+    <meta property="twitter:description" content="Desarrollador Full Stack especializado en Vue, Node y Flutter.">
+    <meta property="twitter:image" content="https://jordismt.github.io/Jcasol/img/logo_jcasol.png">
 
-  <!-- Favicon -->
-  <link rel="icon" href="logo_jcasol.png" type="image/png" />
-  <link rel="shortcut icon" href="logo_jcasol.png" type="image/png" />
+    <link rel="icon" type="image/png" href="./img/logo_jcasol.png">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Bootstrap CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-
-  <!-- Animaciones AOS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" />
-
-  <!-- Estilos principales -->
-  <link rel="stylesheet" href="./css/style.css" />
-
-  <!-- JSON-LD para SEO y Proyectos -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Person",
-        "name": "Jordi Casanova",
-        "url": "https://jordismt.github.io/Jcasol/",
-        "sameAs": [
-          "https://github.com/Jordismt",
-          "https://www.linkedin.com/in/jcasoldev/",
-          "https://twitter.com/JcasolDEV",
-          "https://www.youtube.com/@Jcasol_DEV"
-        ],
-        "jobTitle": "Desarrollador Full Stack",
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Freelance"
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8f9fa; }
+        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        
+        .brand-avatar {
+            width: 200px; height: 200px;
+            position: relative; perspective: 1000px;
+            transform-style: preserve-3d;
+            transition: transform 0.1s ease-out;
         }
-      },
-      {
-        "@type": "Project",
-        "name": "Landing Restaurante",
-        "description": "Landing page para restaurantes hecha con HTML y CSS",
-        "url": "https://jordismt.github.io/Jcasol/projects/landingpages/restaurante.html",
-        "creator": { "@type": "Person", "name": "Jordi Casanova" }
-      },
-      {
-        "@type": "Project",
-        "name": "Landing Dentista",
-        "description": "Landing page para clínicas dentales hecha con HTML y CSS",
-        "url": "https://jordismt.github.io/Jcasol/projects/landingpages/dentista.html",
-        "creator": { "@type": "Person", "name": "Jordi Casanova" }
-      },
-      {
-        "@type": "Project",
-        "name": "Landing Tienda Tech",
-        "description": "Landing page para tiendas de tecnología hecha con HTML y CSS",
-        "url": "https://jordismt.github.io/Jcasol/projects/landingpages/techzone.html",
-        "creator": { "@type": "Person", "name": "Jordi Casanova" }
-      },
-      {
-        "@type": "Project",
-        "name": "App Registro Calorías",
-        "description": "Aplicación para seguimiento de calorías y dieta, desarrollada con NodeJS y Flutter",
-        "url": "https://jordismt.github.io/Jcasol/#proyectos",
-        "creator": { "@type": "Person", "name": "Jordi Casanova" }
-      },
-      {
-        "@type": "Project",
-        "name": "GeneraBD",
-        "description": "Generador de Bases de Datos automático, optimizado para proyectos rápidos, exporta en formato .sql",
-        "url": "https://jordismt.github.io/GeneraBD_Jcasol/",
-        "creator": { "@type": "Person", "name": "Jordi Casanova" }
-      },
-      {
-        "@type": "Project",
-        "name": "Peluqueria Ainhoa",
-        "description": "Web desarrollada como TFG usando Vue.js (frontend), NodeJS (backend) y MongoDB. Incluye registro y login de usuarios, JWT, gestión de citas (crear, editar, eliminar), tienda online con carrito de compras y pago, y otras funcionalidades Full Stack.",
-        "url": "https://jordismt.github.io/GeneraBD_Jcasol/",
-        "creator": { "@type": "Person", "name": "Jordi Casanova" }
-      }
-    ]
-  }
-  </script>
+        .brand-avatar img {
+            width: 100%; height: 100%;
+            border-radius: 50%; object-fit: cover;
+            border: 4px solid white; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .avatar-glow {
+            position: absolute; inset: -15px;
+            background: radial-gradient(circle, rgba(0,123,255,0.4) 0%, transparent 70%);
+            z-index: -1; border-radius: 50%;
+        }
+
+
+    </style>
 </head>
+<body class="text-slate-800 overflow-x-hidden">
 
-
-<body>
-  <h1 style="position:absolute; clip:rect(0 0 0 0); width:1px; height:1px; overflow:hidden; margin:0; padding:0;">
-    Portfolio de Jordi Casanova - Desarrollador Full }Stack
-  </h1>
-  
-    <a href="#main-content" class="sr-only sr-only-focusable">Saltar al contenido principal</a>
-
-    <!-- Secciones del cuerpo -->
-    <header class="bg-primary text-white py-3" data-aos="fade-down" role="banner">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Navegación principal">
-              <a class="navbar-brand" href="#" aria-label="Inicio - Jordi Casanova Solanes">
-                <img src="./img/logo_jcasol.png" alt="Logo de Jordi Casanova" height="75" />
-                <div class="brand-text">
-                    Jordi Casanova
-                    <span class="brand-subtitle">Desarrollador Full Stack</span>
-                </div>
-            </a>
-            
-
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre Mí</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#cv">Descargar CV</a></li>
-                    </ul>
-                </div>
-            </nav>
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-5xl">
+        <div class="glass rounded-full px-6 py-4 flex justify-between items-center shadow-lg border border-white/50">
+            <a href="#" class="font-extrabold text-xl tracking-tighter">JC<span class="text-blue-600">.</span></a>
+            <div class="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-500">
+                <a href="#sobre-mi" class="hover:text-blue-600 transition-colors">Sobre Mí</a>
+                <a href="#proyectos" class="hover:text-blue-600 transition-colors">Proyectos</a>
+                <a href="#servicios" class="hover:text-blue-600 transition-colors">Servicios</a>
+                <a href="#contacto" class="hover:text-blue-600 transition-colors">Contacto</a>
+            </div>
+            <a href="#contacto" class="bg-blue-600 text-white px-6 py-2.5 rounded-full text-xs font-bold hover:bg-blue-700 transition-all">LET'S TALK</a>
         </div>
-    </header>
+    </nav>
 
-    <main id="main-content" role="main">
-
-      <section id="sobre-mi" class="py-5" data-aos="fade-up" aria-label="Sección Sobre Mí">
-        <div class="container">
-          <div class="text-center mb-4">
-            <h2 class="section-heading text-primary">Sobre Mí</h2>
-            <p class="lead text-muted">¡Hola! Soy <strong>Jordi Casanova, desarrollador Full Stack</strong> con formación en <strong><em>DAM</em></strong> y <strong><em>DAW</em></strong>, y experiencia en aplicaciones web y móviles.</p>
-          </div>
-      
-          <div class="row align-items-center gap-4">
-          <!-- Logo / Marca -->
-          <div class="col-md-4 text-center mb-4 mb-md-0">
-            <div class="brand-avatar is-3d">
-              <span class="avatar-glow" aria-hidden="true"></span>
-
-              <img
-                src="./img/logo_jcasol.png"
-                alt="Logo de la marca de Jordi Casanova"
-                class="img-fluid"
-                loading="lazy"
-              />
-            </div>
-          </div>
-
-      
-            <!-- Texto + Badges + CTA -->
-            <div class="col-md-8">
-              <p class="mb-3">Me apasiona crear soluciones completas: diseño de interfaces, arquitectura de backend y gestión de bases de datos. Trabajo con buenas prácticas, pruebas y despliegues automáticos para proyectos escalables.</p>
-      
-              <p class="mb-3">Disfruto aportar en equipos multidisciplinares y transformar requisitos en productos funcionales. Formación: <strong>CFGS DAM</strong> y <strong>CFGS DAW</strong>.</p>
-      
-              <div class="skill-badges d-flex flex-wrap align-items-center gap-2 mb-3" aria-hidden="true">
-                <span class="badge-pill">Full Stack</span>
-                <span class="badge-pill">Buenas practicas</span>
-                <span class="badge-pill">Desarrollador web</span>
-                <span class="badge-pill">Desarrollador multiplataforma</span>
-                <span class="badge-pill">Y más ...</span>
-              </div>
-      
-              <div class="d-flex flex-wrap align-items-center gap-3">
-                <a href="#proyectos" class="btn btn-primary btn-lg" role="button">Ver mis proyectos</a>
-                <a href="./docs/JcasolCV.pdf" class="btn btn-outline-primary btn-lg" download>Descargar CV</a>
-              </div>
-            </div>
-          </div>
+    <section id="sobre-mi" class="min-h-screen flex flex-col items-center justify-center pt-32 px-6 bg-gradient-to-b from-white to-slate-50">
+        <div class="brand-avatar mb-12" data-aos="zoom-in">
+            <div class="avatar-glow"></div>
+            <img src="./img/logo_jcasol.png" alt="Jordi Casanova">
         </div>
-      </section>
-      
-    
-    <section id="conocimientos" class="py-5" data-aos="fade-up">
-
-        <div class="container">
-          <div class="text-center mb-5">
-            <h2 class="section-heading text-primary">Conocimientos</h2>
-            <p class="lead text-muted">Tecnologías y herramientas que utilizo en mis proyectos</p>
-          </div>
-      
-          <div class="row">
-            <!-- Frontend -->
-            <div class="col-lg-6 mb-4">
-              <h3 class="text-center text-primary">Frontend</h3>
-              <div class="d-flex flex-wrap justify-content-center gap-4">
-                <div class="skill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
-                  <p>HTML</p>
-                </div>
-                <div class="skill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
-                  <p>CSS</p>
-                </div>
-                <div class="skill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
-                  <p>JavaScript</p>
-                </div>
-                <div class="skill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" />
-                  <p>Flutter</p>
-                </div>
-                <div class="skill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart" />
-                  <p>Dart</p>
-                </div>
-                <div class="skill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin" />
-                  <p>Kotlin</p>
-                </div>
-                <div class="skill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js" />
-                  <p>Vue.js</p>
-                </div>
-                <div class="skill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" />
-                  <p>Bootstrap</p>
-                </div>
-                <div class="skill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="SCSS" />
-                  <p>SCSS</p>
-                </div>
-                <div class="skill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="PyQT" />
-                  <p>PyQT</p>
-                </div>
-                <div class="skill">
-                  <img src="https://img.icons8.com/fluency/96/python.png" alt="PyGame" />
-                  <p>PyGame</p>
-                </div>
-              </div>
+        <div class="text-center" data-aos="fade-up">
+            <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-4 text-slate-900">
+                Jordi <span class="text-blue-600">Casanova</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-500 font-medium max-w-3xl mx-auto mb-10 leading-relaxed">
+                Desarrollador Full Stack con formación en <span class="text-slate-900 font-bold">DAM y DAW</span>. 
+                Apasionado por crear soluciones completas, desde la arquitectura de backend hasta experiencias móviles fluidas.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#proyectos" class="bg-slate-900 text-white px-10 py-4 rounded-2xl font-bold hover:bg-slate-800 transition-all shadow-xl">Ver Proyectos</a>
+                <a href="mailto:jcasoldev@gmail.com" class="p-4 glass rounded-2xl shadow-sm hover:bg-white transition-all border border-slate-200"><i data-lucide="mail"></i></a>
+                <a href="https://github.com/jordismt" target="_blank" class="p-4 glass rounded-2xl shadow-sm hover:bg-white transition-all border border-slate-200"><i data-lucide="github"></i></a>
             </div>
-      
-            <!-- Backend -->
-            <div class="col-lg-6 mb-4">
-              <h3 class="text-center text-primary">Backend</h3>
-              <div class="d-flex flex-wrap justify-content-center gap-4">
-                <div class="skill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
-                  <p>Java</p>
-                </div>
-                <div class="skill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="SpringBoot" />
-                  <p>SpringBoot</p>
-                </div>
-                <div class="skill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hibernate/hibernate-original.svg" alt="Hibernate" />
-                  <p>Hibernate</p>
-                </div>
-                <div class="skill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="NodeJS" />
-                  <p>NodeJS</p>
-                </div>
-                <div class="skill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
-                  <p>Python</p>
-                </div>
-                <div class="skill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" />
-                  <p>PHP</p>
-                </div>
-                <div class="skill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/symfony/symfony-original.svg" alt="Symfony" />
-                  <p>Symfony</p>
-                </div>
-                <div class="skill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="ExpressJS" />
-                  <p>ExpressJS</p>
-                </div>
-              </div>
-            </div>
-          </div>
-      
-          <!-- Bases de Datos -->
-          <div class="text-center mb-5">
-            <h3 class="text-primary">Bases de Datos</h3>
-            <div class="d-flex flex-wrap justify-content-center gap-4">
-              <div class="skill">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
-                <p>MySQL</p>
-              </div>
-              <div class="skill">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" />
-                <p>PostgreSQL</p>
-              </div>
-              <div class="skill">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
-                <p>MongoDB</p>
-              </div>
-            </div>
-          </div>
-      
-          <!-- Otros -->
-          <div class="text-center">
-            <h3 class="text-primary">Otros</h3>
-            <div class="d-flex flex-wrap justify-content-center gap-4">
-              <div class="skill">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" />
-                <p>Docker</p>
-              </div>
-              <div class="skill">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
-                <p>Git</p>
-              </div>
-              <div class="skill">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" />
-                <p>Linux</p>
-              </div>
-              <div class="skill">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" alt="Windows" />
-                <p>Windows</p>
-              </div>
-              <div class="skill">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" />
-                <p>Bash</p>
-              </div>
-              <div class="skill">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins" />
-                <p>Jenkins</p>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-
-      
-      <section id="servicios" class="py-5 bg-light" data-aos="fade-up" aria-label="Sección de Servicios">
-        <div class="container">
-          <div class="text-center mb-5">
-            <h2 class="section-heading text-primary">Servicios</h2>
-            <p class="lead text-muted">Estas son algunas de las soluciones que ofrezco como desarrollador Full Stack.</p>
-          </div>
-      
-          <div class="row text-center">
-            <!-- Servicio 1 -->
-            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-              <div class="card h-100 border-0 shadow-sm">
-                <div class="card-body">
-                  <div class="mb-3 text-primary">
-                    <i class="fas fa-laptop-code fa-3x"></i>
-                  </div>
-                  <h5 class="card-title">Desarrollo Web</h5>
-                  <p class="card-text text-muted">
-                    Diseño y desarrollo de sitios web responsivos y dinámicos usando tecnologías modernas como HTML, CSS, JavaScript y frameworks como Vue.js o Bootstrap.
-                  </p>
+    <section id="habilidades" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-8">
+            <div data-aos="fade-up">
+                <h3 class="text-blue-600 font-black uppercase tracking-widest text-xs mb-6">Frontend</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="badge-pill">HTML</span><span class="badge-pill">CSS</span>
+                    <span class="badge-pill">JS</span><span class="badge-pill">Flutter</span>
+                    <span class="badge-pill">Vue.js</span><span class="badge-pill">Tailwind</span>
                 </div>
-              </div>
             </div>
-      
-            <!-- Servicio 2 -->
-            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-              <div class="card h-100 border-0 shadow-sm">
-                <div class="card-body">
-                  <div class="mb-3 text-primary">
-                    <i class="fas fa-mobile-alt fa-3x"></i>
-                  </div>
-                  <h5 class="card-title">Desarrollo Móvil</h5>
-                  <p class="card-text text-muted">
-                    Desarrollo de aplicaciones móviles multiplataforma con Flutter, creando experiencias fluidas y adaptadas a cada dispositivo.
-                  </p>
+            <div data-aos="fade-up" data-aos-delay="100">
+                <h3 class="text-blue-600 font-black uppercase tracking-widest text-xs mb-6">Backend</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="badge-pill">Java</span><span class="badge-pill">SpringBoot</span>
+                    <span class="badge-pill">NodeJS</span><span class="badge-pill">Python</span>
+                    <span class="badge-pill">PHP</span><span class="badge-pill">ExpressJS</span>
                 </div>
-              </div>
             </div>
-      
-            <!-- Servicio 3 -->
-            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-              <div class="card h-100 border-0 shadow-sm">
-                <div class="card-body">
-                  <div class="mb-3 text-primary">
-                    <i class="fas fa-database fa-3x"></i>
-                  </div>
-                  <h5 class="card-title">Bases de Datos</h5>
-                  <p class="card-text text-muted">
-                    Diseño y gestión de bases de datos SQL y NoSQL, optimizadas para rendimiento, escalabilidad y seguridad en tus aplicaciones.
-                  </p>
+            <div data-aos="fade-up" data-aos-delay="200">
+                <h3 class="text-blue-600 font-black uppercase tracking-widest text-xs mb-6">Bases de Datos</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="badge-pill">MySQL</span><span class="badge-pill">PostgreSQL</span>
+                    <span class="badge-pill">MongoDB</span><span class="badge-pill">Hibernate</span>
                 </div>
-              </div>
             </div>
-      
-            <!-- Servicio 4 -->
-            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
-              <div class="card h-100 border-0 shadow-sm">
-                <div class="card-body">
-                  <div class="mb-3 text-primary">
-                    <i class="fas fa-server fa-3x"></i>
-                  </div>
-                  <h5 class="card-title">Backend y APIs</h5>
-                  <p class="card-text text-muted">
-                    Desarrollo de servidores, APIs REST y microservicios con NodeJS, SpringBoot o Express, implementando buenas prácticas y seguridad.
-                  </p>
+            <div data-aos="fade-up" data-aos-delay="300">
+                <h3 class="text-blue-600 font-black uppercase tracking-widest text-xs mb-6">Otros</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="badge-pill">Docker</span><span class="badge-pill">Git</span>
+                    <span class="badge-pill">Linux</span><span class="badge-pill">Jenkins</span>
+                    <span class="badge-pill">Bash</span>
                 </div>
-              </div>
             </div>
-      
-            <!-- Servicio 5 -->
-            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="500">
-              <div class="card h-100 border-0 shadow-sm">
-                <div class="card-body">
-                  <div class="mb-3 text-primary">
-                    <i class="fas fa-cogs fa-3x"></i>
-                  </div>
-                  <h5 class="card-title">DevOps & Deploy</h5>
-                  <p class="card-text text-muted">
-                    Automatización de despliegues, integración continua y configuración de entornos con Docker, Jenkins y buenas prácticas DevOps.
-                  </p>
-                </div>
-              </div>
-            </div>
-      
-            <!-- Servicio 6 -->
-            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="600">
-              <div class="card h-100 border-0 shadow-sm">
-                <div class="card-body">
-                  <div class="mb-3 text-primary">
-                    <i class="fas fa-lightbulb fa-3x"></i>
-                  </div>
-                  <h5 class="card-title">Consultoría Técnica</h5>
-                  <p class="card-text text-muted">
-                    Asesoramiento personalizado para proyectos tecnológicos, desde planificación hasta implementación, optimizando procesos y resultados.
-                  </p>
-                </div>
-              </div>
-            </div>
-      
-          </div>
         </div>
-      </section>
-      
+    </section>
 
-
-
-      
-        <section id="proyectos" class="bg-light py-5" data-aos="fade-up" aria-label="Sección de Proyectos">
-            <div class="container">
-              <h2 class="text-center text-primary mb-4">Proyectos</h2>
-              <div class="row g-4">
-                
-                <!-- Restaurante -->
-                <div class="col-md-6 col-lg-4">
-                  <div class="card shadow-lg h-100 d-flex flex-column">
-                    <img src="https://images.unsplash.com/photo-1508424757105-b6d5ad9329d0?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                         class="card-img-top" alt="Landing Restaurante">
-                    <div class="card-body d-flex flex-column">
-                      <h5 class="card-title">Landing page para Restaurante</h5>
-                      <p class="card-text flex-grow-1">Una landing page para restaurantes.</p>
-                      <a href="./projects/landingpages/restaurante.html" target="_blank" class="btn btn-primary mt-auto">Ver proyecto</a>
-                    </div>
-                  </div>
-                </div>
-          
-                <!-- Dentista -->
-                <div class="col-md-6 col-lg-4">
-                  <div class="card shadow-lg h-100 d-flex flex-column">
-                    <img src="https://images.unsplash.com/photo-1588776814546-daab30f310ce?q=80&w=687&auto=format&fit=crop" 
-                         class="card-img-top" alt="Landing Dentista">
-                    <div class="card-body d-flex flex-column">
-                      <h5 class="card-title">Landing page para Dentistas</h5>
-                      <p class="card-text flex-grow-1">Una landing page para clínicas dentales.</p>
-                      <a href="./projects/landingpages/dentista.html" target="_blank" class="btn btn-primary mt-auto">Ver proyecto</a>
-                    </div>
-                  </div>
-                </div>
-          
-                <!-- Tienda Tech -->
-                <div class="col-md-6 col-lg-4">
-                  <div class="card shadow-lg h-100 d-flex flex-column">
-                    <img src="https://images.unsplash.com/photo-1491933382434-500287f9b54b?q=80&w=764&auto=format&fit=crop" 
-                         class="card-img-top" alt="Landing Tech">
-                    <div class="card-body d-flex flex-column">
-                      <h5 class="card-title">Landing page para Tiendas Tech</h5>
-                      <p class="card-text flex-grow-1">Una landing page para tiendas de tecnología.</p>
-                      <a href="./projects/landingpages/techzone.html" target="_blank" class="btn btn-primary mt-auto">Ver proyecto</a>
-                    </div>
-                  </div>
-                </div>
-                <!-- Tienda Look and Luxe -->
-                <div class="col-md-6 col-lg-4">
-                  <div class="card shadow-lg h-100 d-flex flex-column">
-                    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                         class="card-img-top" alt="Landing Look-Luxe">
-                    <div class="card-body d-flex flex-column">
-                      <h5 class="card-title">Web para Peluqueria Look&Luxe</h5>
-                      <p class="card-text flex-grow-1">Una landing page para Peluquerias, con sistema de citas y más</p>
-                      <a href="https://look-luxe.vercel.app/" target="_blank" class="btn btn-primary mt-auto">Ver proyecto</a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- App registro calorias -->
-                <div class="col-md-6 col-lg-4">
-                  <div class="card shadow-lg h-100 d-flex flex-column">
-                    <img src="./img/img-kcal.png" 
-                         class="card-img-top" alt="Landing Tech">
-                    <div class="card-body d-flex flex-column">
-                      <h5 class="card-title">App Registro calorias (PROXIMAMENTE)</h5>
-                      <p class="card-text flex-grow-1">Una aplicación para el seguimiento de calorías y dieta, desarrollada con NodeJS y Flutter.</p>
-                      <a href="#" target="_blank" class="btn btn-primary mt-auto">Ver proyecto</a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- App generador de Base de Datos -->
-                <div class="col-md-6 col-lg-4">
-                  <div class="card shadow-lg h-100 d-flex flex-column">
-                    <img src="./img/logo_generabd.png" 
-                         class="card-img-top" alt="Landing Tech">
-                    <div class="card-body d-flex flex-column">
-                      <h5 class="card-title">GeneraBD</h5>
-                      <p class="card-text flex-grow-1">Generador de Bases de Datos automático, optimizado para proyectos rápidos. Te permite exportar en formato .sql</p>
-                      <a href="https://jordismt.github.io/GeneraBD_Jcasol/" target="_blank" class="btn btn-primary mt-auto">Ver proyecto</a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Web Peluqueria -->
-                <div class="col-md-6 col-lg-4">
-                  <div class="card shadow-lg h-100 d-flex flex-column">
-                    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                         class="card-img-top" alt="Landing Tech">
-                    <div class="card-body d-flex flex-column">
-                      <h5 class="card-title">Web Peluqueria Ainhoa</h5>
-                      <p class="card-text flex-grow-1">
-                        Web desarrollada como TFG usando <strong>Vue.js</strong> (frontend), <strong>NodeJS</strong> (backend) y <strong>MongoDB</strong>. Incluye registro y login de usuarios, JWT, gestión de citas (crear, editar, eliminar), tienda online con carrito de compras y pago, y otras funcionalidades Full Stack.
-                      </p>
-                      
-                      <a href="https://tfg-daw-rfrw.vercel.app/" target="_blank" class="btn btn-primary mt-auto">Ver proyecto</a>
-                    </div>
-                  </div>
-                </div>
-          
-              </div>
-          
-              <div class="text-center mt-5">
-                <a href="https://github.com/Jordismt" target="_blank" class="btn btn-primary">Ver más proyectos en GitHub</a>
-              </div>
+    <section id="servicios" class="py-32 bg-slate-50 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16">
+                <h2 class="text-5xl font-extrabold text-slate-900">Servicios</h2>
+                <p class="text-slate-400 font-medium mt-2">Soluciones Full Stack a medida.</p>
             </div>
-          </section>
-
-          
-<!-- Sección FAQ Mejorada -->
-<section id="faq" class="py-5" data-aos="fade-up" aria-label="Sección de Preguntas Frecuentes">
-  <div class="container">
-    <h2 class="text-center text-primary mb-4">Preguntas Frecuentes</h2>
-    <p class="text-center lead mb-5">Resuelvo las dudas más comunes sobre mis servicios y proyectos.</p>
-
-    <div class="row g-4">
-      <!-- FAQ 1 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="faq-card shadow-sm p-4 h-100 d-flex flex-column">
-          <div class="faq-icon mb-3 text-primary"><i class="fas fa-code fa-2x"></i></div>
-          <h5 class="faq-question">¿Qué tecnologías utilizas principalmente?</h5>
-          <p class="faq-answer flex-grow-1">HTML, CSS, JavaScript, Vue.js, Flutter, NodeJS, SpringBoot, SQL, NoSQL y herramientas DevOps como Docker y Jenkins. Y más ... </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="service-card" data-aos="fade-up">
+                    <i data-lucide="layout" class="text-blue-600 mb-6 w-10 h-10"></i>
+                    <h4 class="text-xl font-bold mb-3">Desarrollo Web</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">Sitios responsivos y dinámicos usando Vue.js, Tailwind o Bootstrap.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <i data-lucide="smartphone" class="text-blue-600 mb-6 w-10 h-10"></i>
+                    <h4 class="text-xl font-bold mb-3">Desarrollo Móvil</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">Apps multiplataforma con Flutter para experiencias fluidas en iOS y Android.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <i data-lucide="server" class="text-blue-600 mb-6 w-10 h-10"></i>
+                    <h4 class="text-xl font-bold mb-3">Backend & APIs</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">Servidores robustos con NodeJS o SpringBoot y gestión de bases de datos SQL/NoSQL.</p>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <!-- FAQ 2 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="faq-card shadow-sm p-4 h-100 d-flex flex-column">
-          <div class="faq-icon mb-3 text-primary"><i class="fas fa-headset fa-2x"></i></div>
-          <h5 class="faq-question">¿Ofreces soporte después de entregar un proyecto?</h5>
-          <p class="faq-answer flex-grow-1">Sí, ofrezco soporte técnico y mantenimiento según el acuerdo del proyecto, para asegurar que todo funcione correctamente después del despliegue.</p>
+<section id="proyectos" class="max-w-7xl mx-auto py-32 px-6">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+        <div>
+            <h2 class="text-6xl font-extrabold text-slate-900 tracking-tighter">Proyectos</h2>
+            <p class="text-blue-600 font-bold uppercase tracking-widest text-xs mt-2 italic">Selección de trabajos destacados y software</p>
         </div>
-      </div>
-
-      <!-- FAQ 3 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="faq-card shadow-sm p-4 h-100 d-flex flex-column">
-          <div class="faq-icon mb-3 text-primary"><i class="fas fa-cogs fa-2x"></i></div>
-          <h5 class="faq-question">¿Puedo solicitar un proyecto a medida?</h5>
-          <p class="faq-answer flex-grow-1">Claro, adapto mis soluciones a las necesidades de cada cliente: sitio web, app móvil o sistema completo. Trabajo siempre con enfoque Full Stack.</p>
-        </div>
-      </div>
-
-      <!-- FAQ 4 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="faq-card shadow-sm p-4 h-100 d-flex flex-column">
-          <div class="faq-icon mb-3 text-primary"><i class="fas fa-envelope fa-2x"></i></div>
-          <h5 class="faq-question">¿Cómo puedo ponerme en contacto contigo?</h5>
-          <p class="faq-answer flex-grow-1">Escríbeme a <a href="mailto:jcasoldev@gmail.com" class="text-primary">jcasoldev@gmail.com</a>, llámame al <a href="tel:+34620711972" class="text-primary">+34 620 711 972</a>, o usa el formulario de contacto.</p>
-        </div>
-      </div>
+        <div class="hidden md:block h-px flex-1 bg-slate-200 mx-10 mb-4"></div>
+        <p class="text-slate-400 text-sm font-medium">Click en las tarjetas para visitar</p>
     </div>
-  </div>
-</section>
 
-<style>
-.faq-card {
-  background: #fff;
-  border-radius: 15px;
-  padding: 1.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-.faq-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-}
-.faq-icon {
-  display: flex;
-  justify-content: center;
-}
-.faq-question {
-  color: #2575fc;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-  text-align: center;
-}
-.faq-answer {
-  color: #555;
-  font-size: 0.95rem;
-  text-align: center;
-}
-@media(max-width:768px){
-  .faq-card { padding: 1rem; }
-  .faq-question { font-size: 1rem; }
-  .faq-answer { font-size: 0.9rem; }
-}
-</style>
-          
-          
-          
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
         
-        <section id="blog" class="py-5" data-aos="fade-up" aria-label="Sección del Blog">
-            <div class="container">
-                <h2 class="text-center text-primary mb-4">Blog</h2>
-                <p class="text-center lead">En este blog compartiré mis experiencias, consejos y conocimientos sobre desarrollo web, programación, y tecnología en general.</p>
-                <div class="text-center">
-                    <a href="https://jcasoldev.blogspot.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visitar el Blog</a>
+        <a href="https://look-luxe.vercel.app/" target="_blank" class="lg:col-span-2 group relative block bg-slate-900 rounded-[3.5rem] overflow-hidden shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:shadow-blue-200/50" data-aos="fade-up">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-transparent opacity-50 group-hover:scale-110 transition-transform duration-700"></div>
+            <div class="relative z-10 p-12 md:p-16 flex flex-col h-full min-h-[450px] justify-center">
+                <span class="bg-blue-600 text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-[0.2em] w-fit mb-6">Featured Project</span>
+                <h3 class="text-5xl md:text-6xl font-black text-white mb-6 tracking-tighter">Peluquería Look&Luxe</h3>
+                <p class="text-slate-300 text-lg md:text-xl max-w-xl leading-relaxed mb-10">Landing page premium con sistema de gestión de citas interactivo. Enfoque total en UX y elegancia visual.</p>
+                <div class="flex flex-wrap gap-3">
+                    <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-xl text-xs font-bold text-white border border-white/10 italic">#BookingSystem</span>
+                    <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-xl text-xs font-bold text-white border border-white/10 italic">#TailwindCSS</span>
                 </div>
             </div>
-        </section>
+        </a>
 
-
-          
-
-        <section id="cv" class="bg-light py-5" data-aos="fade-up" aria-label="Descargar Currículum Vitae">
-            <div class="container">
-                <h2 class="text-center text-primary mb-4">Descargar CV</h2>
-                <div class="text-center">
-                    <a href="./docs/JcasolCV.pdf" class="btn btn-primary" download aria-label="Descargar currículum vitae en PDF">Descargar mi CV en PDF</a>
+        <a href="https://tfg-daw-rfrw.vercel.app/" target="_blank" class="group relative block bg-white border border-slate-100 rounded-[3.5rem] overflow-hidden shadow-sm transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="100">
+            <div class="p-10 flex flex-col h-full min-h-[450px]">
+                <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-3xl flex items-center justify-center mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                    <i data-lucide="layout" class="w-8 h-8"></i>
+                </div>
+                <h3 class="text-3xl font-black text-slate-900 mb-4 tracking-tight">Web Ainhoa</h3>
+                <p class="text-slate-500 leading-relaxed mb-8 text-sm">Aplicación Full Stack (TFG) <b>MEVN</b>. Sistema de citas, <b>JWT</b> y carrito de compras.</p>
+                <div class="mt-auto flex flex-wrap gap-2">
+                    <span class="text-[9px] font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">VUE.JS</span>
+                    <span class="text-[9px] font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">NODE.JS</span>
+                    <span class="text-[9px] font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">MONGODB</span>
                 </div>
             </div>
-        </section>
-<!-- Sección Contacto (reemplaza el newsletter) -->
-<section id="contacto" class="py-5" style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);" data-aos="fade-up" aria-label="Formulario de Contacto">
-  <div class="container">
-    <h2 class="text-center text-white mb-4">Contacto</h2>
-    <p class="text-center text-white mb-5">Envíame un mensaje y me pondré en contacto contigo lo antes posible.</p>
+        </a>
+    </div>
 
-    <form id="contactForm" class="contact-card mx-auto p-4 rounded" style="max-width:600px; background: rgba(255,255,255,0.95); box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-      <div class="form-group mb-3">
-        <label for="name" class="fw-bold">Nombre</label>
-        <input type="text" id="name" name="user_name" class="form-control" placeholder="Tu nombre" required>
-      </div>
-      <div class="form-group mb-3">
-        <label for="email" class="fw-bold">Correo</label>
-        <input type="email" id="email" name="user_email" class="form-control" placeholder="Tu correo" required>
-      </div>
-      <div class="form-group mb-3">
-        <label for="message" class="fw-bold">Mensaje</label>
-        <textarea id="message" name="message" class="form-control" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
-      </div>
-      <button type="submit" class="btn btn-gradient w-100">Enviar Mensaje</button>
-      <div id="successMessage" class="mt-2 text-success fw-bold text-center" style="display:none;">¡Mensaje enviado! ✅</div>
-    </form>
-  </div>
-</section>
+    <div class="mb-12" data-aos="fade-up">
+        <h3 class="text-2xl font-black text-slate-800 tracking-tight flex items-center gap-3">
+            <i data-lucide="layers" class="text-blue-600"></i>
+            Landing Pages & Templates
+        </h3>
+        <p class="text-slate-500 text-sm mt-1">Plantillas rápidas y diseños temáticos profesionales.</p>
+    </div>
 
-<style>
-.contact-card .form-control {
-  border-radius: 50px;
-  padding: 15px 20px;
-  border: 1px solid #ced4da;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-.contact-card .form-control:focus {
-  border-color: #2575fc;
-  box-shadow: 0 0 10px rgba(37,117,252,0.5);
-}
-.btn-gradient {
-  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-  color: #fff;
-  border-radius: 50px;
-  padding: 15px 25px;
-  border: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.btn-gradient:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-</style>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <a href="./projects/landingpages/techzone.html" class="group bg-slate-50 border border-slate-100 p-8 rounded-[2.5rem] transition-all hover:bg-blue-600 hover:-translate-y-2">
+            <i data-lucide="cpu" class="text-blue-600 mb-4 group-hover:text-white transition-colors"></i>
+            <h4 class="font-bold text-slate-900 group-hover:text-white">TechZone</h4>
+            <p class="text-xs text-slate-500 group-hover:text-blue-100 mt-2">Landing para ecommerce de hardware y periféricos gaming.</p>
+        </a>
 
-<script>
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-  emailjs.sendForm('service_l69lpba','template_6kzyzx2', this)
-    .then(() => {
-      const msg = document.getElementById('successMessage');
-      msg.style.display = 'block';
-      msg.classList.add('animate__animated', 'animate__bounceIn');
-      this.reset();
-      setTimeout(() => {
-        msg.style.display = 'none';
-        msg.classList.remove('animate__animated', 'animate__bounceIn');
-      }, 3000);
-    })
-    .catch(err => console.log('Error:', err));
-});
-</script>
-                <section id="contacto" class="bg-primary text-white py-5" data-aos="fade-up" aria-label="Sección de Contacto">
-                  <div class="container">
-                    <h2 class="text-center mb-4">Contacto</h2>
-                    <div class="row justify-content-center">
-                      <div class="col-md-2 mb-4 d-flex justify-content-center">
-                        <a href="mailto:jcasoldev@gmail.com" class="text-white" aria-label="Enviar correo a Jordi Casanova">
-                          <i class="fas fa-envelope fa-3x mb-2"></i>
-                        </a>
-                      </div>
-                      <div class="col-md-2 mb-4 d-flex justify-content-center">
-                        <a href="tel:+34620711972" class="text-white" aria-label="Llamar a Jordi Casanova">
-                          <i class="fas fa-phone fa-3x mb-2"></i>
-                        </a>
-                      </div>
-                      <div class="col-md-2 mb-4 d-flex justify-content-center">
-                        <a href="https://github.com/Jordismt" target="_blank" rel="noopener noreferrer" class="text-white" aria-label="Visitar GitHub de Jordi Casanova">
-                          <i class="fab fa-github fa-3x mb-2"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-        
-        <!-- Necesitas Animate.css para la animación -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-        
-    </main>
+        <a href="./projects/landingpages/dentista.html" class="group bg-slate-50 border border-slate-100 p-8 rounded-[2.5rem] transition-all hover:bg-cyan-500 hover:-translate-y-2">
+            <i data-lucide="heart-pulse" class="text-cyan-500 mb-4 group-hover:text-white transition-colors"></i>
+            <h4 class="font-bold text-slate-900 group-hover:text-white">Dental Care</h4>
+            <p class="text-xs text-slate-500 group-hover:text-cyan-50 mt-2">Diseño limpio y sanitario para clínicas médicas o dentistas.</p>
+        </a>
 
-    
-    
+        <a href="./projects/landingpages/restaurante.html" class="group bg-slate-50 border border-slate-100 p-8 rounded-[2.5rem] transition-all hover:bg-orange-500 hover:-translate-y-2">
+            <i data-lucide="soup" class="text-orange-500 mb-4 group-hover:text-white transition-colors"></i>
+            <h4 class="font-bold text-slate-900 group-hover:text-white">Restaurante</h4>
+            <p class="text-xs text-slate-500 group-hover:text-orange-50 mt-2">Plantilla gastronómica con visualización de carta y reservas.</p>
+        </a>
 
-    <footer class="bg-dark text-white py-5" role="contentinfo">
-        <div class="container">
-            <div class="row">
-                <!-- Logo o Branding -->
-                <div class="col-md-4 mb-4">
-                    <h4 class="font-weight-bold">Jordi Casanova</h4>
-                    <p class="text-muted">Desarrollador Web & Multiplataforma</p>
-                </div>
-
-                <!-- Enlaces útiles -->
-                <div class="col-md-4 mb-4">
-                    <h5 class="font-weight-bold">Enlaces útiles</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#sobre-mi" class="text-muted">Sobre Mí</a></li>
-                        <li><a href="#proyectos" class="text-muted">Proyectos</a></li>
-                        <li><a href="#blog" class="text-muted">Blog</a></li>
-                        <li><a href="#contacto" class="text-muted">Contacto</a></li>
-                        <li><a href="#cv" class="text-muted">Descargar CV</a></li>
-                    </ul>
-                </div>
-
-                <!-- Redes sociales -->
-                <div class="col-md-4 mb-4">
-                    <h5 class="font-weight-bold">Sígueme</h5>
-                    <div class="d-flex justify-content-start">
-                        <a href="https://github.com/Jordismt" class="text-muted mr-3" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                            <i class="fab fa-github fa-2x"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/jcasoldev/" class="text-muted mr-3" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin fa-2x"></i>
-                        </a>
-                        <a href="https://twitter.com/JcasolDEV" class="text-muted mr-3" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                            <i class="fab fa-twitter fa-2x"></i>
-                        </a>
-                        <a href="https://www.youtube.com/@Jcasol_DEV" class="text-muted mr-3" target="_blank" rel="noopener noreferrer" aria-label="Youtube">
-                          <i class="fab fa-youtube fa-2x"></i>
-                      </a>
-                    </div>
-                </div>
+        <a href="https://jordismt.github.io/GeneraBD_Jcasol/" target="_blank" class="group bg-slate-50 border border-slate-100 p-8 rounded-[2.5rem] transition-all hover:bg-emerald-600 hover:-translate-y-2">
+            <div class="flex justify-between items-start">
+                <i data-lucide="database" class="text-emerald-600 mb-4 group-hover:text-white transition-colors"></i>
+                <i data-lucide="external-link" class="w-3 h-3 text-slate-300 group-hover:text-white"></i>
             </div>
+            <h4 class="font-bold text-slate-900 group-hover:text-white">GeneraBD</h4>
+            <p class="text-xs text-slate-500 group-hover:text-emerald-50 mt-2">Utilidad JS para generar SQL y documentación Markdown.</p>
+        </a>
+    </div>
 
-            <div class="text-center mt-4">
-                <p class="text-muted">&copy; 2025 Jordi Casanova Solanes. Todos los derechos reservados.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+        <div class="bg-orange-50/50 border border-orange-100 p-10 rounded-[3rem] flex items-center justify-between group">
+            <div>
+                <h4 class="text-xl font-bold text-slate-900">Haveli Food Web</h4>
+                <p class="text-sm text-slate-500">Carta digital y reservas vía WhatsApp para hostelería.</p>
+            </div>
+            <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform">
+                <i data-lucide="utensils"></i>
             </div>
         </div>
-    </footer>
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script type="text/javascript">
-      (function() {
-        emailjs.init("IaLhzw35oAG114oNL");
-      })();
-    </script>
-    
+        <div class="bg-blue-600 p-10 rounded-[3rem] flex items-center justify-between group text-white shadow-lg">
+            <div>
+                <span class="text-[9px] font-black uppercase tracking-widest opacity-60">En Desarrollo</span>
+                <h4 class="text-xl font-bold">FitTrack App (Flutter)</h4>
+                <p class="text-sm text-blue-100">Seguimiento deportivo multiplataforma.</p>
+            </div>
+            <i data-lucide="smartphone" class="w-10 h-10 opacity-30 group-hover:scale-110 transition-transform"></i>
+        </div>
+    </div>
+</section>
+
+<section id="formacion" class="bg-slate-900 py-32 text-white overflow-hidden">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="mb-20">
+            <h2 class="text-5xl font-black tracking-tighter">Trayectoria <span class="text-blue-500">Académica</span></h2>
+            <div class="h-1 w-20 bg-blue-600 mt-4 rounded-full"></div>
+        </div>
+
+        <div class="relative border-l-2 border-slate-800 ml-4 md:ml-0">
+            
+            <div class="mb-16 pl-8 relative" data-aos="fade-up">
+                <div class="absolute w-5 h-5 bg-blue-600 rounded-full -left-[11px] top-1 shadow-[0_0_15px_rgba(37,99,235,0.5)] border-4 border-slate-900"></div>
+                
+                <span class="inline-block px-3 py-1 rounded-full bg-blue-600/10 text-blue-400 font-bold text-[10px] uppercase tracking-widest mb-3">
+                    2022 — 2025 (Finalizado)
+                </span>
+                <h3 class="text-3xl font-black text-white tracking-tight">Doble Grado Superior: DAM & DAW</h3>
+                <p class="text-blue-500 font-bold text-sm mb-2">Desarrollo de Aplicaciones Multiplataforma y Web</p>
+                <p class="text-slate-400 italic text-sm">IES Jaume II el Just, Tavernes de la Valldigna</p>
+            </div>
+
+            <div class="mb-16 pl-8 relative" data-aos="fade-up" data-aos-delay="100">
+                <div class="absolute w-5 h-5 bg-slate-700 rounded-full -left-[11px] top-1 border-4 border-slate-900"></div>
+                
+                <span class="text-slate-500 font-bold text-[10px] uppercase tracking-widest">2022</span>
+                <h3 class="text-2xl font-bold text-slate-200 mt-1">1er Año ASIR</h3>
+                <p class="text-slate-400 text-sm mb-1">Administración de Sistemas Informáticos en Red</p>
+                <p class="text-slate-500 italic text-xs">IES Jaume II el Just, Tavernes</p>
+            </div>
+
+            <div class="pl-8 relative" data-aos="fade-up" data-aos-delay="200">
+                <div class="absolute w-5 h-5 bg-slate-700 rounded-full -left-[11px] top-1 border-4 border-slate-900"></div>
+                
+                <span class="text-slate-500 font-bold text-[10px] uppercase tracking-widest">2020 — 2022</span>
+                <h3 class="text-2xl font-bold text-slate-200 mt-1">CFGM SMR</h3>
+                <p class="text-slate-400 text-sm mb-1">Sistemas Microinformáticos y Redes</p>
+                <p class="text-slate-500 italic text-xs">IES Jaume II el Just, Tavernes</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="contacto" class="py-32 px-6 bg-white">
+        <div class="max-w-4xl mx-auto glass rounded-[3rem] p-12 shadow-2xl border-white" data-aos="zoom-in">
+            <div class="text-center mb-12">
+                <h2 class="text-5xl font-black tracking-tighter mb-4">¿Hablamos?</h2>
+                <div id="successMessage" class="hidden text-green-600 font-bold mb-4">¡Mensaje enviado con éxito! 🚀</div>
+            </div>
+            
+            <form id="contactForm" class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-4">
+                    <label class="text-[10px] font-black uppercase text-gray-400 ml-2 tracking-widest">Nombre</label>
+                    <input type="text" name="user_name" placeholder="Tu Nombre" class="w-full p-5 rounded-2xl bg-gray-50 border-none outline-none focus:ring-2 focus:ring-blue-600 transition-all" required>
+                    <label class="text-[10px] font-black uppercase text-gray-400 ml-2 tracking-widest">Email</label>
+                    <input type="email" name="user_email" placeholder="email@ejemplo.com" class="w-full p-5 rounded-2xl bg-gray-50 border-none outline-none focus:ring-2 focus:ring-blue-600 transition-all" required>
+                </div>
+                <div class="flex flex-col">
+                    <label class="text-[10px] font-black uppercase text-gray-400 ml-2 tracking-widest mb-4">Mensaje</label>
+                    <textarea name="message" placeholder="¿En qué puedo ayudarte?" rows="6" class="w-full p-5 rounded-2xl bg-gray-50 border-none outline-none focus:ring-2 focus:ring-blue-600 transition-all" required></textarea>
+                </div>
+                <button type="submit" class="md:col-span-2 bg-blue-600 text-white py-5 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-blue-700 transition-all shadow-lg">
+                    Enviar Mensaje
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <script>
-        AOS.init();
+        // Inicialización EmailJS con tu llave pública
+        (function() { emailjs.init({ publicKey: "IaLhzw35oAG114oNL" }); })();
+        
+        AOS.init({ duration: 800, once: true });
+        lucide.createIcons();
+
+        // Lógica de Envío de Formulario con TUS IDS REALES
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Usando tus IDs: service_l69lpba y template_6kzyzx2
+            emailjs.sendForm('service_l69lpba', 'template_6kzyzx2', this)
+                .then(() => {
+                    const msg = document.getElementById('successMessage');
+                    msg.classList.remove('hidden');
+                    msg.classList.add('animate__animated', 'animate__bounceIn');
+                    this.reset();
+                    
+                    setTimeout(() => {
+                        msg.classList.add('hidden');
+                        msg.classList.remove('animate__animated', 'animate__bounceIn');
+                    }, 4000);
+                })
+                .catch(err => {
+                    alert('Error al enviar: ' + JSON.stringify(err));
+                    console.log('Error:', err);
+                });
+        });
+
+        // Efecto 3D Avatar
+        const avatar = document.querySelector('.brand-avatar');
+        avatar.addEventListener('mousemove', (e) => {
+            const rect = avatar.getBoundingClientRect();
+            const x = (e.clientX - rect.left - rect.width / 2) / 8;
+            const y = (e.clientY - rect.top - rect.height / 2) / 8;
+            avatar.style.transform = `rotateX(${-y}deg) rotateY(${x}deg)`;
+        });
+        avatar.addEventListener('mouseleave', () => avatar.style.transform = `rotateX(0deg) rotateY(0deg)`);
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.1/ScrollTrigger.min.js"></script>
 
+<footer class="bg-slate-900 text-white pt-24 pb-12 overflow-hidden relative">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
+
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-16 mb-20">
+            
+            <div class="md:col-span-5">
+                <a href="#" class="text-3xl font-black tracking-tighter mb-6 block">
+                    JORDI <span class="text-blue-500">CASANOVA</span>
+                </a>
+                <p class="text-slate-400 max-w-sm leading-relaxed mb-8">
+                    Desarrollador Full Stack especializado en crear experiencias digitales de alto impacto, desde Simat al mundo.
+                </p>
+                <div class="flex gap-4">
+                    <a href="https://github.com/Jordismt" target="_blank" class="w-12 h-12 rounded-2xl bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300 shadow-lg">
+                        <i data-lucide="github" class="w-5 h-5 text-white"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jcasoldev/" target="_blank" class="w-12 h-12 rounded-2xl bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300 shadow-lg">
+                        <i data-lucide="linkedin" class="w-5 h-5 text-white"></i>
+                    </a>
+                    <a href="https://twitter.com/JcasolDEV" target="_blank" class="w-12 h-12 rounded-2xl bg-slate-800 flex items-center justify-center hover:bg-blue-400 hover:-translate-y-1 transition-all duration-300 shadow-lg">
+                        <i data-lucide="twitter" class="w-5 h-5 text-white"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@Jcasol_DEV" target="_blank" class="w-12 h-12 rounded-2xl bg-slate-800 flex items-center justify-center hover:bg-red-600 hover:-translate-y-1 transition-all duration-300 shadow-lg">
+                        <i data-lucide="youtube" class="w-5 h-5 text-white"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="md:col-span-3">
+                <h5 class="text-xs font-black uppercase tracking-[0.2em] text-blue-500 mb-8">Navegación</h5>
+                <ul class="space-y-4">
+                    <li><a href="#sobre-mi" class="text-slate-400 hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2"><span class="w-1 h-1 bg-blue-500 rounded-full"></span> Sobre Mí</a></li>
+                    <li><a href="#proyectos" class="text-slate-400 hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2"><span class="w-1 h-1 bg-blue-500 rounded-full"></span> Proyectos</a></li>
+                    <li><a href="#servicios" class="text-slate-400 hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2"><span class="w-1 h-1 bg-blue-500 rounded-full"></span> Servicios</a></li>
+                    <li><a href="#contacto" class="text-slate-400 hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2"><span class="w-1 h-1 bg-blue-500 rounded-full"></span> Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-4">
+                <h5 class="text-xs font-black uppercase tracking-[0.2em] text-blue-500 mb-8">Recursos</h5>
+                <div class="bg-slate-800/50 p-6 rounded-[2rem] border border-white/5 backdrop-blur-sm">
+                    <p class="text-sm text-slate-400 mb-4">¿Te interesa mi perfil para tu equipo?</p>
+                    <a href="./docs/JcasolCV.pdf" download="Jordi_Casanova_CV.pdf" class="flex items-center justify-between bg-white text-slate-900 px-6 py-4 rounded-2xl font-bold hover:bg-blue-500 hover:text-white transition-all group shadow-md">
+                        Descargar CV 
+                        <i data-lucide="download-cloud" class="w-5 h-5 group-hover:animate-bounce"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest text-center md:text-left">
+    © <span id="current-year"></span> Jordi Casanova Solanes.
+</p>
+            <div class="flex gap-8 text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                <span class="cursor-default">Full Stack Developer</span>
+                <span class="cursor-default">DAM & DAW</span>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="https://unpkg.com/lucide@latest"></script>
 <script>
-const avatar = document.querySelector('.brand-avatar');
-const img = avatar.querySelector('img');
-const glow = avatar.querySelector('.avatar-glow');
+    // Actualizar el año automáticamente
+    document.getElementById('current-year').textContent = new Date().getFullYear();
 
-avatar.addEventListener('mousemove', (e) => {
-  const rect = avatar.getBoundingClientRect();
-
-  const x = e.clientX - rect.left - rect.width / 2;
-  const y = e.clientY - rect.top - rect.height / 2;
-
-  // rotación más pronunciada
-  const rotateX = (-y / 5).toFixed(2);
-  const rotateY = (x / 5).toFixed(2);
-
-  avatar.style.transform = `
-    rotateX(${rotateX}deg)
-    rotateY(${rotateY}deg)
-  `;
-
-  img.style.transform = `
-    translateZ(70px)
-    scale(1.1)
-  `;
-
-  glow.style.transform = `
-    translateX(${x / 6}px)
-    translateY(${y / 6}px)
-    scale(1.25)
-  `;
-});
-
-// reset al salir
-avatar.addEventListener('mouseleave', () => {
-  avatar.style.transform = 'rotateX(0deg) rotateY(0deg)';
-  img.style.transform = 'translateZ(35px) scale(1)';
-  glow.style.transform = 'scale(1)';
-});
+    // Tus otros scripts...
+    lucide.createIcons();
+    AOS.init({ duration: 800, once: true });
+</script>
+<script>
+    // ESTO ES LO QUE "DIBUJA" LOS ICONOS EN PANTALLA
+    lucide.createIcons();
+    
+    // Si usas AOS para animaciones
+    AOS.init({
+        duration: 800,
+        once: true
+    });
 </script>
 
-
-
-    
 </body>
-
 </html>
