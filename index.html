@@ -1,458 +1,859 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es" class="scroll-smooth">
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>Jordi Casanova | Desarrollador Full Stack MEVN & Mobile</title>
-    <meta name="title" content="Jordi Casanova | Desarrollador Full Stack MEVN & Mobile">
-    <meta name="description" content="Portfolio de Jordi Casanova. Especialista en Stack MEVN (MongoDB, Express, Vue, Node), Flutter y arquitecturas escalables. De Simat al mundo.">
-    <meta name="keywords" content="Jordi Casanova, Desarrollador Full Stack, MEVN stack, Vue.js, Node.js, Flutter, Desarrollo Web Valencia, DAM, DAW, Portfolio Programador">
-    <meta name="author" content="Jordi Casanova Solanes">
-    <link rel="canonical" href="https://jordismt.github.io/Jcasol/">
+    <meta name="title" content="Jordi Casanova | Desarrollador Full Stack MEVN & Mobile" />
+    <meta
+      name="description"
+      content="Portfolio de Jordi Casanova. Especialista en Stack MEVN (MongoDB, Express, Vue, Node), Flutter y arquitecturas escalables. De Simat al mundo." />
+    <meta
+      name="keywords"
+      content="Jordi Casanova, Desarrollador Full Stack, MEVN stack, Vue.js, Node.js, Flutter, Desarrollo Web Valencia, DAM, DAW, Portfolio Programador" />
+    <meta name="author" content="Jordi Casanova Solanes" />
+    <link rel="canonical" href="https://jordismt.github.io/Jcasol/" />
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jordismt.github.io/Jcasol/">
-    <meta property="og:title" content="Jordi Casanova | Desarrollador Full Stack">
-    <meta property="og:description" content="Explora mis proyectos web y móviles. Especialista en crear soluciones digitales de alto impacto.">
-    <meta property="og:image" content="https://jordismt.github.io/Jcasol/img/logo_jcasol.png">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jordismt.github.io/Jcasol/" />
+    <meta property="og:title" content="Jordi Casanova | Desarrollador Full Stack" />
+    <meta
+      property="og:description"
+      content="Explora mis proyectos web y móviles. Especialista en crear soluciones digitales de alto impacto." />
+    <meta property="og:image" content="https://jordismt.github.io/Jcasol/img/logo_jcasol.png" />
 
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://jordismt.github.io/Jcasol/">
-    <meta property="twitter:title" content="Jordi Casanova | Desarrollador Full Stack">
-    <meta property="twitter:description" content="Desarrollador Full Stack especializado en Vue, Node y Flutter.">
-    <meta property="twitter:image" content="https://jordismt.github.io/Jcasol/img/logo_jcasol.png">
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://jordismt.github.io/Jcasol/" />
+    <meta property="twitter:title" content="Jordi Casanova | Desarrollador Full Stack" />
+    <meta
+      property="twitter:description"
+      content="Desarrollador Full Stack especializado en Vue, Node y Flutter." />
+    <meta property="twitter:image" content="https://jordismt.github.io/Jcasol/img/logo_jcasol.png" />
 
-    <link rel="icon" type="image/png" href="./img/logo_jcasol.png">
+    <link rel="icon" type="image/png" href="./img/logo_jcasol.png" />
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+      rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8f9fa; }
-        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
-        
-        .brand-avatar {
-            width: 200px; height: 200px;
-            position: relative; perspective: 1000px;
-            transform-style: preserve-3d;
-            transition: transform 0.1s ease-out;
-        }
-        .brand-avatar img {
-            width: 100%; height: 100%;
-            border-radius: 50%; object-fit: cover;
-            border: 4px solid white; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        .avatar-glow {
-            position: absolute; inset: -15px;
-            background: radial-gradient(circle, rgba(0,123,255,0.4) 0%, transparent 70%);
-            z-index: -1; border-radius: 50%;
-        }
+      svg.lucide {
+        width: 20px; /* Equivalente a w-5 */
+        height: 20px; /* Equivalente a h-5 */
+        display: inline-block;
+      }
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        background-color: #f8f9fa;
+      }
+      .glass {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
 
-
+      .brand-avatar {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+        transition: transform 0.1s ease-out;
+      }
+      .brand-avatar img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+      .avatar-glow {
+        position: absolute;
+        inset: -15px;
+        background: radial-gradient(circle, rgba(0, 123, 255, 0.4) 0%, transparent 70%);
+        z-index: -1;
+        border-radius: 50%;
+      }
     </style>
-</head>
-<body class="text-slate-800 overflow-x-hidden">
-
+  </head>
+  <body class="text-slate-800 overflow-x-hidden">
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-5xl">
-        <div class="glass rounded-full px-6 py-4 flex justify-between items-center shadow-lg border border-white/50">
-            <a href="#" class="font-extrabold text-xl tracking-tighter">JC<span class="text-blue-600">.</span></a>
-            <div class="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-500">
-                <a href="#sobre-mi" class="hover:text-blue-600 transition-colors">Sobre Mí</a>
-                <a href="#proyectos" class="hover:text-blue-600 transition-colors">Proyectos</a>
-                <a href="#servicios" class="hover:text-blue-600 transition-colors">Servicios</a>
-                <a href="#contacto" class="hover:text-blue-600 transition-colors">Contacto</a>
-            </div>
-            <a href="#contacto" class="bg-blue-600 text-white px-6 py-2.5 rounded-full text-xs font-bold hover:bg-blue-700 transition-all">LET'S TALK</a>
+      <div
+        class="glass rounded-full px-6 py-4 flex justify-between items-center shadow-lg border border-white/50">
+        <a href="#" class="font-extrabold text-xl tracking-tighter">JC<span class="text-blue-600">.</span></a>
+        <div class="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-500">
+          <a href="#sobre-mi" class="hover:text-blue-600 transition-colors">Sobre Mí</a>
+          <a href="#proyectos" class="hover:text-blue-600 transition-colors">Proyectos</a>
+          <a href="#servicios" class="hover:text-blue-600 transition-colors">Servicios</a>
+          <a href="#contacto" class="hover:text-blue-600 transition-colors">Contacto</a>
         </div>
+        <a
+          href="#contacto"
+          class="bg-blue-600 text-white px-6 py-2.5 rounded-full text-xs font-bold hover:bg-blue-700 transition-all"
+          >LET'S TALK</a
+        >
+      </div>
     </nav>
 
-    <section id="sobre-mi" class="min-h-screen flex flex-col items-center justify-center pt-32 px-6 bg-gradient-to-b from-white to-slate-50">
-        <div class="brand-avatar mb-12" data-aos="zoom-in">
-            <div class="avatar-glow"></div>
-            <img src="./img/logo_jcasol.png" alt="Jordi Casanova">
+    <section
+      id="sobre-mi"
+      class="min-h-screen flex flex-col items-center justify-center pt-32 px-6 bg-gradient-to-b from-white to-slate-50">
+      <div class="brand-avatar mb-12" data-aos="zoom-in">
+        <div class="avatar-glow"></div>
+        <img src="./img/logo_jcasol.png" alt="Jordi Casanova" />
+      </div>
+      <div class="text-center" data-aos="fade-up">
+        <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-4 text-slate-900">
+          Jordi <span class="text-blue-600">Casanova</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-slate-500 font-medium max-w-3xl mx-auto mb-10 leading-relaxed">
+          Desarrollador Full Stack con formación en <span class="text-slate-900 font-bold">DAM y DAW</span>.
+          Apasionado por crear soluciones completas, desde la arquitectura de backend hasta experiencias
+          móviles fluidas.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a
+            href="#proyectos"
+            class="bg-slate-900 text-white px-10 py-4 rounded-2xl font-bold hover:bg-slate-800 transition-all shadow-xl"
+            >Ver Proyectos</a
+          >
+          <a
+            href="mailto:jcasoldev@gmail.com"
+            class="p-4 glass rounded-2xl shadow-sm hover:bg-white transition-all border border-slate-200"
+            ><i data-lucide="mail"></i
+          ></a>
+          <a
+            href="https://github.com/jordismt"
+            target="_blank"
+            class="p-4 glass rounded-2xl shadow-sm hover:bg-white transition-all border border-slate-200 flex items-center justify-center group">
+            <img
+              src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/github.svg"
+              class="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity"
+              alt="GitHub" />
+          </a>
         </div>
-        <div class="text-center" data-aos="fade-up">
-            <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-4 text-slate-900">
-                Jordi <span class="text-blue-600">Casanova</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-slate-500 font-medium max-w-3xl mx-auto mb-10 leading-relaxed">
-                Desarrollador Full Stack con formación en <span class="text-slate-900 font-bold">DAM y DAW</span>. 
-                Apasionado por crear soluciones completas, desde la arquitectura de backend hasta experiencias móviles fluidas.
+      </div>
+    </section>
+
+    <section id="habilidades" class="py-32 max-w-7xl mx-auto px-6">
+      <div class="mb-20 text-center reveal">
+        <h2 class="text-blue-600 font-black uppercase tracking-[0.4em] text-[10px] mb-4">Tecnologias</h2>
+        <p class="text-5xl md:text-7xl font-extrabold tracking-tighter text-slate-900">
+          Stack <span class="text-slate-400">tecnologico.</span>
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div
+          class="reveal group p-8 rounded-[2.5rem] bg-slate-50 border border-slate-200 hover:border-blue-500/50 hover:bg-white transition-all duration-500 shadow-sm hover:shadow-xl">
+          <div
+            class="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-blue-200">
+            <i data-lucide="monitor" class="w-6 h-6 text-white"></i>
+          </div>
+          <h3 class="text-slate-900 font-black text-xl mb-6 tracking-tight">
+            Frontend <span class="text-blue-600">&</span> Core
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="px-3 py-1.5 rounded-xl bg-blue-600 text-white text-[10px] font-bold uppercase tracking-wider shadow-md"
+              >Next.js</span
+            >
+            <span
+              class="px-3 py-1.5 rounded-xl bg-slate-900 text-white text-[10px] font-bold uppercase tracking-wider"
+              >TypeScript</span
+            >
+            <span
+              class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-600 text-[10px] font-bold uppercase tracking-wider hover:border-blue-400 transition-colors"
+              >Vue.js</span
+            >
+            <span
+              class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-600 text-[10px] font-bold uppercase tracking-wider hover:border-blue-400 transition-colors"
+              >Flutter</span
+            >
+            <span
+              class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-600 text-[10px] font-bold uppercase tracking-wider hover:border-blue-400 transition-colors"
+              >Tailwind</span
+            >
+          </div>
+        </div>
+
+        <div
+          class="reveal group p-8 rounded-[2.5rem] bg-slate-50 border border-slate-200 hover:border-purple-500/50 hover:bg-white transition-all duration-500 shadow-sm hover:shadow-xl">
+          <div
+            class="w-12 h-12 rounded-2xl bg-purple-600 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-purple-200">
+            <i data-lucide="cpu" class="w-6 h-6 text-white"></i>
+          </div>
+          <h3 class="text-slate-900 font-black text-xl mb-6 tracking-tight">
+            Backend <span class="text-purple-600">&</span> IA
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="px-3 py-1.5 rounded-xl bg-[#635bff] text-white text-[10px] font-bold uppercase tracking-wider shadow-md flex items-center gap-1">
+              <i data-lucide="credit-card" class="w-3 h-3"></i> Stripe
+            </span>
+            <span
+              class="px-3 py-1.5 rounded-xl bg-purple-600 text-white text-[10px] font-bold uppercase tracking-wider shadow-md"
+              >Whisper AI</span
+            >
+            <span
+              class="px-3 py-1.5 rounded-xl bg-slate-900 text-white text-[10px] font-bold uppercase tracking-wider"
+              >Node.js</span
+            >
+            <span
+              class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-600 text-[10px] font-bold uppercase tracking-wider"
+              >Python</span
+            >
+            <span
+              class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-600 text-[10px] font-bold uppercase tracking-wider"
+              >Spring</span
+            >
+            <span
+              class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-600 text-[10px] font-bold uppercase tracking-wider"
+              >Express</span
+            >
+          </div>
+        </div>
+
+        <div
+          class="reveal group p-8 rounded-[2.5rem] bg-slate-50 border border-slate-200 hover:border-emerald-500/50 hover:bg-white transition-all duration-500 shadow-sm hover:shadow-xl">
+          <div
+            class="w-12 h-12 rounded-2xl bg-emerald-600 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-emerald-200">
+            <i data-lucide="database" class="w-6 h-6 text-white"></i>
+          </div>
+          <h3 class="text-slate-900 font-black text-xl mb-6 tracking-tight">
+            Data <span class="text-emerald-600">&</span> Cloud
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="px-3 py-1.5 rounded-xl bg-emerald-600 text-white text-[10px] font-bold uppercase tracking-wider shadow-md"
+              >Supabase</span
+            >
+            <span
+              class="px-3 py-1.5 rounded-xl bg-slate-900 text-white text-[10px] font-bold uppercase tracking-wider"
+              >Postgres</span
+            >
+            <span
+              class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-600 text-[10px] font-bold uppercase tracking-wider hover:border-emerald-400 transition-colors"
+              >GROQ</span
+            >
+            <span
+              class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-600 text-[10px] font-bold uppercase tracking-wider hover:border-emerald-400 transition-colors"
+              >MongoDB</span
+            >
+            <span
+              class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-600 text-[10px] font-bold uppercase tracking-wider hover:border-emerald-400 transition-colors"
+              >MySQL</span
+            >
+          </div>
+        </div>
+
+        <div
+          class="reveal group p-8 rounded-[2.5rem] bg-slate-50 border border-slate-200 hover:border-orange-500/50 hover:bg-white transition-all duration-500 shadow-sm hover:shadow-xl">
+          <div
+            class="w-12 h-12 rounded-2xl bg-orange-600 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-orange-200">
+            <i data-lucide="layers" class="w-6 h-6 text-white"></i>
+          </div>
+          <h3 class="text-slate-900 font-black text-xl mb-6 tracking-tight">
+            Infra <span class="text-orange-600">&</span> Deploy
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="px-3 py-1.5 rounded-xl bg-orange-600 text-white text-[10px] font-bold uppercase tracking-wider shadow-md"
+              >Vercel</span
+            >
+            <span
+              class="px-3 py-1.5 rounded-xl bg-slate-900 text-white text-[10px] font-bold uppercase tracking-wider"
+              >Docker</span
+            >
+            <span
+              class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-600 text-[10px] font-bold uppercase tracking-wider hover:border-orange-400 transition-colors"
+              >Git</span
+            >
+            <span
+              class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-600 text-[10px] font-bold uppercase tracking-wider hover:border-orange-400 transition-colors"
+              >Linux</span
+            >
+            <span
+              class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-600 text-[10px] font-bold uppercase tracking-wider hover:border-orange-400 transition-colors"
+              >CI/CD</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="servicios" class="py-32 bg-slate-50 px-6 relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-blue-100/50 blur-[100px] rounded-full -z-10"></div>
+
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-20 reveal">
+          <h2 class="text-xs font-black uppercase tracking-[0.4em] text-blue-600 mb-4">
+            ¿Cómo puedo ayudarte?
+          </h2>
+          <p class="text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tighter">
+            Servicios <span class="text-slate-400">Digitales.</span>
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div
+            class="reveal group p-10 rounded-[3rem] bg-white border border-slate-200/60 hover:border-blue-500/50 transition-all duration-500 shadow-xl shadow-slate-200/50 hover:shadow-blue-200/20">
+            <div
+              class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-600 transition-colors duration-500">
+              <i
+                data-lucide="layout"
+                class="text-blue-600 w-7 h-7 group-hover:text-white transition-colors"></i>
+            </div>
+            <h4 class="text-2xl font-black text-slate-900 mb-4 tracking-tight">Desarrollo Web Next.js</h4>
+            <p class="text-slate-500 text-sm leading-relaxed mb-6">
+              Interfaces ultra rápidas con <b>Next.js</b> y <b>Vue</b>. Optimizadas para SEO, performance y
+              conversión.
             </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#proyectos" class="bg-slate-900 text-white px-10 py-4 rounded-2xl font-bold hover:bg-slate-800 transition-all shadow-xl">Ver Proyectos</a>
-                <a href="mailto:jcasoldev@gmail.com" class="p-4 glass rounded-2xl shadow-sm hover:bg-white transition-all border border-slate-200"><i data-lucide="mail"></i></a>
-                <a href="https://github.com/jordismt" target="_blank" class="p-4 glass rounded-2xl shadow-sm hover:bg-white transition-all border border-slate-200"><i data-lucide="github"></i></a>
+            <ul class="space-y-2">
+              <li
+                class="flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> SPA / SSR / SSG
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="reveal group p-10 rounded-[3rem] bg-white border border-slate-200/60 hover:border-blue-500/50 transition-all duration-500 shadow-xl shadow-slate-200/50 hover:shadow-blue-200/20"
+            data-aos-delay="100">
+            <div
+              class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-600 transition-colors duration-500">
+              <i
+                data-lucide="smartphone"
+                class="text-blue-600 w-7 h-7 group-hover:text-white transition-colors"></i>
             </div>
+            <h4 class="text-2xl font-black text-slate-900 mb-4 tracking-tight">Mobile First Flutter</h4>
+            <p class="text-slate-500 text-sm leading-relaxed mb-6">
+              Aplicaciones nativas para <b>iOS y Android</b> con un solo código base usando Flutter.
+              Experiencias fluidas.
+            </p>
+            <ul class="space-y-2">
+              <li
+                class="flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Multiplataforma
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="reveal group p-10 rounded-[3rem] bg-white border border-slate-200/60 hover:border-blue-500/50 transition-all duration-500 shadow-xl shadow-slate-200/50 hover:shadow-blue-200/20"
+            data-aos-delay="200">
+            <div
+              class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-600 transition-colors duration-500">
+              <i
+                data-lucide="server"
+                class="text-blue-600 w-7 h-7 group-hover:text-white transition-colors"></i>
+            </div>
+            <h4 class="text-2xl font-black text-slate-900 mb-4 tracking-tight">Arquitectura Backend</h4>
+            <p class="text-slate-500 text-sm leading-relaxed mb-6">
+              APIs robustas y escalables. Gestión inteligente de datos con <b>Supabase</b>, <b>Node</b> y SQL.
+            </p>
+            <ul class="space-y-2">
+              <li
+                class="flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Real-time & Security
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="reveal group p-10 rounded-[3rem] bg-slate-900 border border-slate-800 hover:border-blue-500 transition-all duration-500 shadow-2xl">
+            <div class="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center mb-8">
+              <i data-lucide="zap" class="text-white w-7 h-7"></i>
+            </div>
+            <h4 class="text-2xl font-black text-white mb-4 tracking-tight">SaaS & Automatización</h4>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              Integración de <b>Stripe</b> para pagos y <b>IA (Whisper)</b> para automatizar procesos de
+              negocio complejos.
+            </p>
+            <div class="flex gap-2">
+              <span class="px-3 py-1 bg-white/10 rounded-lg text-[9px] font-bold text-blue-400 uppercase"
+                >Pagos</span
+              >
+              <span class="px-3 py-1 bg-white/10 rounded-lg text-[9px] font-bold text-purple-400 uppercase"
+                >AI Ready</span
+              >
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <section id="habilidades" class="py-24 max-w-7xl mx-auto px-6">
-        <div class="grid md:grid-cols-4 gap-8">
-            <div data-aos="fade-up">
-                <h3 class="text-blue-600 font-black uppercase tracking-widest text-xs mb-6">Frontend</h3>
-                <div class="flex flex-wrap gap-2">
-                    <span class="badge-pill">HTML</span><span class="badge-pill">CSS</span>
-                    <span class="badge-pill">JS</span><span class="badge-pill">Flutter</span>
-                    <span class="badge-pill">Vue.js</span><span class="badge-pill">Tailwind</span>
-                </div>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="100">
-                <h3 class="text-blue-600 font-black uppercase tracking-widest text-xs mb-6">Backend</h3>
-                <div class="flex flex-wrap gap-2">
-                    <span class="badge-pill">Java</span><span class="badge-pill">SpringBoot</span>
-                    <span class="badge-pill">NodeJS</span><span class="badge-pill">Python</span>
-                    <span class="badge-pill">PHP</span><span class="badge-pill">ExpressJS</span>
-                </div>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="200">
-                <h3 class="text-blue-600 font-black uppercase tracking-widest text-xs mb-6">Bases de Datos</h3>
-                <div class="flex flex-wrap gap-2">
-                    <span class="badge-pill">MySQL</span><span class="badge-pill">PostgreSQL</span>
-                    <span class="badge-pill">MongoDB</span><span class="badge-pill">Hibernate</span>
-                </div>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="300">
-                <h3 class="text-blue-600 font-black uppercase tracking-widest text-xs mb-6">Otros</h3>
-                <div class="flex flex-wrap gap-2">
-                    <span class="badge-pill">Docker</span><span class="badge-pill">Git</span>
-                    <span class="badge-pill">Linux</span><span class="badge-pill">Jenkins</span>
-                    <span class="badge-pill">Bash</span>
-                </div>
-            </div>
+    <section id="proyectos" class="max-w-7xl mx-auto py-32 px-6">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8 reveal">
+        <div class="max-w-2xl">
+          <h2 class="text-7xl md:text-8xl font-black text-slate-900 tracking-tighter leading-none">
+            Proyectos <span class="text-blue-600">.</span>
+          </h2>
+          <p class="text-slate-500 font-medium text-lg mt-4">
+            Soluciones desplegadas para clientes reales y proyectos de ingeniería de software.
+          </p>
         </div>
+        <div class="flex gap-4 mb-4">
+          <div
+            class="flex items-center gap-2 px-4 py-2 bg-slate-100 rounded-full text-[10px] font-bold uppercase tracking-widest text-slate-500">
+            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span> Disponibilidad Inmediata
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-12 flex items-center gap-4 reveal">
+        <h3 class="text-xs font-black uppercase tracking-[0.3em] text-blue-600">Proyectos para Clientes</h3>
+        <div class="h-px flex-1 bg-gradient-to-r from-blue-100 to-transparent"></div>
+      </div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-24">
+  <a
+    href="https://ramisautoescola.com"
+    target="_blank"
+    class="group relative overflow-hidden rounded-[2.5rem] md:rounded-[3rem] bg-slate-900 min-h-[450px] md:h-[500px] flex flex-col justify-end p-6 md:p-10 transition-all duration-500 hover:-translate-y-2 shadow-2xl reveal">
+    
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1517524206127-48bbd362f39e?q=80&w=2000')] bg-cover bg-center opacity-40 group-hover:scale-110 transition-transform duration-700"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
+    
+    <div class="relative z-10">
+      <div class="flex flex-wrap items-center gap-2 mb-4">
+        <span class="px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[9px] md:text-[10px] font-bold text-white uppercase tracking-widest">Live Site</span>
+        <span class="px-3 py-1 rounded-full bg-blue-600 text-[9px] md:text-[10px] font-bold text-white uppercase tracking-widest">Real Client</span>
+      </div>
+      
+      <h4 class="text-3xl md:text-4xl font-black text-white mb-2 uppercase tracking-tighter leading-none">Autoescuela Ramis</h4>
+      <p class="text-slate-300 text-xs md:text-sm max-w-sm mb-6 leading-relaxed">
+        Plataforma corporativa optimizada para SEO local y conversión de nuevos alumnos.
+      </p>
+      
+      <div class="flex items-center justify-between border-t border-white/10 pt-4">
+        <div class="flex flex-wrap gap-x-3 gap-y-1 text-white font-bold text-[10px] md:text-xs opacity-80">
+          <span>UX/UI</span> <span>•</span> <span>HTML5</span> <span>•</span> <span>Tailwind</span>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+      </div>
+    </div>
+  </a>
+
+  <a
+    href="https://mariajoseciscar.com"
+    target="_blank"
+    class="group relative overflow-hidden rounded-[2.5rem] md:rounded-[3rem] bg-[#1a1a1a] min-h-[450px] md:h-[500px] flex flex-col justify-end p-6 md:p-10 transition-all duration-500 hover:-translate-y-2 shadow-2xl reveal">
+    
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=2000')] bg-cover bg-center opacity-30 group-hover:scale-110 transition-transform duration-700"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+    
+    <div class="relative z-10">
+      <div class="flex flex-wrap items-center gap-2 mb-4">
+        <span class="px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[9px] md:text-[10px] font-bold text-white uppercase tracking-widest">Live Site</span>
+        <span class="px-3 py-1 rounded-full bg-pink-600 text-[9px] md:text-[10px] font-bold text-white uppercase tracking-widest">Real Client</span>
+      </div>
+      
+      <h4 class="text-3xl md:text-4xl font-black text-white mb-2 uppercase tracking-tighter leading-none">Maria José Císcar</h4>
+      <p class="text-slate-300 text-xs md:text-sm max-w-sm mb-6 leading-relaxed">
+        Landing page de alta gama centrada en la elegancia visual y reserva de servicios de estética.
+      </p>
+      
+      <div class="flex items-center justify-between border-t border-white/10 pt-4">
+        <div class="flex flex-wrap gap-x-3 gap-y-1 text-white font-bold text-[10px] md:text-xs opacity-80">
+          <span>UX/UI</span> <span>•</span> <span>HTML5</span> <span>•</span> <span>Tailwind</span>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+      </div>
+    </div>
+  </a>
+</div>
+
+      <div class="mb-12 flex items-center gap-4 reveal">
+        <h3 class="text-xs font-black uppercase tracking-[0.3em] text-blue-600">Software & IA</h3>
+        <div class="h-px flex-1 bg-gradient-to-r from-blue-100 to-transparent"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-24">
+        <a
+          href="https://presuvoz.es"
+          target="_blank"
+          class="lg:col-span-2 group relative rounded-[3.5rem] bg-blue-600 overflow-hidden shadow-2xl transition-all duration-500 hover:-translate-y-2 reveal">
+          <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-blue-800 opacity-90"></div>
+          <div class="relative z-10 p-12 md:p-16 flex flex-col h-full min-h-[450px]">
+            <div class="flex justify-between items-start mb-auto">
+              <div
+                class="w-16 h-16 bg-white/20 backdrop-blur-xl rounded-2xl flex items-center justify-center">
+                <i data-lucide="mic" class="text-white w-8 h-8"></i>
+              </div>
+              <span
+                class="bg-black/20 text-white text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-widest"
+                >Product Launch</span
+              >
+            </div>
+            <h3 class="text-5xl md:text-6xl font-black text-white mb-4 tracking-tighter">PresuVoz</h3>
+            <p class="text-blue-50 text-xl max-w-xl leading-relaxed mb-8">
+              Revolucionando la gestión comercial: Generación automática de presupuestos mediante IA y
+              reconocimiento de voz.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="bg-white/10 px-4 py-2 rounded-xl text-xs font-bold text-white border border-white/20 uppercase tracking-tighter"
+                >#WhisperAI</span
+              >
+              <span
+                class="bg-white/10 px-4 py-2 rounded-xl text-xs font-bold text-white border border-white/20 uppercase tracking-tighter"
+                >#NextJS</span
+              >
+              <span
+                class="bg-white/10 px-4 py-2 rounded-xl text-xs font-bold text-white border border-white/20 uppercase tracking-tighter"
+                >#Stripe</span
+              >
+            </div>
+          </div>
+        </a>
+
+        <a
+          href="https://tfg-daw-rfrw.vercel.app/"
+          target="_blank"
+          class="group bg-white border border-slate-200 rounded-[3.5rem] p-10 flex flex-col transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl reveal">
+          <div
+            class="w-14 h-14 bg-slate-50 text-blue-600 rounded-2xl flex items-center justify-center mb-10 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-inner">
+            <i data-lucide="database" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-3xl font-black text-slate-900 mb-4 tracking-tighter">Web Ainhoa</h3>
+          <p class="text-slate-500 text-sm leading-relaxed mb-8">
+            Ecosistema MEVN completo con gestión de inventario, pasarela de pagos y panel de administración.
+          </p>
+          <div class="mt-auto pt-6 border-t border-slate-100 flex flex-wrap gap-2">
+            <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">MongoDB</span>
+            <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Express</span>
+            <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Vue</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+        <a
+          href="https://jordismt.github.io/GeneraBD_Jcasol/"
+          class="group p-8 rounded-[2.5rem] bg-emerald-50/50 border border-emerald-100 hover:bg-emerald-600 transition-all duration-500 hover:-translate-y-2">
+          <i
+            data-lucide="terminal"
+            class="text-emerald-600 mb-6 group-hover:text-white transition-colors"></i>
+          <h4 class="font-bold text-slate-900 group-hover:text-white mb-2">GeneraBD</h4>
+          <p class="text-xs text-slate-500 group-hover:text-emerald-50">
+            Generador de SQL y documentación automática.
+          </p>
+        </a>
+
+        <div class="p-8 rounded-[2.5rem] bg-blue-50 border border-blue-100 flex flex-col justify-between">
+          <div>
+            <i data-lucide="smartphone" class="text-blue-600 mb-6"></i>
+            <h4 class="font-bold text-slate-900 mb-2">FitTrack</h4>
+            <p class="text-xs text-slate-500">App multiplataforma en desarrollo con Flutter & Supabase.</p>
+          </div>
+          <span class="text-[8px] font-black uppercase tracking-[0.2em] text-blue-600 mt-4">Coming Soon</span>
+        </div>
+
+        <a
+          href="./projects/landingpages/techzone.html"
+          class="group p-8 rounded-[2.5rem] bg-slate-50 border border-slate-200 hover:bg-slate-900 transition-all duration-500">
+          <i
+            data-lucide="shopping-bag"
+            class="text-slate-400 mb-6 group-hover:text-white transition-colors"></i>
+          <h4 class="font-bold text-slate-900 group-hover:text-white mb-2">TechZone</h4>
+          <p class="text-xs text-slate-500 group-hover:text-slate-400">Template E-commerce Hardware.</p>
+        </a>
+
+        <a
+          href="https://look-luxe.vercel.app/"
+          class="group p-8 rounded-[2.5rem] bg-slate-50 border border-slate-200 hover:bg-blue-600 transition-all duration-500">
+          <i
+            data-lucide="external-link"
+            class="text-slate-400 mb-6 group-hover:text-white transition-colors"></i>
+          <h4 class="font-bold text-slate-900 group-hover:text-white mb-2">Look&Luxe UI</h4>
+          <p class="text-xs text-slate-500 group-hover:text-blue-50">
+            Concepto visual para centros de estética.
+          </p>
+        </a>
+      </div>
     </section>
 
-    <section id="servicios" class="py-32 bg-slate-50 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="mb-16">
-                <h2 class="text-5xl font-extrabold text-slate-900">Servicios</h2>
-                <p class="text-slate-400 font-medium mt-2">Soluciones Full Stack a medida.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="service-card" data-aos="fade-up">
-                    <i data-lucide="layout" class="text-blue-600 mb-6 w-10 h-10"></i>
-                    <h4 class="text-xl font-bold mb-3">Desarrollo Web</h4>
-                    <p class="text-slate-500 text-sm leading-relaxed">Sitios responsivos y dinámicos usando Vue.js, Tailwind o Bootstrap.</p>
-                </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <i data-lucide="smartphone" class="text-blue-600 mb-6 w-10 h-10"></i>
-                    <h4 class="text-xl font-bold mb-3">Desarrollo Móvil</h4>
-                    <p class="text-slate-500 text-sm leading-relaxed">Apps multiplataforma con Flutter para experiencias fluidas en iOS y Android.</p>
-                </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <i data-lucide="server" class="text-blue-600 mb-6 w-10 h-10"></i>
-                    <h4 class="text-xl font-bold mb-3">Backend & APIs</h4>
-                    <p class="text-slate-500 text-sm leading-relaxed">Servidores robustos con NodeJS o SpringBoot y gestión de bases de datos SQL/NoSQL.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<section id="proyectos" class="max-w-7xl mx-auto py-32 px-6">
-    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-        <div>
-            <h2 class="text-6xl font-extrabold text-slate-900 tracking-tighter">Proyectos</h2>
-            <p class="text-blue-600 font-bold uppercase tracking-widest text-xs mt-2 italic">Selección de trabajos destacados y software</p>
-        </div>
-        <div class="hidden md:block h-px flex-1 bg-slate-200 mx-10 mb-4"></div>
-        <p class="text-slate-400 text-sm font-medium">Click en las tarjetas para visitar</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
-        
-
-        <a href="https://presuvoz.es" target="_blank" class="lg:col-span-2 group relative block bg-slate-900 rounded-[3.5rem] overflow-hidden shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:shadow-blue-200/50" data-aos="fade-up">
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-transparent opacity-50 group-hover:scale-110 transition-transform duration-700"></div>
-            <div class="relative z-10 p-12 md:p-16 flex flex-col h-full min-h-[450px] justify-center">
-                <span class="bg-blue-600 text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-[0.2em] w-fit mb-6">Featured Project</span>
-                <h3 class="text-5xl md:text-6xl font-black text-white mb-6 tracking-tighter">PresuVoz</h3>
-                <p class="text-slate-300 text-lg md:text-xl max-w-xl leading-relaxed mb-10">Generacion de presupuestos en segundos con IA.</p>
-                <div class="flex flex-wrap gap-3">
-                    <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-xl text-xs font-bold text-white border border-white/10 italic">#IA</span>
-                    <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-xl text-xs font-bold text-white border border-white/10 italic">#TailwindCSS</span>
-                </div>
-            </div>
-        </a>
-
-        <a href="https://look-luxe.vercel.app/" target="_blank" class="lg:col-span-2 group relative block bg-slate-900 rounded-[3.5rem] overflow-hidden shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:shadow-blue-200/50" data-aos="fade-up">
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-transparent opacity-50 group-hover:scale-110 transition-transform duration-700"></div>
-            <div class="relative z-10 p-12 md:p-16 flex flex-col h-full min-h-[450px] justify-center">
-                <span class="bg-blue-600 text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-[0.2em] w-fit mb-6">Featured Project</span>
-                <h3 class="text-5xl md:text-6xl font-black text-white mb-6 tracking-tighter">Peluquería Look&Luxe</h3>
-                <p class="text-slate-300 text-lg md:text-xl max-w-xl leading-relaxed mb-10">Landing page premium con sistema de gestión de citas interactivo. Enfoque total en UX y elegancia visual.</p>
-                <div class="flex flex-wrap gap-3">
-                    <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-xl text-xs font-bold text-white border border-white/10 italic">#BookingSystem</span>
-                    <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-xl text-xs font-bold text-white border border-white/10 italic">#TailwindCSS</span>
-                </div>
-            </div>
-        </a>
-
-        <a href="https://tfg-daw-rfrw.vercel.app/" target="_blank" class="group relative block bg-white border border-slate-100 rounded-[3.5rem] overflow-hidden shadow-sm transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="100">
-            <div class="p-10 flex flex-col h-full min-h-[450px]">
-                <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-3xl flex items-center justify-center mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
-                    <i data-lucide="layout" class="w-8 h-8"></i>
-                </div>
-                <h3 class="text-3xl font-black text-slate-900 mb-4 tracking-tight">Web Ainhoa</h3>
-                <p class="text-slate-500 leading-relaxed mb-8 text-sm">Aplicación Full Stack (TFG) <b>MEVN</b>. Sistema de citas, <b>JWT</b> y carrito de compras.</p>
-                <div class="mt-auto flex flex-wrap gap-2">
-                    <span class="text-[9px] font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">VUE.JS</span>
-                    <span class="text-[9px] font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">NODE.JS</span>
-                    <span class="text-[9px] font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">MONGODB</span>
-                </div>
-            </div>
-        </a>
-    </div>
-
-    <div class="mb-12" data-aos="fade-up">
-        <h3 class="text-2xl font-black text-slate-800 tracking-tight flex items-center gap-3">
-            <i data-lucide="layers" class="text-blue-600"></i>
-            Landing Pages & Templates
-        </h3>
-        <p class="text-slate-500 text-sm mt-1">Plantillas rápidas y diseños temáticos profesionales.</p>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <a href="./projects/landingpages/techzone.html" class="group bg-slate-50 border border-slate-100 p-8 rounded-[2.5rem] transition-all hover:bg-blue-600 hover:-translate-y-2">
-            <i data-lucide="cpu" class="text-blue-600 mb-4 group-hover:text-white transition-colors"></i>
-            <h4 class="font-bold text-slate-900 group-hover:text-white">TechZone</h4>
-            <p class="text-xs text-slate-500 group-hover:text-blue-100 mt-2">Landing para ecommerce de hardware y periféricos gaming.</p>
-        </a>
-
-        <a href="./projects/landingpages/dentista.html" class="group bg-slate-50 border border-slate-100 p-8 rounded-[2.5rem] transition-all hover:bg-cyan-500 hover:-translate-y-2">
-            <i data-lucide="heart-pulse" class="text-cyan-500 mb-4 group-hover:text-white transition-colors"></i>
-            <h4 class="font-bold text-slate-900 group-hover:text-white">Dental Care</h4>
-            <p class="text-xs text-slate-500 group-hover:text-cyan-50 mt-2">Diseño limpio y sanitario para clínicas médicas o dentistas.</p>
-        </a>
-
-        <a href="./projects/landingpages/restaurante.html" class="group bg-slate-50 border border-slate-100 p-8 rounded-[2.5rem] transition-all hover:bg-orange-500 hover:-translate-y-2">
-            <i data-lucide="soup" class="text-orange-500 mb-4 group-hover:text-white transition-colors"></i>
-            <h4 class="font-bold text-slate-900 group-hover:text-white">Restaurante</h4>
-            <p class="text-xs text-slate-500 group-hover:text-orange-50 mt-2">Plantilla gastronómica con visualización de carta y reservas.</p>
-        </a>
-
-        <a href="https://jordismt.github.io/GeneraBD_Jcasol/" target="_blank" class="group bg-slate-50 border border-slate-100 p-8 rounded-[2.5rem] transition-all hover:bg-emerald-600 hover:-translate-y-2">
-            <div class="flex justify-between items-start">
-                <i data-lucide="database" class="text-emerald-600 mb-4 group-hover:text-white transition-colors"></i>
-                <i data-lucide="external-link" class="w-3 h-3 text-slate-300 group-hover:text-white"></i>
-            </div>
-            <h4 class="font-bold text-slate-900 group-hover:text-white">GeneraBD</h4>
-            <p class="text-xs text-slate-500 group-hover:text-emerald-50 mt-2">Utilidad JS para generar SQL y documentación Markdown.</p>
-        </a>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-
-
-        <div class="bg-blue-600 p-10 rounded-[3rem] flex items-center justify-between group text-white shadow-lg">
-            <div>
-                <span class="text-[9px] font-black uppercase tracking-widest opacity-60">En Desarrollo</span>
-                <h4 class="text-xl font-bold">FitTrack App (Flutter)</h4>
-                <p class="text-sm text-blue-100">Seguimiento deportivo multiplataforma.</p>
-            </div>
-            <i data-lucide="smartphone" class="w-10 h-10 opacity-30 group-hover:scale-110 transition-transform"></i>
-        </div>
-    </div>
-</section>
-
-<section id="formacion" class="bg-slate-900 py-32 text-white overflow-hidden">
-    <div class="max-w-4xl mx-auto px-6">
+    <section id="formacion" class="bg-slate-900 py-32 text-white overflow-hidden">
+      <div class="max-w-4xl mx-auto px-6">
         <div class="mb-20">
-            <h2 class="text-5xl font-black tracking-tighter">Trayectoria <span class="text-blue-500">Académica</span></h2>
-            <div class="h-1 w-20 bg-blue-600 mt-4 rounded-full"></div>
+          <h2 class="text-5xl font-black tracking-tighter">
+            Trayectoria <span class="text-blue-500">Académica</span>
+          </h2>
+          <div class="h-1 w-20 bg-blue-600 mt-4 rounded-full"></div>
         </div>
 
         <div class="relative border-l-2 border-slate-800 ml-4 md:ml-0">
-            
-            <div class="mb-16 pl-8 relative" data-aos="fade-up">
-                <div class="absolute w-5 h-5 bg-blue-600 rounded-full -left-[11px] top-1 shadow-[0_0_15px_rgba(37,99,235,0.5)] border-4 border-slate-900"></div>
-                
-                <span class="inline-block px-3 py-1 rounded-full bg-blue-600/10 text-blue-400 font-bold text-[10px] uppercase tracking-widest mb-3">
-                    2022 — 2025 (Finalizado)
-                </span>
-                <h3 class="text-3xl font-black text-white tracking-tight">Doble Grado Superior: DAM & DAW</h3>
-                <p class="text-blue-500 font-bold text-sm mb-2">Desarrollo de Aplicaciones Multiplataforma y Web</p>
-                <p class="text-slate-400 italic text-sm">IES Jaume II el Just, Tavernes de la Valldigna</p>
-            </div>
+          <div class="mb-16 pl-8 relative" data-aos="fade-up">
+            <div
+              class="absolute w-5 h-5 bg-blue-600 rounded-full -left-[11px] top-1 shadow-[0_0_15px_rgba(37,99,235,0.5)] border-4 border-slate-900"></div>
 
-            <div class="mb-16 pl-8 relative" data-aos="fade-up" data-aos-delay="100">
-                <div class="absolute w-5 h-5 bg-slate-700 rounded-full -left-[11px] top-1 border-4 border-slate-900"></div>
-                
-                <span class="text-slate-500 font-bold text-[10px] uppercase tracking-widest">2022</span>
-                <h3 class="text-2xl font-bold text-slate-200 mt-1">1er Año ASIR</h3>
-                <p class="text-slate-400 text-sm mb-1">Administración de Sistemas Informáticos en Red</p>
-                <p class="text-slate-500 italic text-xs">IES Jaume II el Just, Tavernes</p>
-            </div>
+            <span
+              class="inline-block px-3 py-1 rounded-full bg-blue-600/10 text-blue-400 font-bold text-[10px] uppercase tracking-widest mb-3">
+              2022 — 2025 (Finalizado)
+            </span>
+            <h3 class="text-3xl font-black text-white tracking-tight">Doble Grado Superior: DAM & DAW</h3>
+            <p class="text-blue-500 font-bold text-sm mb-2">
+              Desarrollo de Aplicaciones Multiplataforma y Web
+            </p>
+            <p class="text-slate-400 italic text-sm">IES Jaume II el Just, Tavernes de la Valldigna</p>
+          </div>
 
-            <div class="pl-8 relative" data-aos="fade-up" data-aos-delay="200">
-                <div class="absolute w-5 h-5 bg-slate-700 rounded-full -left-[11px] top-1 border-4 border-slate-900"></div>
-                
-                <span class="text-slate-500 font-bold text-[10px] uppercase tracking-widest">2020 — 2022</span>
-                <h3 class="text-2xl font-bold text-slate-200 mt-1">CFGM SMR</h3>
-                <p class="text-slate-400 text-sm mb-1">Sistemas Microinformáticos y Redes</p>
-                <p class="text-slate-500 italic text-xs">IES Jaume II el Just, Tavernes</p>
-            </div>
+          <div class="mb-16 pl-8 relative" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="absolute w-5 h-5 bg-slate-700 rounded-full -left-[11px] top-1 border-4 border-slate-900"></div>
 
+            <span class="text-slate-500 font-bold text-[10px] uppercase tracking-widest">2022</span>
+            <h3 class="text-2xl font-bold text-slate-200 mt-1">1er Año ASIR</h3>
+            <p class="text-slate-400 text-sm mb-1">Administración de Sistemas Informáticos en Red</p>
+            <p class="text-slate-500 italic text-xs">IES Jaume II el Just, Tavernes</p>
+          </div>
+
+          <div class="pl-8 relative" data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="absolute w-5 h-5 bg-slate-700 rounded-full -left-[11px] top-1 border-4 border-slate-900"></div>
+
+            <span class="text-slate-500 font-bold text-[10px] uppercase tracking-widest">2020 — 2022</span>
+            <h3 class="text-2xl font-bold text-slate-200 mt-1">CFGM SMR</h3>
+            <p class="text-slate-400 text-sm mb-1">Sistemas Microinformáticos y Redes</p>
+            <p class="text-slate-500 italic text-xs">IES Jaume II el Just, Tavernes</p>
+          </div>
         </div>
-    </div>
-</section>
-
-<section id="contacto" class="py-32 px-6 bg-white">
-        <div class="max-w-4xl mx-auto glass rounded-[3rem] p-12 shadow-2xl border-white" data-aos="zoom-in">
-            <div class="text-center mb-12">
-                <h2 class="text-5xl font-black tracking-tighter mb-4">¿Hablamos?</h2>
-                <div id="successMessage" class="hidden text-green-600 font-bold mb-4">¡Mensaje enviado con éxito! 🚀</div>
-            </div>
-            
-            <form id="contactForm" class="grid md:grid-cols-2 gap-6">
-                <div class="space-y-4">
-                    <label class="text-[10px] font-black uppercase text-gray-400 ml-2 tracking-widest">Nombre</label>
-                    <input type="text" name="user_name" placeholder="Tu Nombre" class="w-full p-5 rounded-2xl bg-gray-50 border-none outline-none focus:ring-2 focus:ring-blue-600 transition-all" required>
-                    <label class="text-[10px] font-black uppercase text-gray-400 ml-2 tracking-widest">Email</label>
-                    <input type="email" name="user_email" placeholder="email@ejemplo.com" class="w-full p-5 rounded-2xl bg-gray-50 border-none outline-none focus:ring-2 focus:ring-blue-600 transition-all" required>
-                </div>
-                <div class="flex flex-col">
-                    <label class="text-[10px] font-black uppercase text-gray-400 ml-2 tracking-widest mb-4">Mensaje</label>
-                    <textarea name="message" placeholder="¿En qué puedo ayudarte?" rows="6" class="w-full p-5 rounded-2xl bg-gray-50 border-none outline-none focus:ring-2 focus:ring-blue-600 transition-all" required></textarea>
-                </div>
-                <button type="submit" class="md:col-span-2 bg-blue-600 text-white py-5 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-blue-700 transition-all shadow-lg">
-                    Enviar Mensaje
-                </button>
-            </form>
-        </div>
+      </div>
     </section>
 
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <section id="contacto" class="py-32 px-6 bg-white">
+      <div class="max-w-4xl mx-auto glass rounded-[3rem] p-12 shadow-2xl border-white" data-aos="zoom-in">
+        <div class="text-center mb-12">
+          <h2 class="text-5xl font-black tracking-tighter mb-4">¿Hablamos?</h2>
+          <div id="successMessage" class="hidden text-green-600 font-bold mb-4">
+            ¡Mensaje enviado con éxito! 🚀
+          </div>
+        </div>
+
+        <form id="contactForm" class="grid md:grid-cols-2 gap-6">
+          <div class="space-y-4">
+            <label class="text-[10px] font-black uppercase text-gray-400 ml-2 tracking-widest">Nombre</label>
+            <input
+              type="text"
+              name="user_name"
+              placeholder="Tu Nombre"
+              class="w-full p-5 rounded-2xl bg-gray-50 border-none outline-none focus:ring-2 focus:ring-blue-600 transition-all"
+              required />
+            <label class="text-[10px] font-black uppercase text-gray-400 ml-2 tracking-widest">Email</label>
+            <input
+              type="email"
+              name="user_email"
+              placeholder="email@ejemplo.com"
+              class="w-full p-5 rounded-2xl bg-gray-50 border-none outline-none focus:ring-2 focus:ring-blue-600 transition-all"
+              required />
+          </div>
+          <div class="flex flex-col">
+            <label class="text-[10px] font-black uppercase text-gray-400 ml-2 tracking-widest mb-4"
+              >Mensaje</label
+            >
+            <textarea
+              name="message"
+              placeholder="¿En qué puedo ayudarte?"
+              rows="6"
+              class="w-full p-5 rounded-2xl bg-gray-50 border-none outline-none focus:ring-2 focus:ring-blue-600 transition-all"
+              required></textarea>
+          </div>
+          <button
+            type="submit"
+            class="md:col-span-2 bg-blue-600 text-white py-5 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-blue-700 transition-all shadow-lg">
+            Enviar Mensaje
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="bg-slate-900 text-white pt-24 pb-12 overflow-hidden relative">
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
+
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-16 mb-20">
+          <div class="md:col-span-5">
+            <a href="#" class="text-3xl font-black tracking-tighter mb-6 block">
+              JORDI <span class="text-blue-500">CASANOVA</span>
+            </a>
+            <p class="text-slate-400 max-w-sm leading-relaxed mb-8">
+              Desarrollador Full Stack especializado en crear experiencias digitales de alto impacto, desde
+              Simat al mundo.
+            </p>
+            <div class="flex gap-4">
+              <a
+                href="https://github.com/Jordismt"
+                target="_blank"
+                class="w-12 h-12 rounded-2xl bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:-translate-y-1 transition-all shadow-lg">
+                <img
+                  src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/github.svg"
+                  class="w-5 h-5 invert"
+                  alt="GitHub" />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/jcasoldev/"
+                target="_blank"
+                class="w-12 h-12 rounded-2xl bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:-translate-y-1 transition-all shadow-lg">
+                <img
+                  src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/linkedin.svg"
+                  class="w-5 h-5 invert"
+                  alt="LinkedIn" />
+              </a>
+
+              <a
+                href="https://twitter.com/JcasolDEV"
+                target="_blank"
+                class="w-12 h-12 rounded-2xl bg-slate-800 flex items-center justify-center hover:bg-blue-400 hover:-translate-y-1 transition-all shadow-lg">
+                <img
+                  src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/twitter.svg"
+                  class="w-5 h-5 invert"
+                  alt="Twitter" />
+              </a>
+
+              <a
+                href="https://www.youtube.com/@Jcasol_DEV"
+                target="_blank"
+                class="w-12 h-12 rounded-2xl bg-slate-800 flex items-center justify-center hover:bg-red-600 hover:-translate-y-1 transition-all shadow-lg">
+                <img
+                  src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/youtube.svg"
+                  class="w-5 h-5 invert"
+                  alt="YouTube" />
+              </a>
+            </div>
+          </div>
+
+          <div class="md:col-span-3">
+            <h5 class="text-xs font-black uppercase tracking-[0.2em] text-blue-500 mb-8">Navegación</h5>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  href="#sobre-mi"
+                  class="text-slate-400 hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2"
+                  ><span class="w-1 h-1 bg-blue-500 rounded-full"></span> Sobre Mí</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#proyectos"
+                  class="text-slate-400 hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2"
+                  ><span class="w-1 h-1 bg-blue-500 rounded-full"></span> Proyectos</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#servicios"
+                  class="text-slate-400 hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2"
+                  ><span class="w-1 h-1 bg-blue-500 rounded-full"></span> Servicios</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contacto"
+                  class="text-slate-400 hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2"
+                  ><span class="w-1 h-1 bg-blue-500 rounded-full"></span> Contacto</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="md:col-span-4">
+            <h5 class="text-xs font-black uppercase tracking-[0.2em] text-blue-500 mb-8">Recursos</h5>
+            <div class="bg-slate-800/50 p-6 rounded-[2rem] border border-white/5 backdrop-blur-sm">
+              <p class="text-sm text-slate-400 mb-4">¿Te interesa mi perfil para tu equipo?</p>
+              <a
+                href="./docs/JcasolCV.pdf"
+                download="Jordi_Casanova_CV.pdf"
+                class="flex items-center justify-between bg-white text-slate-900 px-6 py-4 rounded-2xl font-bold hover:bg-blue-500 hover:text-white transition-all group shadow-md">
+                Descargar CV
+                <i data-lucide="download-cloud" class="w-5 h-5 group-hover:animate-bounce"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest text-center md:text-left">
+            © <span id="current-year"></span> Jordi Casanova Solanes.
+          </p>
+          <div class="flex gap-8 text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+            <span class="cursor-default">Full Stack Developer</span>
+            <span class="cursor-default">DAM & DAW</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
     <script>
-        // Inicialización EmailJS con tu llave pública
-        (function() { emailjs.init({ publicKey: "IaLhzw35oAG114oNL" }); })();
-        
-        AOS.init({ duration: 800, once: true });
-        lucide.createIcons();
+      function initIcons() {
+        if (window.lucide) {
+          window.lucide.createIcons();
+        }
+      }
+      // Todo lo que dependa de librerías externas debe ir dentro de este evento
+      window.addEventListener("DOMContentLoaded", () => {
+        // 1. Inicializar Iconos (Con un pequeño retraso de seguridad si fallara)
+        initIcons();
 
-        // Lógica de Envío de Formulario con TUS IDS REALES
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            // Usando tus IDs: service_l69lpba y template_6kzyzx2
-            emailjs.sendForm('service_l69lpba', 'template_6kzyzx2', this)
-                .then(() => {
-                    const msg = document.getElementById('successMessage');
-                    msg.classList.remove('hidden');
-                    msg.classList.add('animate__animated', 'animate__bounceIn');
-                    this.reset();
-                    
-                    setTimeout(() => {
-                        msg.classList.add('hidden');
-                        msg.classList.remove('animate__animated', 'animate__bounceIn');
-                    }, 4000);
-                })
-                .catch(err => {
-                    alert('Error al enviar: ' + JSON.stringify(err));
-                    console.log('Error:', err);
-                });
+        // 2. Inicializar Animaciones AOS
+        AOS.init({
+          duration: 800,
+          once: true,
         });
 
-        // Efecto 3D Avatar
-        const avatar = document.querySelector('.brand-avatar');
-        avatar.addEventListener('mousemove', (e) => {
+        // 3. Actualizar el año automáticamente
+        const yearEl = document.getElementById("current-year");
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+        // 4. Inicialización EmailJS
+        emailjs.init({ publicKey: "IaLhzw35oAG114oNL" });
+
+        // 5. Lógica de Envío de Formulario
+        const contactForm = document.getElementById("contactForm");
+        if (contactForm) {
+          contactForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            emailjs
+              .sendForm("service_l69lpba", "template_6kzyzx2", this)
+              .then(() => {
+                const msg = document.getElementById("successMessage");
+                msg.classList.remove("hidden");
+                msg.classList.add("animate__animated", "animate__bounceIn");
+                this.reset();
+                setTimeout(() => {
+                  msg.classList.add("hidden");
+                  msg.classList.remove("animate__animated", "animate__bounceIn");
+                }, 4000);
+              })
+              .catch((err) => {
+                alert("Error al enviar: " + JSON.stringify(err));
+              });
+          });
+        }
+
+        // 6. Efecto 3D Avatar
+        const avatar = document.querySelector(".brand-avatar");
+        if (avatar) {
+          avatar.addEventListener("mousemove", (e) => {
             const rect = avatar.getBoundingClientRect();
             const x = (e.clientX - rect.left - rect.width / 2) / 8;
             const y = (e.clientY - rect.top - rect.height / 2) / 8;
             avatar.style.transform = `rotateX(${-y}deg) rotateY(${x}deg)`;
-        });
-        avatar.addEventListener('mouseleave', () => avatar.style.transform = `rotateX(0deg) rotateY(0deg)`);
+          });
+          avatar.addEventListener("mouseleave", () => {
+            avatar.style.transform = `rotateX(0deg) rotateY(0deg)`;
+          });
+        }
+      });
     </script>
-
-<footer class="bg-slate-900 text-white pt-24 pb-12 overflow-hidden relative">
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
-
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-16 mb-20">
-            
-            <div class="md:col-span-5">
-                <a href="#" class="text-3xl font-black tracking-tighter mb-6 block">
-                    JORDI <span class="text-blue-500">CASANOVA</span>
-                </a>
-                <p class="text-slate-400 max-w-sm leading-relaxed mb-8">
-                    Desarrollador Full Stack especializado en crear experiencias digitales de alto impacto, desde Simat al mundo.
-                </p>
-                <div class="flex gap-4">
-                    <a href="https://github.com/Jordismt" target="_blank" class="w-12 h-12 rounded-2xl bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300 shadow-lg">
-                        <i data-lucide="github" class="w-5 h-5 text-white"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/jcasoldev/" target="_blank" class="w-12 h-12 rounded-2xl bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300 shadow-lg">
-                        <i data-lucide="linkedin" class="w-5 h-5 text-white"></i>
-                    </a>
-                    <a href="https://twitter.com/JcasolDEV" target="_blank" class="w-12 h-12 rounded-2xl bg-slate-800 flex items-center justify-center hover:bg-blue-400 hover:-translate-y-1 transition-all duration-300 shadow-lg">
-                        <i data-lucide="twitter" class="w-5 h-5 text-white"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@Jcasol_DEV" target="_blank" class="w-12 h-12 rounded-2xl bg-slate-800 flex items-center justify-center hover:bg-red-600 hover:-translate-y-1 transition-all duration-300 shadow-lg">
-                        <i data-lucide="youtube" class="w-5 h-5 text-white"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="md:col-span-3">
-                <h5 class="text-xs font-black uppercase tracking-[0.2em] text-blue-500 mb-8">Navegación</h5>
-                <ul class="space-y-4">
-                    <li><a href="#sobre-mi" class="text-slate-400 hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2"><span class="w-1 h-1 bg-blue-500 rounded-full"></span> Sobre Mí</a></li>
-                    <li><a href="#proyectos" class="text-slate-400 hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2"><span class="w-1 h-1 bg-blue-500 rounded-full"></span> Proyectos</a></li>
-                    <li><a href="#servicios" class="text-slate-400 hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2"><span class="w-1 h-1 bg-blue-500 rounded-full"></span> Servicios</a></li>
-                    <li><a href="#contacto" class="text-slate-400 hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2"><span class="w-1 h-1 bg-blue-500 rounded-full"></span> Contacto</a></li>
-                </ul>
-            </div>
-
-            <div class="md:col-span-4">
-                <h5 class="text-xs font-black uppercase tracking-[0.2em] text-blue-500 mb-8">Recursos</h5>
-                <div class="bg-slate-800/50 p-6 rounded-[2rem] border border-white/5 backdrop-blur-sm">
-                    <p class="text-sm text-slate-400 mb-4">¿Te interesa mi perfil para tu equipo?</p>
-                    <a href="./docs/JcasolCV.pdf" download="Jordi_Casanova_CV.pdf" class="flex items-center justify-between bg-white text-slate-900 px-6 py-4 rounded-2xl font-bold hover:bg-blue-500 hover:text-white transition-all group shadow-md">
-                        Descargar CV 
-                        <i data-lucide="download-cloud" class="w-5 h-5 group-hover:animate-bounce"></i>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-<p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest text-center md:text-left">
-    © <span id="current-year"></span> Jordi Casanova Solanes.
-</p>
-            <div class="flex gap-8 text-[10px] font-bold text-slate-500 uppercase tracking-widest">
-                <span class="cursor-default">Full Stack Developer</span>
-                <span class="cursor-default">DAM & DAW</span>
-            </div>
-        </div>
-    </div>
-</footer>
-<script src="https://unpkg.com/lucide@latest"></script>
-<script>
-    // Actualizar el año automáticamente
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-
-    // Tus otros scripts...
-    lucide.createIcons();
-    AOS.init({ duration: 800, once: true });
-</script>
-<script>
-    // ESTO ES LO QUE "DIBUJA" LOS ICONOS EN PANTALLA
-    lucide.createIcons();
-    
-    // Si usas AOS para animaciones
-    AOS.init({
-        duration: 800,
-        once: true
-    });
-</script>
-
-</body>
+  </body>
 </html>
