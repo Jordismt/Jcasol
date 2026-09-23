@@ -1,16 +1,268 @@
-<!doctype html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Portfolio de Jordi Casanova, Full Stack Developer en Valencia."><title>Jordi Casanova — Full Stack Developer</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"><script src="https://unpkg.com/lucide@latest"></script><script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script><link rel="stylesheet" href="./style.css"></head><body>
-<div id="boot"><div class="bootbox"><div class="bootlogo">JC<span>_</span></div><div id="bootlines"></div><div class="bootbar"><i></i></div></div></div><div id="cursor"></div><div class="progress" id="progress"></div>
-<nav><a class="brand" href="#top">JC<span>.</span></a><div class="navlinks"><a href="#stack">01 Stack</a><a href="#projects">02 Work</a><a href="#journey">03 Journey</a><a href="#contact">04 Contact</a></div><button class="cmd" id="cmdBtn"><span>Navigate</span><kbd>Ctrl K</kbd></button></nav>
-<main id="top"><section class="hero"><div class="grid"></div><div class="heroCopy reveal"><div class="path">~/portfolio <b>•</b> available_for_work</div><p class="overline">FULL STACK DEVELOPER · VALENCIA / REMOTE</p><h1>Jordi<br><em>Casanova</em><span>_</span></h1><p class="lead">Construyo productos web completos: interfaces, APIs, bases de datos, autenticación, pagos e integraciones con IA.</p><div class="actions"><a class="primary" href="#projects">Ver proyectos <i data-lucide="arrow-down-right"></i></a><a class="secondary" href="./docs/Jcasol_CV.pdf" target="_blank">CV <i data-lucide="file-text"></i></a></div><div class="facts"><span><b>STACK</b> Next · Vue · Node · Spring</span><span><b>FOCUS</b> Full Stack · SaaS · AI</span></div></div>
-<div class="terminalWrap reveal"><div class="terminal"><div class="termbar"><div><i></i><i></i><i></i></div><span>jordi@portfolio:~</span><small>bash</small></div><div class="termbody" id="heroTerm"></div></div><p class="termcaption"><span></span>LIVE DEVELOPER PROFILE</p></div><div class="scroll">SCROLL <i data-lucide="arrow-down"></i></div></section>
-<section id="stack" class="section"><header class="sectionHead reveal"><div><span>01 / STACK</span><code>~/skills</code></div><h2>Herramientas que uso<br>para <em>construir.</em></h2></header><div class="ide reveal"><div class="ideSide"><div class="ideTitle">EXPLORER</div><button class="tab active" data-tab="front">▾ frontend</button><button class="tab" data-tab="back">▾ backend</button><button class="tab" data-tab="data">▾ database</button><button class="tab" data-tab="infra">▾ infrastructure</button></div><div class="editor"><div class="tabs"><span id="fileName">frontend.tsx ×</span></div><pre id="codePanel"></pre><div class="statusbar"><span>main*</span><span>UTF-8 &nbsp; TypeScript React</span></div></div></div><div class="ticker"><div>NEXT.JS ✦ VUE 3 ✦ NUXT ✦ TYPESCRIPT ✦ NODE.JS ✦ EXPRESS ✦ SPRING BOOT ✦ SUPABASE ✦ POSTGRESQL ✦ DOCKER ✦ GROQ ✦ STRIPE ✦&nbsp;</div></div></section>
-<section id="projects" class="section work"><header class="sectionHead reveal"><div><span>02 / SELECTED WORK</span><code>~/projects</code></div><h2>De la idea<br>a <em>producción.</em></h2></header>
-<a class="project heroProject reveal" href="https://presuvoz.es" target="_blank"><div class="projectText"><span class="badge live">● LIVE PRODUCT</span><div class="meta">SAAS / AI · 2026</div><h3>Presu<span>Voz</span></h3><p>Generación de presupuestos mediante texto o voz con IA, historial, autenticación y pagos.</p><div class="tags"><b>Nuxt / Vue</b><b>Supabase</b><b>Groq</b><b>Whisper</b><b>Stripe</b></div></div><div class="productUI"><div class="uiTop"><i></i><i></i><i></i><span>presupuesto_nuevo</span></div><div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p>“Instalación de 4 enchufes y revisión...”</p><div class="budget"><span>Concepto</span><b>Importe</b><span>Material + instalación</span><b>286,00 €</b><strong>TOTAL</strong><strong>346,06 €</strong></div><button>Generar presupuesto →</button></div></a>
-<div class="clientGrid"><a class="project client reveal" href="https://ramisautoescola.com" target="_blank"><div class="num">01</div><span class="badge">CLIENT PROJECT</span><div class="browser"><div></div><strong>AUTOESCOLA<br>RAMIS</strong><small>Web corporativa · SEO local · 3 idiomas</small></div><div class="clientFoot"><h3>Autoescuela Ramis</h3><p>HTML · Tailwind · JavaScript · SEO</p></div></a><a class="project client reveal" href="https://mariajoseciscar.com" target="_blank"><div class="num">02</div><span class="badge pink">CLIENT PROJECT</span><div class="browser beauty"><div></div><strong>MARÍA JOSÉ<br>CÍSCAR</strong><small>Centro de estética · Reserva directa</small></div><div class="clientFoot"><h3>María José Císcar</h3><p>HTML · Tailwind · JavaScript</p></div></a></div>
-<div class="projectGrid"><a class="smallProject reveal" href="https://tfg-daw-rfrw.vercel.app/" target="_blank"><span>03 · FULL STACK / MEVN</span><h3>Web Ainhoa</h3><p>Gestión de productos, inventario, usuarios y funcionalidades de negocio.</p><b>MongoDB · Express · Vue · Node ↗</b></a><a class="smallProject reveal" href="https://jordismt.github.io/GeneraBD_Jcasol/" target="_blank"><span>04 · DEVELOPER TOOL</span><h3>GeneraBD</h3><p>Generador de SQL y documentación automática para bases de datos.</p><b>JavaScript · SQL ↗</b></a><a class="smallProject reveal" href="https://look-luxe.vercel.app/" target="_blank"><span>05 · UI / WEB</span><h3>Look&Luxe</h3><p>Concepto visual premium para un centro de estética.</p><b>Frontend · UI/UX ↗</b></a><a class="smallProject reveal" href="./projects/landingpages/techzone.html"><span>06 · E-COMMERCE</span><h3>TechZone</h3><p>Concepto de e-commerce para hardware y productos tecnológicos.</p><b>Frontend · Responsive ↗</b></a><article class="smallProject reveal"><span>07 · MOBILE / SOFTWARE</span><h3>FitTrack</h3><p>Aplicación multiplataforma para seguimiento de entrenamiento y progreso.</p><b>Flutter · App development</b></article></div></section>
-<section id="journey" class="journey"><div class="journeyIntro reveal"><span>03 / JOURNEY</span><code>git log --education</code><h2>Aprender.<br>Construir.<br><em>Repetir.</em></h2><p>Formación técnica enfocada en desarrollo de software y sistemas.</p></div><div class="gitlog reveal"><div class="commit"><i></i><code>a91f2c</code><time>2022—2025</time><h3>DAM + DAW</h3><p>IES Jaume II el Just · Tavernes de la Valldigna</p><span>COMPLETADO</span></div><div class="commit"><i></i><code>7bd031</code><time>2022</time><h3>1º ASIR</h3><p>Administración de Sistemas Informáticos en Red</p></div><div class="commit"><i></i><code>c403ef</code><time>2020—2022</time><h3>CFGM SMR</h3><p>Sistemas Microinformáticos y Redes</p></div></div></section>
-<section class="playground section"><header class="sectionHead light reveal"><div><span>TERMINAL / PLAYGROUND</span><code>~/terminal</code></div><h2>Prueba algunos<br><em>comandos.</em></h2></header><div class="interactiveTerm reveal"><div class="termbar"><div><i></i><i></i><i></i></div><span>portfolio-terminal</span><small>interactive</small></div><div id="termHistory" class="history"><p class="muted">Escribe <b>help</b> para ver los comandos disponibles.</p></div><form id="termForm"><label>jordi@portfolio:~$</label><input id="termInput" autocomplete="off" spellcheck="false" autofocus></form></div></section>
-<section id="contact" class="contact"><div class="contactCopy reveal"><span>04 / CONTACT</span><div class="available">● DISPONIBLE PARA OPORTUNIDADES</div><h2>¿Construimos<br>algo <em>juntos?</em></h2><p>Si tienes un proyecto, una oportunidad o simplemente quieres hablar de desarrollo, escríbeme.</p><a class="mail" href="mailto:jcasoldev@gmail.com">jcasoldev@gmail.com ↗</a><div class="social"><a href="https://github.com/jordismt" target="_blank">GitHub ↗</a><a href="https://www.linkedin.com/in/jcasoldev/" target="_blank">LinkedIn ↗</a><a href="./docs/Jcasol_CV.pdf" target="_blank">CV ↗</a></div></div><form id="contactForm" class="contactForm reveal"><div class="formbar">new-message.sh <span>● ready</span></div><label>NAME<input name="user_name" required placeholder="Tu nombre"></label><label>EMAIL<input name="user_email" type="email" required placeholder="tu@email.com"></label><label>MESSAGE<textarea name="message" required placeholder="Cuéntame qué tienes en mente..."></textarea></label><button type="submit">$ send_message <i data-lucide="arrow-up-right"></i></button><p id="successMessage"></p></form></section></main>
-<footer><b>JC.</b><span>Full Stack Developer · Valencia / Remote</span><span>© <i id="year"></i> Jordi Casanova</span></footer>
-<div class="palette" id="palette"><div class="paletteBox"><div class="search"><i data-lucide="search"></i><input id="paletteInput" placeholder="Ir a una sección..."><kbd>ESC</kbd></div><a href="#stack">01 <b>Stack</b><span>Herramientas y tecnologías</span></a><a href="#projects">02 <b>Selected Work</b><span>Proyectos</span></a><a href="#journey">03 <b>Journey</b><span>Formación</span></a><a href="#contact">04 <b>Contact</b><span>Hablemos</span></a></div></div>
-<script src="./script.js"></script></body></html>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Portfolio de Jordi Casanova, Full Stack Developer en Valencia." />
+    <title>Jordi Casanova — Full Stack Developer</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./logo_jcasol.png" />
+    <link rel="shortcut icon" href="./logo_jcasol.png" />
+    <link rel="apple-touch-icon" href="./logo_jcasol.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="boot">
+      <div class="bootbox">
+        <div class="bootlogo">JC<span>_</span></div>
+        <div id="bootlines"></div>
+        <div class="bootbar"><i></i></div>
+      </div>
+    </div>
+    <div id="cursor"></div>
+    <div class="progress" id="progress"></div>
+    <nav>
+      <a class="brand" href="#top">JC<span>.</span></a>
+      <div class="navlinks">
+        <a href="#stack">01 Stack</a><a href="#projects">02 Work</a><a href="#journey">03 Journey</a
+        ><a href="#contact">04 Contact</a>
+      </div>
+      <button class="cmd" id="cmdBtn"><span>Navigate</span><kbd>Ctrl K</kbd></button>
+    </nav>
+    <main id="top">
+      <section class="hero">
+        <div class="grid"></div>
+        <div class="heroCopy reveal">
+          <div class="path">~/portfolio <b>•</b> available_for_work</div>
+          <p class="overline">FULL STACK DEVELOPER · VALENCIA / REMOTE</p>
+          <h1>Jordi<br /><em>Casanova</em><span>_</span></h1>
+          <p class="lead">
+            Construyo productos web completos: interfaces, APIs, bases de datos, autenticación, pagos e
+            integraciones con IA.
+          </p>
+          <div class="actions">
+            <a class="primary" href="#projects">Ver proyectos <i data-lucide="arrow-down-right"></i></a
+            ><a class="secondary" href="./docs/Jcasol_CV.pdf" target="_blank"
+              >CV <i data-lucide="file-text"></i
+            ></a>
+          </div>
+          <div class="facts">
+            <span><b>STACK</b> Next · Vue · Node · Spring</span
+            ><span><b>FOCUS</b> Full Stack · SaaS · AI</span>
+          </div>
+        </div>
+        <div class="terminalWrap reveal">
+          <div class="terminal">
+            <div class="termbar">
+              <div><i></i><i></i><i></i></div>
+              <span>jordi@portfolio:~</span><small>bash</small>
+            </div>
+            <div class="termbody" id="heroTerm"></div>
+          </div>
+          <p class="termcaption"><span></span>LIVE DEVELOPER PROFILE</p>
+        </div>
+        <div class="scroll">SCROLL <i data-lucide="arrow-down"></i></div>
+      </section>
+      <section id="stack" class="section">
+        <header class="sectionHead reveal">
+          <div><span>01 / STACK</span><code>~/skills</code></div>
+          <h2>Herramientas que uso<br />para <em>construir.</em></h2>
+        </header>
+        <div class="ide reveal">
+          <div class="ideSide">
+            <div class="ideTitle">EXPLORER</div>
+            <button class="tab active" data-tab="front">▾ frontend</button
+            ><button class="tab" data-tab="back">▾ backend</button
+            ><button class="tab" data-tab="data">▾ database</button
+            ><button class="tab" data-tab="infra">▾ infrastructure</button>
+          </div>
+          <div class="editor">
+            <div class="tabs"><span id="fileName">frontend.tsx ×</span></div>
+            <pre id="codePanel"></pre>
+            <div class="statusbar"><span>main*</span><span>UTF-8 &nbsp; TypeScript React</span></div>
+          </div>
+        </div>
+        <div class="ticker">
+          <div>
+            NEXT.JS ✦ VUE 3 ✦ NUXT ✦ TYPESCRIPT ✦ NODE.JS ✦ EXPRESS ✦ SPRING BOOT ✦ SUPABASE ✦ POSTGRESQL ✦
+            DOCKER ✦ GROQ ✦ STRIPE ✦&nbsp;
+          </div>
+        </div>
+      </section>
+      <section id="projects" class="section work">
+        <header class="sectionHead reveal">
+          <div><span>02 / SELECTED WORK</span><code>~/projects</code></div>
+          <h2>De la idea<br />a <em>producción.</em></h2>
+        </header>
+        <a class="project heroProject reveal" href="https://presuvoz.es" target="_blank"
+          ><div class="projectText">
+            <span class="badge live">● LIVE PRODUCT</span>
+            <div class="meta">SAAS / AI · 2026</div>
+            <h3>Presu<span>Voz</span></h3>
+            <p>Generación de presupuestos mediante texto o voz con IA, historial, autenticación y pagos.</p>
+            <div class="tags"><b>Nuxt / Vue</b><b>Supabase</b><b>Groq</b><b>Whisper</b><b>Stripe</b></div>
+          </div>
+          <div class="productUI">
+            <div class="uiTop"><i></i><i></i><i></i><span>presupuesto_nuevo</span></div>
+            <div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <p>“Instalación de 4 enchufes y revisión...”</p>
+            <div class="budget">
+              <span>Concepto</span><b>Importe</b><span>Material + instalación</span><b>286,00 €</b
+              ><strong>TOTAL</strong><strong>346,06 €</strong>
+            </div>
+            <button>Generar presupuesto →</button>
+          </div></a
+        >
+        <div class="clientGrid">
+          <a class="project client reveal" href="https://ramisautoescola.com" target="_blank"
+            ><div class="num">01</div>
+            <span class="badge">CLIENT PROJECT</span>
+            <div class="browser">
+              <div></div>
+              <strong>AUTOESCOLA<br />RAMIS</strong><small>Web corporativa · SEO local · 3 idiomas</small>
+            </div>
+            <div class="clientFoot">
+              <h3>Autoescuela Ramis</h3>
+              <p>HTML · Tailwind · JavaScript · SEO</p>
+            </div></a
+          ><a class="project client reveal" href="https://mariajoseciscar.com" target="_blank"
+            ><div class="num">02</div>
+            <span class="badge pink">CLIENT PROJECT</span>
+            <div class="browser beauty">
+              <div></div>
+              <strong>MARÍA JOSÉ<br />CÍSCAR</strong><small>Centro de estética · Reserva directa</small>
+            </div>
+            <div class="clientFoot">
+              <h3>María José Císcar</h3>
+              <p>HTML · Tailwind · JavaScript</p>
+            </div></a
+          >
+        </div>
+        <div class="projectGrid">
+          <a class="smallProject reveal" href="https://tfg-daw-rfrw.vercel.app/" target="_blank"
+            ><span>03 · FULL STACK / MEVN</span>
+            <h3>Web Ainhoa</h3>
+            <p>Gestión de productos, inventario, usuarios y funcionalidades de negocio.</p>
+            <b>MongoDB · Express · Vue · Node ↗</b></a
+          ><a class="smallProject reveal" href="https://jordismt.github.io/GeneraBD_Jcasol/" target="_blank"
+            ><span>04 · DEVELOPER TOOL</span>
+            <h3>GeneraBD</h3>
+            <p>Generador de SQL y documentación automática para bases de datos.</p>
+            <b>JavaScript · SQL ↗</b></a
+          ><a class="smallProject reveal" href="https://look-luxe.vercel.app/" target="_blank"
+            ><span>05 · UI / WEB</span>
+            <h3>Look&Luxe</h3>
+            <p>Concepto visual premium para un centro de estética.</p>
+            <b>Frontend · UI/UX ↗</b></a
+          ><a class="smallProject reveal" href="./projects/landingpages/techzone.html"
+            ><span>06 · E-COMMERCE</span>
+            <h3>TechZone</h3>
+            <p>Concepto de e-commerce para hardware y productos tecnológicos.</p>
+            <b>Frontend · Responsive ↗</b></a
+          >
+          <article class="smallProject reveal">
+            <span>07 · MOBILE / SOFTWARE</span>
+            <h3>FitTrack</h3>
+            <p>Aplicación multiplataforma para seguimiento de entrenamiento y progreso.</p>
+            <b>Flutter · App development</b>
+          </article>
+        </div>
+      </section>
+      <section id="journey" class="journey">
+        <div class="journeyIntro reveal">
+          <span>03 / JOURNEY</span><code>git log --education</code>
+          <h2>Aprender.<br />Construir.<br /><em>Repetir.</em></h2>
+          <p>Formación técnica enfocada en desarrollo de software y sistemas.</p>
+        </div>
+        <div class="gitlog reveal">
+          <div class="commit">
+            <i></i><code>a91f2c</code><time>2022—2025</time>
+            <h3>DAM + DAW</h3>
+            <p>IES Jaume II el Just · Tavernes de la Valldigna</p>
+            <span>COMPLETADO</span>
+          </div>
+          <div class="commit">
+            <i></i><code>7bd031</code><time>2022</time>
+            <h3>1º ASIR</h3>
+            <p>Administración de Sistemas Informáticos en Red</p>
+          </div>
+          <div class="commit">
+            <i></i><code>c403ef</code><time>2020—2022</time>
+            <h3>CFGM SMR</h3>
+            <p>Sistemas Microinformáticos y Redes</p>
+          </div>
+        </div>
+      </section>
+      <section class="playground section">
+        <header class="sectionHead light reveal">
+          <div><span>TERMINAL / PLAYGROUND</span><code>~/terminal</code></div>
+          <h2>Prueba algunos<br /><em>comandos.</em></h2>
+        </header>
+        <div class="interactiveTerm reveal">
+          <div class="termbar">
+            <div><i></i><i></i><i></i></div>
+            <span>portfolio-terminal</span><small>interactive</small>
+          </div>
+          <div id="termHistory" class="history">
+            <p class="muted">Escribe <b>help</b> para ver los comandos disponibles.</p>
+          </div>
+          <form id="termForm">
+            <label>jordi@portfolio:~$</label
+            ><input id="termInput" autocomplete="off" spellcheck="false" autofocus />
+          </form>
+        </div>
+      </section>
+      <section id="contact" class="contact">
+        <div class="contactCopy reveal">
+          <span>04 / CONTACT</span>
+          <div class="available">● DISPONIBLE PARA OPORTUNIDADES</div>
+          <h2>¿Construimos<br />algo <em>juntos?</em></h2>
+          <p>Si tienes un proyecto, una oportunidad o simplemente quieres hablar de desarrollo, escríbeme.</p>
+          <a class="mail" href="mailto:jcasoldev@gmail.com">jcasoldev@gmail.com ↗</a>
+          <div class="social">
+            <a href="https://github.com/jordismt" target="_blank">GitHub ↗</a
+            ><a href="https://www.linkedin.com/in/jcasoldev/" target="_blank">LinkedIn ↗</a
+            ><a href="./docs/Jcasol_CV.pdf" target="_blank">CV ↗</a>
+          </div>
+        </div>
+        <form id="contactForm" class="contactForm reveal">
+          <div class="formbar">new-message.sh <span>● ready</span></div>
+          <label>NAME<input name="user_name" required placeholder="Tu nombre" /></label
+          ><label>EMAIL<input name="user_email" type="email" required placeholder="tu@email.com" /></label
+          ><label
+            >MESSAGE<textarea
+              name="message"
+              required
+              placeholder="Cuéntame qué tienes en mente..."></textarea></label
+          ><button type="submit">$ send_message <i data-lucide="arrow-up-right"></i></button>
+          <p id="successMessage"></p>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <b>JC.</b><span>Full Stack Developer · Valencia / Remote</span
+      ><span>© <i id="year"></i> Jordi Casanova</span>
+    </footer>
+    <div class="palette" id="palette">
+      <div class="paletteBox">
+        <div class="search">
+          <i data-lucide="search"></i><input id="paletteInput" placeholder="Ir a una sección..." /><kbd
+            >ESC</kbd
+          >
+        </div>
+        <a href="#stack">01 <b>Stack</b><span>Herramientas y tecnologías</span></a
+        ><a href="#projects">02 <b>Selected Work</b><span>Proyectos</span></a
+        ><a href="#journey">03 <b>Journey</b><span>Formación</span></a
+        ><a href="#contact">04 <b>Contact</b><span>Hablemos</span></a>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
