@@ -1464,3 +1464,514 @@ footer b {
     animation: none;
   }
 }
+
+/* ======================================
+   RESBIX FEATURED PROJECT
+====================================== */
+
+.rbx-card {
+  --rbx-purple: #a99aff;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 550px;
+  overflow: hidden;
+  border: 1px solid #303550;
+  border-radius: 24px;
+  background: #0b1020;
+  color: #fff;
+  margin-bottom: 32px;
+  isolation: isolate;
+}
+
+/* LEFT COLUMN */
+
+.rbx-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(28px, 4vw, 58px);
+  position: relative;
+  z-index: 2;
+}
+
+.rbx-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  font:
+    700 10px "JetBrains Mono",
+    monospace;
+  letter-spacing: 0.06em;
+}
+
+.rbx-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #70e9b3;
+  padding: 8px 12px;
+  border: 1px solid #285747;
+  border-radius: 100px;
+  background: #12352955;
+}
+
+.rbx-live-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #63e8ac;
+  box-shadow: 0 0 12px #63e8ac;
+  flex-shrink: 0;
+}
+
+.rbx-year {
+  color: #8b96b5;
+}
+
+.rbx-intro {
+  margin: 45px 0;
+}
+
+.rbx-brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 25px;
+}
+
+.rbx-brand-icon {
+  display: grid;
+  place-items: center;
+  width: 49px;
+  height: 49px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #7868ee, #45369e);
+  font:
+    900 25px Inter,
+    sans-serif;
+  letter-spacing: -4px;
+  padding-right: 4px;
+  box-shadow: 0 8px 30px #6855e544;
+}
+
+.rbx-brand-icon span {
+  color: #d3caff;
+}
+
+.rbx-brand-name {
+  font:
+    800 29px Inter,
+    sans-serif;
+  letter-spacing: -1.5px;
+}
+
+.rbx-brand-name span {
+  color: var(--rbx-purple);
+}
+
+.rbx-intro h3 {
+  font:
+    800 clamp(32px, 3.2vw, 51px)/1.1 Inter,
+    sans-serif;
+  letter-spacing: -0.055em;
+  color: #fff;
+  margin: 0 0 20px;
+}
+
+.rbx-intro h3 span {
+  display: block;
+  color: var(--rbx-purple);
+}
+
+.rbx-intro p {
+  max-width: 460px;
+  color: #a8b2cd;
+  font:
+    400 14px/1.9 Inter,
+    sans-serif;
+  margin: 0;
+}
+
+.rbx-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 24px;
+}
+
+.rbx-tags span {
+  border: 1px solid #303b58;
+  border-radius: 6px;
+  padding: 8px 10px;
+  background: #ffffff06;
+  color: #b7bfd7;
+  font:
+    500 10px "JetBrains Mono",
+    monospace;
+}
+
+.rbx-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #c6bcff;
+  text-decoration: none;
+  font:
+    700 12px Inter,
+    sans-serif;
+  transition:
+    gap 0.25s,
+    color 0.25s;
+}
+
+.rbx-cta:hover {
+  gap: 16px;
+  color: #fff;
+}
+
+.rbx-cta svg {
+  width: 17px;
+  height: 17px;
+}
+
+/* RIGHT COLUMN */
+
+.rbx-visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  min-height: 480px;
+  padding: 45px 30px;
+  background:
+    radial-gradient(ellipse at 55% 45%, #6550d448, transparent 65%), linear-gradient(135deg, #171a36, #10162b);
+  overflow: hidden;
+}
+
+.rbx-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+  background-image:
+    linear-gradient(#a99aff33 1px, transparent 1px), linear-gradient(90deg, #a99aff33 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(ellipse, #000, transparent 75%);
+}
+
+.rbx-orbit {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border: 1px solid #9d8cff20;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.rbx-orbit-two {
+  width: 550px;
+  height: 550px;
+}
+
+/* CHAT PREVIEW */
+
+.rbx-chat {
+  position: relative;
+  width: min(100%, 370px);
+  background: #151b30;
+  border: 1px solid #42486c;
+  border-radius: 17px;
+  overflow: hidden;
+  box-shadow:
+    0 35px 80px #0008,
+    0 0 70px #8266ff1c;
+  transform: rotate(-2deg);
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+  z-index: 1;
+}
+
+.rbx-card:hover .rbx-chat {
+  transform: rotate(0) translateY(-8px);
+  box-shadow:
+    0 45px 90px #0009,
+    0 0 90px #8266ff33;
+}
+
+.rbx-chat-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 17px;
+  background: #1d243d;
+  border-bottom: 1px solid #333b59;
+}
+
+.rbx-avatar {
+  display: grid;
+  place-items: center;
+  width: 37px;
+  height: 37px;
+  background: #6353bb;
+  border-radius: 11px;
+}
+
+.rbx-avatar svg {
+  width: 19px;
+  height: 19px;
+  color: white;
+}
+
+.rbx-agent-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+}
+
+.rbx-agent-info strong {
+  font:
+    700 12px Inter,
+    sans-serif;
+}
+
+.rbx-agent-info small {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font:
+    500 10px Inter,
+    sans-serif;
+  color: #77eab7;
+}
+
+.rbx-chat-header > svg {
+  width: 19px;
+  color: #929cba;
+}
+
+.rbx-chat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-height: 300px;
+  padding: 24px 17px;
+}
+
+.rbx-chat-date {
+  text-align: center;
+  color: #677391;
+  font:
+    700 9px "JetBrains Mono",
+    monospace;
+}
+
+.rbx-bubble {
+  max-width: 84%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  font:
+    500 11px/1.7 Inter,
+    sans-serif;
+}
+
+.rbx-user {
+  align-self: flex-end;
+  background: #343d58;
+  color: #e5e9f7;
+  border-bottom-right-radius: 3px;
+}
+
+.rbx-ai {
+  align-self: flex-start;
+  background: #6251ae;
+  color: #fff;
+  border-bottom-left-radius: 3px;
+}
+
+.rbx-last {
+  animation: rbx-appear 0.6s ease 0.8s both;
+}
+
+.rbx-typing {
+  align-self: flex-start;
+  display: flex;
+  gap: 5px;
+  padding: 12px 15px;
+  background: #34304f;
+  border-radius: 12px;
+  animation: rbx-appear 0.6s ease 1.3s both;
+}
+
+.rbx-typing span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #bdb2ff;
+  animation: rbx-pulse 1s infinite alternate;
+}
+
+.rbx-typing span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.rbx-typing span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.rbx-chat-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 14px 14px;
+  padding: 7px 7px 7px 13px;
+  border: 1px solid #39415d;
+  border-radius: 9px;
+  color: #77829e;
+  font:
+    10px Inter,
+    sans-serif;
+}
+
+.rbx-chat-footer > div {
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  border-radius: 7px;
+  background: #7563d3;
+}
+
+.rbx-chat-footer svg {
+  width: 14px;
+  height: 14px;
+  color: #fff;
+}
+
+/* FLOATING LABEL */
+
+.rbx-floating-label {
+  position: absolute;
+  right: 3%;
+  bottom: 8%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 16px;
+  border: 1px solid #7264b6;
+  border-radius: 11px;
+  background: #30284c;
+  box-shadow: 0 15px 40px #0006;
+  z-index: 2;
+  animation: rbx-float 4s ease-in-out infinite;
+}
+
+.rbx-floating-label > svg {
+  width: 22px;
+  color: #b9aaff;
+}
+
+.rbx-floating-label > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rbx-floating-label strong {
+  font:
+    800 9px Inter,
+    sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.rbx-floating-label span {
+  color: #c1b7e3;
+  font:
+    10px Inter,
+    sans-serif;
+}
+
+/* ANIMATIONS */
+
+@keyframes rbx-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@keyframes rbx-pulse {
+  to {
+    opacity: 0.2;
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes rbx-appear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .rbx-card {
+    grid-template-columns: 1fr;
+  }
+
+  .rbx-copy {
+    gap: 20px;
+  }
+
+  .rbx-intro {
+    margin: 15px 0;
+  }
+
+  .rbx-visual {
+    min-height: 450px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rbx-card {
+    border-radius: 17px;
+  }
+
+  .rbx-copy {
+    padding: 25px;
+  }
+
+  .rbx-visual {
+    padding: 30px 15px 65px;
+    min-height: 440px;
+  }
+
+  .rbx-floating-label {
+    right: 10px;
+    bottom: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rbx-chat,
+  .rbx-floating-label,
+  .rbx-typing span,
+  .rbx-last,
+  .rbx-typing {
+    animation: none;
+    transition: none;
+  }
+}
