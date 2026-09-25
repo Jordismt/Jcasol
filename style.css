@@ -1076,3 +1076,391 @@ footer b {
     display: none;
   }
 }
+
+/* ==========================================
+   RESBIX — FEATURED PROJECT
+========================================== */
+
+.resbixProject {
+  background: #090d1b;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  margin-bottom: 28px;
+}
+
+.resbixProject::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  right: -130px;
+  top: -160px;
+  background: #6557ff;
+  opacity: 0.17;
+  filter: blur(110px);
+  pointer-events: none;
+}
+
+.resbixProject .projectText {
+  position: relative;
+  z-index: 2;
+}
+
+.resbixProject .meta {
+  color: #a5a7c4;
+}
+
+.resbixProject .projectText h3 {
+  color: #fff;
+  letter-spacing: -0.065em;
+}
+
+.resbixProject .projectText h3 span {
+  color: #9388ff;
+}
+
+.resbixProject .projectText p {
+  color: #b1b5cc;
+}
+
+.resbixProject .tags b {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #d9d7ff;
+}
+
+.resbixLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 25px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #bdb5ff;
+}
+
+.resbixLink svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s;
+}
+
+.resbixProject:hover .resbixLink svg {
+  transform: translate(4px, -4px);
+}
+
+/* DASHBOARD */
+
+.resbixPreview {
+  position: relative;
+  min-width: 0;
+  padding: 25px 0;
+}
+
+.resbixWindow {
+  width: 100%;
+  background: #101527;
+  border: 1px solid #303650;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 35px 65px rgba(0, 0, 0, 0.4);
+  transform: perspective(1000px) rotateY(-5deg) rotateX(3deg);
+  transition: transform 0.5s ease;
+}
+
+.resbixProject:hover .resbixWindow {
+  transform: perspective(1000px) rotateY(0) rotateX(0) translateY(-6px);
+}
+
+.resbixTop {
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0 13px;
+  background: #171c30;
+  border-bottom: 1px solid #2b3148;
+  color: #7e88a7;
+  font:
+    10px "JetBrains Mono",
+    monospace;
+}
+
+.resbixDots {
+  display: flex;
+  gap: 5px;
+}
+
+.resbixDots i {
+  width: 7px;
+  height: 7px;
+  background: #454b62;
+  border-radius: 50%;
+}
+
+.resbixDots i:first-child {
+  background: #ff6277;
+}
+.resbixDots i:nth-child(2) {
+  background: #ffca68;
+}
+.resbixDots i:last-child {
+  background: #50dca1;
+}
+
+.resbixOnline {
+  color: #50dca1;
+}
+
+.resbixDashboard {
+  display: flex;
+  min-height: 320px;
+}
+
+.resbixSidebar {
+  width: 49px;
+  flex-shrink: 0;
+  background: #0b1020;
+  border-right: 1px solid #292e46;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 17px;
+  padding: 17px 0;
+}
+
+.resbixLogo {
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin-bottom: 12px;
+}
+
+.resbixLogo span {
+  color: #9388ff;
+}
+
+.resbixNav {
+  color: #636d8d;
+  font-size: 17px;
+}
+
+.resbixNav.active {
+  color: #a89eff;
+}
+
+.resbixContent {
+  flex: 1;
+  min-width: 0;
+  padding: 19px;
+}
+
+.resbixHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.resbixHeader small,
+.resbixMetrics small {
+  font:
+    8px "JetBrains Mono",
+    monospace;
+  color: #818ba9;
+}
+
+.resbixHeader h4 {
+  color: #fff;
+  font-size: 14px;
+  margin: 5px 0 0;
+}
+
+.resbixStatus {
+  font-size: 8px;
+  color: #54e0a8;
+  white-space: nowrap;
+}
+
+.resbixMetrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 19px 0;
+}
+
+.resbixMetrics > div {
+  padding: 13px;
+  background: #191f35;
+  border: 1px solid #2b3149;
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.resbixMetrics strong {
+  font-size: 24px;
+  color: #fff;
+}
+
+.resbixMetrics span {
+  font-size: 9px;
+  color: #53dfa4;
+}
+
+.resbixChat {
+  border: 1px solid #2c324c;
+  border-radius: 9px;
+  padding: 13px;
+  background: #141a2e;
+}
+
+.resbixChatTitle {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  color: #c8c6ff;
+  font-size: 9px;
+  margin-bottom: 17px;
+}
+
+.resbixChatTitle small {
+  color: #52dda4;
+  font-size: 8px;
+}
+
+.resbixMessage {
+  max-width: 85%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 9px;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.resbixMessage.user {
+  margin-left: auto;
+  background: #2c344e;
+  color: #e2e6f5;
+}
+
+.resbixMessage.ai {
+  background: #5144a5;
+  color: #fff;
+}
+
+.resbixTyping {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 15px;
+}
+
+.resbixTyping i {
+  width: 4px;
+  height: 4px;
+  background: #a89eff;
+  border-radius: 50%;
+  animation: resbixPulse 1s infinite alternate;
+}
+
+.resbixTyping i:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.resbixTyping i:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.resbixTyping span {
+  margin-left: 7px;
+  font-size: 8px;
+  color: #858eaa;
+}
+
+.resbixFloat {
+  position: absolute;
+  right: -8px;
+  bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 17px;
+  border: 1px solid #4c487f;
+  border-radius: 12px;
+  background: #282344;
+  box-shadow: 0 15px 35px #0005;
+  animation: resbixFloat 4s ease-in-out infinite;
+}
+
+.resbixFloat > span {
+  color: #b2a7ff;
+  font-size: 22px;
+}
+
+.resbixFloat div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.resbixFloat strong {
+  font-size: 9px;
+  color: #fff;
+}
+
+.resbixFloat small {
+  font-size: 8px;
+  color: #a8a3c8;
+}
+
+@keyframes resbixFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@keyframes resbixPulse {
+  to {
+    opacity: 0.2;
+    transform: translateY(-3px);
+  }
+}
+
+@media (max-width: 768px) {
+  .resbixPreview {
+    padding: 12px 0;
+  }
+
+  .resbixWindow {
+    transform: none;
+  }
+
+  .resbixFloat {
+    right: 0;
+    bottom: -8px;
+  }
+
+  .resbixContent {
+    padding: 12px;
+  }
+
+  .resbixHeader h4 {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resbixFloat,
+  .resbixTyping i {
+    animation: none;
+  }
+}
