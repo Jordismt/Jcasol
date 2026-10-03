@@ -179,3 +179,16 @@ footer p {margin-top:20px;font-size:0.9rem;}
   .nav-links li {text-align:center;margin:10px 0;}
   .nav-links .btn-reserve {margin:0;}
 }
+
+/* Reserve image space using the intrinsic dimensions in HTML. */
+img { height: auto; }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+iframe { max-width: 100%; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  [data-aos] { opacity: 1 !important; transform: none !important; }
+}
+
+.testimonial-author { font-size: 1rem; font-weight: 700; }
+#contact { scroll-margin-top: 100px; }

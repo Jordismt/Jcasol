@@ -1,3 +1,6 @@
+document.documentElement.classList.add("js");
+const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+const scrollBehavior = () => motionPreference.matches ? "auto" : "smooth";
 const $ = (s) => document.querySelector(s);
 const $$ = (s) => [...document.querySelectorAll(s)];
 
@@ -10,10 +13,10 @@ if ("scrollRestoration" in history) {
 }
 
 // Evita que el navegador recuerde una posición anterior.
-window.scrollTo(0, 0);
+if (!location.hash) window.scrollTo(0, 0);
 
 window.addEventListener("pageshow", () => {
-  window.scrollTo(0, 0);
+  if (!location.hash) window.scrollTo(0, 0);
 });
 
 /* =========================================================
@@ -25,7 +28,7 @@ window.addEventListener("DOMContentLoaded", () => {
      START AT TOP
   ------------------------------------------------------- */
 
-  window.scrollTo(0, 0);
+  if (!location.hash) window.scrollTo(0, 0);
 
   // Mientras aparece el boot no permitimos hacer scroll.
   document.documentElement.style.overflow = "hidden";
@@ -35,9 +38,13 @@ window.addEventListener("DOMContentLoaded", () => {
      LUCIDE
   ------------------------------------------------------- */
 
-  if (window.lucide) {
-    lucide.createIcons();
+  function initializeIcons() {
+    if (window.lucide) {
+      lucide.createIcons({ attrs: { "aria-hidden": "true", focusable: "false" } });
+    }
   }
+  initializeIcons();
+  $("#iconScript")?.addEventListener("load", initializeIcons, { once: true });
 
   /* -------------------------------------------------------
      CURRENT YEAR
@@ -94,7 +101,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         // MUY IMPORTANTE:
         // volvemos arriba una vez desaparece el boot.
-        window.scrollTo({
+        if (!location.hash) window.scrollTo({
           top: 0,
           left: 0,
           behavior: "instant",
@@ -103,17 +110,18 @@ window.addEventListener("DOMContentLoaded", () => {
         // Por si el navegador intenta recolocar el scroll
         // durante el siguiente frame.
         requestAnimationFrame(() => {
-          window.scrollTo(0, 0);
+          if (!location.hash) window.scrollTo(0, 0);
         });
-      }, 600);
-    }, 1250);
+        if (location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView({ behavior: "auto" });
+      }, motionPreference.matches ? 0 : 600);
+    }, motionPreference.matches ? 0 : 1250);
   } else {
     // Si por cualquier razón no existe el boot,
     // nunca dejamos la página bloqueada.
     document.documentElement.style.overflow = "";
     document.body.style.overflow = "";
 
-    window.scrollTo(0, 0);
+    if (!location.hash) window.scrollTo(0, 0);
   }
 
   /* =======================================================
@@ -171,6 +179,11 @@ window.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    if (motionPreference.matches) {
+      line.textContent = text;
+      typeHeroLine();
+      return;
+    }
     let characterIndex = 0;
 
     const typingInterval = setInterval(() => {
@@ -201,6 +214,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const revealElements = $$(".reveal");
 
+  $$(".stack-summary, .service-grid, .clientGrid, .projectGrid").forEach((group) => {
+    [...group.children].forEach((item, index) => item.style.setProperty("--reveal-delay", `${(index % 3) * 90}ms`));
+  });
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -239,20 +255,26 @@ window.addEventListener("DOMContentLoaded", () => {
     const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
 
     if (documentHeight <= 0) {
-      progress.style.width = "0%";
+      progress.style.transform = "scaleX(0)";
 
       return;
     }
 
     const percentage = Math.min(Math.max((window.scrollY / documentHeight) * 100, 0), 100);
 
-    progress.style.width = `${percentage}%`;
+    progress.style.transform = `scaleX(${percentage / 100})`;
   }
 
-  window.addEventListener("scroll", updateProgress, {
-    passive: true,
-  });
-
+  let progressFrame = 0;
+  function scheduleProgress() {
+    if (progressFrame) return;
+    progressFrame = requestAnimationFrame(() => {
+      progressFrame = 0;
+      updateProgress();
+    });
+  }
+  window.addEventListener("scroll", scheduleProgress, { passive: true });
+  window.addEventListener("resize", scheduleProgress, { passive: true });
   updateProgress();
 
   /* =======================================================
@@ -261,11 +283,19 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const cursor = $("#cursor");
 
-  if (cursor && window.matchMedia("(pointer: fine)").matches) {
+  if (cursor && !motionPreference.matches && window.matchMedia("(pointer: fine)").matches) {
+    let cursorFrame = 0;
+    let cursorX = 0;
+    let cursorY = 0;
     window.addEventListener("mousemove", (event) => {
-      cursor.style.left = `${event.clientX}px`;
-      cursor.style.top = `${event.clientY}px`;
-    });
+      cursorX = event.clientX;
+      cursorY = event.clientY;
+      if (cursorFrame || motionPreference.matches) return;
+      cursorFrame = requestAnimationFrame(() => {
+        cursorFrame = 0;
+        cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
+      });
+    }, { passive: true });
 
     document.addEventListener("mouseleave", () => {
       cursor.style.opacity = "0";
@@ -389,6 +419,8 @@ WHERE category IN (
 
     $$(".tab").forEach((tab) => {
       tab.classList.toggle("active", tab.dataset.tab === key);
+      tab.setAttribute("aria-pressed", String(tab.dataset.tab === key));
+      tab.setAttribute("aria-controls", "codePanel");
     });
 
     if (fileName) {
@@ -397,6 +429,9 @@ WHERE category IN (
 
     if (codePanel) {
       codePanel.textContent = stackData[key][1];
+      if (!motionPreference.matches && codePanel.animate) {
+        codePanel.animate([{ opacity: .4, transform: "translateY(5px)" }, { opacity: 1, transform: "none" }], { duration: 180, easing: "ease-out" });
+      }
     }
   }
 
@@ -418,12 +453,24 @@ WHERE category IN (
   const paletteInput = $("#paletteInput");
   const commandButton = $("#cmdBtn");
 
+  let paletteReturnFocus;
   function togglePalette(force) {
     if (!palette) return;
 
     const shouldOpen = typeof force === "boolean" ? force : !palette.classList.contains("open");
 
+    if (shouldOpen) {
+      paletteReturnFocus = document.activeElement;
+      paletteInput.value = "";
+      $$(".palette a").forEach((item) => item.style.display = "");
+    }
+    const wasOpen = palette.classList.contains("open");
     palette.classList.toggle("open", shouldOpen);
+    commandButton?.setAttribute("aria-expanded", String(shouldOpen));
+    $("main").inert = shouldOpen;
+    $("nav").inert = shouldOpen;
+    $("footer").inert = shouldOpen;
+    if (!shouldOpen && wasOpen) paletteReturnFocus?.focus();
 
     if (shouldOpen && paletteInput) {
       setTimeout(() => {
@@ -453,6 +500,22 @@ WHERE category IN (
   });
 
   document.addEventListener("keydown", (event) => {
+    if (palette?.classList.contains("open")) {
+      const focusable = [paletteInput, ...$$(".palette a").filter((a) => a.style.display !== "none")];
+      const index = focusable.indexOf(document.activeElement);
+      if (event.key === "Tab") {
+        event.preventDefault();
+        focusable[(index + (event.shiftKey ? -1 : 1) + focusable.length) % focusable.length].focus();
+      }
+      if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+        event.preventDefault();
+        focusable[(index + (event.key === "ArrowDown" ? 1 : -1) + focusable.length) % focusable.length].focus();
+      }
+      if (event.key === "Enter" && document.activeElement === paletteInput) {
+        event.preventDefault();
+        focusable[1]?.click();
+      }
+    }
     if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
       event.preventDefault();
 
@@ -485,15 +548,17 @@ WHERE category IN (
   ======================================================= */
 
   const commands = {
-    help: "help · about · stack · projects · contact · github · linkedin · cv · clear",
+    help: "help · about · stack · projects · experience · services · contact · github · linkedin · cv · clear",
+    experience: "Prácticas en Gesdata Consulting y Venalsol Smart Light; desarrollo freelance y productos propios. Consulta Journey o el CV.",
+    services: "Webs para negocios · aplicaciones Full Stack · SaaS · APIs e integraciones.",
 
-    about: "Jordi Casanova — Full Stack Developer · Valencia / Remote.",
+    about: "Jordi Casanova — Full Stack Developer · Valencia / Remote. DAM + DAW. Abierto a empleo y proyectos freelance.",
 
     stack:
       "Next.js · Vue · Nuxt · TypeScript · Node.js · Express · Spring Boot · Supabase · PostgreSQL · MongoDB · Docker",
 
     projects:
-      "PresuVoz · Autoescuela Ramis · María José Císcar · Web Ainhoa · GeneraBD · Look&Luxe · TechZone · FitTrack",
+      "Resbix · Cartaliax · MySong · PresuVoz · Autoescuela Ramis · María José Císcar · Web Ainhoa · GeneraBD · Look&Luxe · TechZone · FitTrack",
 
     contact: "Email: jcasoldev@gmail.com",
 
@@ -545,6 +610,7 @@ WHERE category IN (
 
       if (command === "clear") {
         terminalHistory.innerHTML = "";
+        terminalInput.removeAttribute("aria-describedby");
 
         terminalInput.value = "";
 
@@ -560,6 +626,9 @@ WHERE category IN (
       addTerminalOutput(command, output);
 
       /* ACTIONS */
+      if (command === "experience" || command === "services") {
+        $(command === "experience" ? "#journey" : "#services")?.scrollIntoView({ behavior: scrollBehavior() });
+      }
 
       if (command === "github") {
         window.open("https://github.com/jordismt", "_blank", "noopener,noreferrer");
@@ -570,7 +639,7 @@ WHERE category IN (
       }
 
       if (command === "cv") {
-        window.open("./docs/Jcasol_CV.pdf", "_blank");
+        window.open("./docs/Jcasol_CV.pdf", "_blank", "noopener,noreferrer");
       }
 
       if (command === "contact") {
@@ -578,7 +647,7 @@ WHERE category IN (
 
         if (contact) {
           contact.scrollIntoView({
-            behavior: "smooth",
+            behavior: scrollBehavior(),
           });
         }
       }
@@ -588,7 +657,7 @@ WHERE category IN (
 
         if (projects) {
           projects.scrollIntoView({
-            behavior: "smooth",
+            behavior: scrollBehavior(),
           });
         }
       }
@@ -600,7 +669,7 @@ WHERE category IN (
         // con id="stack".
         if (stack) {
           stack.scrollIntoView({
-            behavior: "smooth",
+            behavior: scrollBehavior(),
           });
         }
       }
@@ -631,11 +700,13 @@ WHERE category IN (
      EMAILJS
   ======================================================= */
 
-  if (window.emailjs) {
-    emailjs.init({
-      publicKey: "IaLhzw35oAG114oNL",
-    });
+  function initializeEmail() {
+    if (window.emailjs) {
+      emailjs.init({ publicKey: "IaLhzw35oAG114oNL" });
+    }
   }
+  initializeEmail();
+  $("#emailScript")?.addEventListener("load", initializeEmail, { once: true });
 
   const contactForm = $("#contactForm");
   const successMessage = $("#successMessage");
@@ -705,12 +776,52 @@ WHERE category IN (
 
       event.preventDefault();
 
+      history.pushState(null, "", href);
+      target.setAttribute("tabindex", "-1");
+      target.focus({ preventScroll: true });
       target.scrollIntoView({
-        behavior: "smooth",
+        behavior: scrollBehavior(),
         block: "start",
       });
     });
   });
+
+  // Keep existing continuous animations, but pause them outside the viewport.
+  if ("IntersectionObserver" in window) {
+    const motionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => entry.target.classList.toggle("motion-paused", !entry.isIntersecting));
+    }, { rootMargin: "80px" });
+    $$(".heroProject, .rbx-card, .ticker").forEach((element) => motionObserver.observe(element));
+  }
+
+  // Card lighting follows the pointer only where hover and motion are appropriate.
+  if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    $$(".skill-card").forEach((card) => {
+      let frame;
+      card.addEventListener("pointermove", (event) => {
+        if (motionPreference.matches) return;
+        cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(() => {
+          const rect = card.getBoundingClientRect();
+          card.style.setProperty("--light-x", `${event.clientX - rect.left}px`);
+          card.style.setProperty("--light-y", `${event.clientY - rect.top}px`);
+        });
+      });
+      card.addEventListener("pointerleave", () => cancelAnimationFrame(frame));
+    });
+  }
+  if ("IntersectionObserver" in window) {
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        $$(".navlinks a").forEach((link) => {
+          if (link.hash === `#${entry.target.id}`) link.setAttribute("aria-current", "location");
+          else link.removeAttribute("aria-current");
+        });
+      });
+    }, { rootMargin: "-15% 0px -60% 0px", threshold: 0 });
+    $$("section[id]").forEach((section) => sectionObserver.observe(section));
+  }
 
   /* =======================================================
      FINAL SAFETY CHECK
@@ -721,13 +832,13 @@ WHERE category IN (
   // Mientras el boot siga visible, impedimos que ocurra.
   setTimeout(() => {
     if ($("#boot")) {
-      window.scrollTo(0, 0);
+      if (!location.hash) window.scrollTo(0, 0);
     }
   }, 100);
 
   setTimeout(() => {
     if ($("#boot")) {
-      window.scrollTo(0, 0);
+      if (!location.hash) window.scrollTo(0, 0);
     }
   }, 500);
 });

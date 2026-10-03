@@ -57,3 +57,14 @@
     
     /* Accessibility focus styles */
     :focus{outline:3px solid rgba(197,157,95,.25);outline-offset:2px}
+/* Reserve image space using the intrinsic dimensions in HTML. */
+img { height: auto; }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+iframe { max-width: 100%; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  [data-aos] { opacity: 1 !important; transform: none !important; }
+}
+
+@media (max-width: 560px) { .chat-window { width: min(320px, calc(100vw - 32px)); } .chat-form input { min-width: 0; } }

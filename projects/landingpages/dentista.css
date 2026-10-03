@@ -271,4 +271,15 @@
     .testimonials h2, .team h2, .pricing h2, .faq h2 { font-size: 2rem; }
     .services, .plans, .team-list { grid-template-columns: 1fr; }
   }
-  
+
+/* Reserve image space using the intrinsic dimensions in HTML. */
+img { height: auto; }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+iframe { max-width: 100%; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  [data-aos] { opacity: 1 !important; transform: none !important; }
+}
+
+@media (max-width: 768px) { header { flex-wrap: wrap; gap: 20px; padding: 20px; } header nav { display: flex; flex-wrap: wrap; gap: 12px; } header nav a { margin-left: 0; } }

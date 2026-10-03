@@ -90,7 +90,7 @@ nav ul li a:hover {color:#ff6a00;}
 .modal-buttons #add-cart:hover {transform:scale(1.05);}
 .modal-buttons .close {background:#eee;}
 .modal-buttons .close:hover {background:#ccc;}
-.modal .close {position:absolute;top:15px;right:20px;font-size:1.5rem;cursor:pointer;color:#333;}
+.modal-content > .close {position:absolute;top:15px;right:20px;font-size:1.5rem;cursor:pointer;color:#333;}
 
 /* ----------------- ABOUT ----------------- */
 .about {background:linear-gradient(95deg,#c6dbfa,#111721);color:white;padding:80px 40px;text-align:center;}
@@ -148,7 +148,7 @@ nav ul li a:hover {color:#ff6a00;}
   color: #ddd;
 }
 
-.testimonial-card h4 {
+.testimonial-card .testimonial-author {
   margin-top: 15px;
   font-weight: 700;
   color: #ff6a00;
@@ -253,4 +253,14 @@ footer p {margin-top:20px;font-size:0.9rem;}
   .about h2,.contact h2,.testimonials h2,.newsletter h2{font-size:2rem;}
   .products,.testimonial-cards{grid-template-columns:1fr;}
   .newsletter form{flex-direction:column;align-items:center;}
+}
+
+/* Reserve image space using the intrinsic dimensions in HTML. */
+img { height: auto; }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+iframe { max-width: 100%; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  [data-aos] { opacity: 1 !important; transform: none !important; }
 }

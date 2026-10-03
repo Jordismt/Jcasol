@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Delicias Gourmet - Restaurante</title>
+  <title>Delicias Gourmet — Demo web | Jordi Casanova</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="restaurante.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="description" content="Demo de desarrollo web para un restaurante: menú, galería y formulario de reservas. Proyecto de muestra del portfolio de Jordi Casanova." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://jordismt.github.io/Jcasol/projects/landingpages/restaurante.html" />
 </head>
 <body>
 
@@ -29,6 +32,7 @@
 
 
 <!-- HERO -->
+<main id="demo-content">
 <section class="hero">
   <h2>Sabores que enamoran</h2>
   <p>Disfruta de la mejor gastronomía en un ambiente acogedor</p>
@@ -40,19 +44,19 @@
   <h2>Menú Destacado</h2>
   <div class="menu-grid">
     <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80" alt="Pizza Gourmet">
+      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80" alt="Pizza Gourmet" decoding="async" loading="lazy" width="800" height="533">
       <h3>Pizza Gourmet</h3>
       <p>Masa artesanal, ingredientes frescos y queso fundido que encanta</p>
       <button>Ordenar</button>
     </div>
     <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1600891964309-c3e4a8ef1c8c?auto=format&fit=crop&w=800&q=80" alt="Pasta Italiana">
+      <img src="https://images.unsplash.com/photo-1600891964309-c3e4a8ef1c8c?auto=format&fit=crop&w=800&q=80" alt="Pasta Italiana" decoding="async" loading="lazy">
       <h3>Pasta Italiana</h3>
       <p>Salsa casera con tomates frescos y albahaca, hecha con amor</p>
       <button>Ordenar</button>
     </div>
     <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1600891964525-37f2b0c84c3d?auto=format&fit=crop&w=800&q=80" alt="Ensalada Fresca">
+      <img src="https://images.unsplash.com/photo-1600891964525-37f2b0c84c3d?auto=format&fit=crop&w=800&q=80" alt="Ensalada Fresca" decoding="async" loading="lazy">
       <h3>Ensalada Fresca</h3>
       <p>Ingredientes de temporada, aderezo especial y crujiente irresistible</p>
       <button>Ordenar</button>
@@ -65,17 +69,17 @@
   <h2>Especialidades del Chef</h2>
   <div class="specialties-list">
     <div class="specialty">
-      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" alt="Carne Asada">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" alt="Carne Asada" decoding="async" loading="lazy" width="800" height="533">
       <h3>Carne Asada Premium</h3>
       <p>Corte selecto con sazón especial, cocinado a la perfección.</p>
     </div>
     <div class="specialty">
-      <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=800&q=80" alt="Risotto">
+      <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=800&q=80" alt="Risotto" decoding="async" loading="lazy" width="800" height="600">
       <h3>Risotto de Mariscos</h3>
       <p>Arroz cremoso con camarones, calamares y toque de limón.</p>
     </div>
     <div class="specialty">
-      <img src="https://images.unsplash.com/photo-1608759265467-2e04bb10ecf2?auto=format&fit=crop&w=800&q=80" alt="Postre">
+      <img src="https://images.unsplash.com/photo-1608759265467-2e04bb10ecf2?auto=format&fit=crop&w=800&q=80" alt="Postre" decoding="async" loading="lazy">
       <h3>Cheesecake de Frutos Rojos</h3>
       <p>Suave, cremoso y coronado con frutas frescas de temporada.</p>
     </div>
@@ -88,15 +92,15 @@
   <div class="testimonials-list">
     <div class="testimonial">
       <p>"La mejor experiencia gastronómica, cada plato fue un deleite."</p>
-      <h4>- Ana Gómez ⭐⭐⭐⭐⭐</h4>
+      <p class="testimonial-author">- Ana Gómez ⭐⭐⭐⭐⭐</p>
     </div>
     <div class="testimonial">
       <p>"Ambiente acogedor y un servicio impecable, ¡recomendado 100%!"</p>
-      <h4>- Carlos López ⭐⭐⭐⭐⭐</h4>
+      <p class="testimonial-author">- Carlos López ⭐⭐⭐⭐⭐</p>
     </div>
     <div class="testimonial">
       <p>"Volveré sin duda, la pasta fue la mejor que he probado en años."</p>
-      <h4>- Laura Méndez ⭐⭐⭐⭐⭐</h4>
+      <p class="testimonial-author">- Laura Méndez ⭐⭐⭐⭐⭐</p>
     </div>
   </div>
 </section>
@@ -105,10 +109,10 @@
 <section class="gallery" id="gallery">
   <h2>Nuestro Ambiente</h2>
   <div class="gallery-grid">
-    <img src="https://images.unsplash.com/photo-1555992336-cbf7c6cdb677?auto=format&fit=crop&w=800&q=80" alt="Restaurante">
-    <img src="https://images.unsplash.com/photo-1564758565413-56c1b1fcb0e4?auto=format&fit=crop&w=800&q=80" alt="Plato 1">
-    <img src="https://images.unsplash.com/photo-1533777324565-a040eb52fac1?auto=format&fit=crop&w=800&q=80" alt="Plato 2">
-    <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80" alt="Ambiente interior">
+    <img src="https://images.unsplash.com/photo-1555992336-cbf7c6cdb677?auto=format&fit=crop&w=800&q=80" alt="Restaurante" decoding="async" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1564758565413-56c1b1fcb0e4?auto=format&fit=crop&w=800&q=80" alt="Plato 1" decoding="async" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1533777324565-a040eb52fac1?auto=format&fit=crop&w=800&q=80" alt="Plato 2" decoding="async" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80" alt="Ambiente interior" decoding="async" loading="lazy" width="800" height="1200">
   </div>
 </section>
 
@@ -128,20 +132,21 @@
       <p><strong>Domingo:</strong> 13:00 - 22:00</p>
       <p><strong>Teléfono:</strong> +34 600 123 456</p>
     </div>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.27990353254!2d-74.25987568762827!3d40.69767006615374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDQyJzUxLjYiTiA3NMKwMTUnMjYuMiJX!5e0!3m2!1ses!2ses!4v1611234567890!5m2!1ses!2ses" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <iframe title="Mapa de ubicación de la demo" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.27990353254!2d-74.25987568762827!3d40.69767006615374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDQyJzUxLjYiTiA3NMKwMTUnMjYuMiJX!5e0!3m2!1ses!2ses!4v1611234567890!5m2!1ses!2ses" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </div>
 </section>
 
 <!-- CONTACTO/RESERVA -->
 <section class="contact" id="reservation">
+  <span id="contact" aria-hidden="true"></span>
   <h2>Haz tu Reserva</h2>
   <form>
-    <input type="text" placeholder="Nombre" required>
-    <input type="email" placeholder="Correo electrónico" required>
-    <input type="number" placeholder="Número de comensales" required>
-    <input type="date" required>
-    <input type="time" required>
-    <textarea rows="4" placeholder="Comentarios adicionales"></textarea>
+    <input type="text" placeholder="Nombre" required aria-label="Nombre">
+    <input type="email" placeholder="Correo electrónico" required aria-label="Correo electrónico">
+    <input type="number" placeholder="Número de comensales" required aria-label="Número de comensales">
+    <input type="date" required aria-label="Fecha de la reserva">
+    <input type="time" required aria-label="Hora de la reserva">
+    <textarea rows="4" placeholder="Comentarios adicionales" aria-label="Mensaje o comentarios de la demo"></textarea>
     <button type="submit">Reservar Ahora</button>
   </form>
 </section>
@@ -153,6 +158,7 @@
 </section>
 
 <!-- FOOTER -->
+</main>
 <footer>
   <div class="footer-links">
     <a href="#"><i class="fab fa-facebook-f"></i></a>

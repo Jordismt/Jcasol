@@ -100,6 +100,8 @@
     });
   
     // Lazy-load imágenes
-    document.querySelectorAll('img').forEach(img => (img.loading = 'lazy'));
+    document.querySelectorAll('img').forEach(img => {
+      if (!img.closest('.hero-media')) img.loading = 'lazy';
+    });
   })();
   
