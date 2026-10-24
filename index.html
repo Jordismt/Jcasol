@@ -33,6 +33,9 @@
     <script async id="iconScript" src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
     <script async id="emailScript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./workspace.css" />
+    <link rel="stylesheet" href="./projects.css" />
+    <link rel="stylesheet" href="./stories.css" />
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -134,7 +137,7 @@
       "creator": {
         "@id": "https://jordismt.github.io/Jcasol/#person"
       },
-      "keywords": "Vue.js, Node.js, Express, Supabase, PostgreSQL, Groq, Stripe",
+      "keywords": "Node.js, Express, JavaScript, Supabase, Groq, Stripe, Evolution API",
       "url": "https://resbix.com"
     },
     {
@@ -151,12 +154,13 @@
     {
       "@type": "WebApplication",
       "@id": "https://jordismt.github.io/Jcasol/#work-cartaliax",
-      "name": "Cartaliax",
+      "name": "Carteliax",
       "description": "SaaS de cartas digitales para restaurantes con panel de administración, códigos QR y pagos recurrentes.",
       "creator": {
         "@id": "https://jordismt.github.io/Jcasol/#person"
       },
-      "keywords": "JavaScript, Stripe"
+      "keywords": "Nuxt, Vue 3, Tailwind CSS, Node.js, Express, Supabase",
+      "url": "https://carteliax.com"
     },
     {
       "@type": "CreativeWork",
@@ -248,7 +252,7 @@
 }
     </script>
   </head>
-  <body>
+  <body class="terminal-theme">
     <a class="skip-link" href="#top">Saltar al contenido</a>
     <div id="boot" aria-hidden="true">
       <div class="bootbox">
@@ -257,25 +261,29 @@
         <div class="bootbar"><i></i></div>
       </div>
     </div>
-    <div id="cursor"></div>
-    <div class="progress" id="progress"></div>
+    <div class="workspace-backdrop" aria-hidden="true">
+      <canvas id="codeRain"></canvas>
+      <div class="workspace-grid"></div>
+    </div>
+    <div id="cursor" aria-hidden="true"></div>
+    <div class="progress" id="progress" aria-hidden="true"></div>
     <nav aria-label="Navegación principal">
       <a class="brand" href="#top" aria-label="JC. — Jordi Casanova, inicio">JC<span>.</span></a>
       <div class="navlinks">
-        <a href="#stack">01 Stack</a><a href="#projects">02 Work</a><a href="#journey">03 Journey</a
+        <a href="#about">About</a><a href="#stack">01 Stack</a><a href="#projects">02 Work</a><a href="#case-studies">Cases</a><a href="#journey">03 Journey</a
         ><a href="#contact">04 Contact</a><a href="#services">05 Services</a>
       </div>
       <button class="cmd" id="cmdBtn" aria-label="Navigate · Ctrl K: abrir navegación por secciones" aria-haspopup="dialog" aria-controls="palette" aria-expanded="false"><span>Navigate</span><kbd>Ctrl K</kbd></button>
     </nav>
-    <noscript><div class="fallback-nav"><a href="#stack">Stack</a><a href="#projects">Proyectos</a><a href="#journey">Experiencia</a><a href="#services">Servicios</a><a href="#contact">Contacto</a></div></noscript>
+    <noscript><div class="fallback-nav"><a href="#about">Sobre mí</a><a href="#case-studies">Casos de estudio</a><a href="#faq">Preguntas frecuentes</a><a href="#stack">Stack</a><a href="#projects">Proyectos</a><a href="#journey">Experiencia</a><a href="#services">Servicios</a><a href="#contact">Contacto</a></div></noscript>
     <main id="top">
       <section class="hero">
-        <div class="grid"></div>
+        <div class="grid" aria-hidden="true"></div>
         <div class="heroCopy reveal">
           <div class="path">~/portfolio <b>•</b> available_for_work</div>
           <h1 class="hero-title">
             <span class="overline">FULL STACK DEVELOPER · VALENCIA / REMOTE</span>
-            <span class="hero-name">Jordi<br /><em>Casanova</em><span aria-hidden="true">_</span></span>
+            <span class="hero-name"><span class="name-mask"><span class="name-line">Jordi</span></span><span class="name-mask"><span class="name-line"><em>Casanova</em><span class="name-cursor" aria-hidden="true">_</span></span></span></span>
           </h1>
           <p class="lead">
             Como desarrollador Full Stack, construyo productos web completos: interfaces, APIs REST, bases de datos, autenticación, pagos e
@@ -288,18 +296,19 @@
               >CV <i data-lucide="file-text"></i
             ></a>
           </div>
-          <div class="profile-links">
+          <div class="profile-links"><a href="#about">Sobre mí ↗</a>
             <a href="#journey">Perfil y experiencia ↗</a>
             <a href="#services">Servicios y proyectos freelance ↗</a>
             <a href="https://github.com/jordismt" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
             <a href="https://www.linkedin.com/in/jcasoldev/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
           </div>
           <div class="facts">
-            <span><b>STACK</b> Next · Vue · Node · Spring</span
+            <span><b>STACK</b> Express · Vue · Node · Supabase · SpringBoot</span
             ><span><b>FOCUS</b> Full Stack · SaaS · AI</span>
           </div>
         </div>
         <div class="terminalWrap reveal">
+          <div class="session-chrome" aria-hidden="true"><span><span class="session-dot"></span> profile.sh</span><span>~/workspace</span></div>
           <div class="terminal">
             <div class="termbar">
               <div><i></i><i></i><i></i></div>
@@ -315,6 +324,26 @@
         </div>
         <div class="scroll">SCROLL <i data-lucide="arrow-down"></i></div>
       </section>
+      <section id="about" class="section about-section">
+        <header class="sectionHead reveal">
+          <h2 class="section-heading"><span class="section-meta"><span>ABOUT / SOBRE MÍ</span><code>~/about</code></span><span class="section-title">Detrás del código,<br /><em>Jordi.</em></span></h2>
+        </header>
+        <div class="about-layout">
+          <div class="about-copy reveal">
+            <p class="about-intro">Soy Jordi Casanova, desarrollador Full Stack en Valencia, titulado en Desarrollo de Aplicaciones Web y Multiplataforma.</p>
+            <p>Mi trabajo conecta lo que se ve en pantalla con lo que ocurre detrás: interfaces, APIs REST, bases de datos, autenticación e integraciones. He pasado por prácticas en empresas, webs para negocios y el desarrollo de mis propios productos.</p>
+            <p>En 2026 he desarrollado y lanzado por mi cuenta <a href="https://resbix.com" target="_blank" rel="noopener noreferrer">Resbix</a> y <a href="https://carteliax.com" target="_blank" rel="noopener noreferrer">Carteliax</a>. En ambos me he encargado del producto completo: desde la interfaz y el backend hasta los datos y la puesta en producción.</p>
+            <p>Busco aportar esa visión de conjunto a un equipo de desarrollo, y también colaborar en proyectos freelance con necesidades concretas.</p>
+            <div class="story-actions"><a href="#case-studies">Ver cómo los he construido <i data-lucide="arrow-down-right"></i></a><a href="./docs/Jcasol_CV.pdf" target="_blank" rel="noopener noreferrer">Mi CV <i data-lucide="file-text"></i></a></div>
+          </div>
+          <div class="profile-file reveal">
+            <div class="file-chrome"><span class="file-lights" aria-hidden="true"><i></i><i></i><i></i></span><span>profile.yaml</span><span>UTF-8</span></div>
+            <div class="profile-identity"><span class="profile-monogram" aria-hidden="true">JC<span>_</span></span><div><h3>Jordi Casanova</h3><p>Full Stack Developer</p></div></div>
+            <dl class="profile-manifest"><div><dt>location</dt><dd>Valencia / remoto</dd></div><div><dt>education</dt><dd>DAM + DAW</dd></div><div><dt>build</dt><dd>Frontend → API → datos</dd></div><div><dt>focus</dt><dd>SaaS · APIs REST · producto</dd></div></dl>
+            <div class="profile-launched"><span class="story-label">PRODUCTOS LANZADOS / 2026</span><a href="https://resbix.com" target="_blank" rel="noopener noreferrer"><span class="launch-dot" aria-hidden="true"></span>Resbix <i data-lucide="arrow-up-right"></i></a><a href="https://carteliax.com" target="_blank" rel="noopener noreferrer"><span class="launch-dot" aria-hidden="true"></span>Carteliax <i data-lucide="arrow-up-right"></i></a></div>
+          </div>
+        </div>
+      </section>
       <section id="stack" class="section">
         <header class="sectionHead reveal">
           <h2 class="section-heading"><span class="section-meta"><span>01 / STACK · TECNOLOGÍAS</span><code>~/skills</code></span><span class="section-title">Herramientas que uso<br />para <em>construir.</em></span></h2>
@@ -325,7 +354,7 @@
           <article class="skill-card reveal"><code>03 / DATA & DEPLOY</code><h3>Datos y producción</h3><p>PostgreSQL · Supabase · MongoDB · MySQL</p><small>SQL, RLS, Git, GitHub, Linux y Vercel. Docker: conocimientos básicos.</small></article>
         </div>
         <div class="ide reveal">
-          <div class="ideSide">
+          <div class="ideSide" role="tablist" aria-label="Áreas del stack" aria-orientation="vertical">
             <div class="ideTitle">EXPLORER</div>
             <button class="tab active" data-tab="front">▾ frontend</button
             ><button class="tab" data-tab="back">▾ backend</button
@@ -334,7 +363,7 @@
           </div>
           <div class="editor">
             <div class="tabs"><span id="fileName">frontend.tsx ×</span></div>
-            <pre id="codePanel">// Explora el stack por áreas
+            <pre id="codePanel" tabindex="0" role="tabpanel" aria-label="Código del stack">// Explora el stack por áreas
 frontend: Vue.js, Next.js, Nuxt, JavaScript, TypeScript, Tailwind, Flutter
 backend: Node.js, Express, PHP, Spring Boot
 data: Supabase, PostgreSQL, MongoDB, MySQL
@@ -352,10 +381,18 @@ infra: Git, GitHub, Linux, Vercel, Docker</pre>
       <section id="projects" class="section work">
         <header class="sectionHead reveal">
           <h2 class="section-heading"><span class="section-meta"><span>02 / SELECTED WORK · PROYECTOS</span><code>~/projects</code></span><span class="section-title">De la idea<br />a <em>producción.</em></span></h2>
+          <div class="work-directory" role="navigation" aria-label="Explorar los proyectos por tipo">
+            <span class="directory-total"><span class="directory-dot" aria-hidden="true"></span>11 proyectos · un mismo enfoque</span>
+            <a href="#built-products"><span>Productos propios</span><span>03 <i data-lucide="arrow-down-right"></i></span></a>
+            <a href="#client-work"><span>Webs para negocios</span><span>02 <i data-lucide="arrow-down-right"></i></span></a>
+            <a href="#project-collection"><span>Más proyectos</span><span>06 <i data-lucide="arrow-down-right"></i></span></a>
+          </div>
         </header>
+        <div class="work-group" id="built-products"><p>Productos propios</p><span>SaaS · de la interfaz a la infraestructura</span></div>
 
         <!-- RESBIX — FEATURED PROJECT -->
         <article class="rbx-card reveal" aria-labelledby="resbix-title">
+          <div class="project-windowbar" aria-hidden="true"><span class="window-lights"><i></i><i></i><i></i></span><span><i data-lucide="lock-keyhole"></i>resbix.com</span><span>AI platform</span></div>
           <div class="rbx-copy">
             <div class="rbx-eyebrow">
               <span class="rbx-live">
@@ -388,17 +425,19 @@ infra: Git, GitHub, Linux, Vercel, Docker</pre>
                 <span>Express</span>
                 <span>Supabase</span>
                 <span>Groq</span>
-                <span>Multi-tenant</span>
+                <span>Multi-tenant</span><span>Stripe</span><span>Evolution API</span>
               </div>
 
               <details class="project-details">
                 <summary>Ver arquitectura y funcionalidades</summary>
-                <dl><dt>Frontend</dt><dd>Vue.js y JavaScript · dashboard de administración.</dd><dt>Backend</dt><dd>Node.js y Express · APIs REST · plataforma multiempresa.</dd><dt>Datos y acceso</dt><dd>Supabase y PostgreSQL · autenticación y políticas RLS.</dd><dt>Integraciones</dt><dd>Groq y suscripciones Stripe · CRM, conversaciones, reservas y calendarios.</dd></dl>
+                <dl><dt>Frontend</dt><dd>JavaScript · dashboard de administración.</dd><dt>Backend</dt><dd>Node.js y Express · APIs REST · plataforma multiempresa.</dd><dt>Datos y acceso</dt><dd>Supabase y PostgreSQL · autenticación y políticas RLS.</dd><dt>Integraciones</dt><dd>Groq y suscripciones Stripe · CRM, conversaciones, reservas y calendarios.</dd></dl>
               </details>
+              <div class="launched-actions">
               <a class="rbx-cta" href="https://resbix.com" target="_blank" rel="noopener noreferrer">
                 Explorar Resbix
                 <i data-lucide="arrow-up-right"></i>
-              </a>
+              </a><a class="study-link" href="#case-resbix">Caso de estudio <i data-lucide="arrow-down-right"></i></a>
+              </div>
             </div>
           </div>
 
@@ -458,16 +497,29 @@ infra: Git, GitHub, Linux, Vercel, Docker</pre>
             </div>
           </div>
         </article>
+        <article class="product-extension cartaliax-card launched-feature reveal" aria-labelledby="project-cartaliax">
+          <div class="project-windowbar" aria-hidden="true"><span class="window-lights"><i></i><i></i><i></i></span><span><i data-lucide="lock-keyhole"></i>carteliax.com</span><span>Digital menus</span></div>
+          <div class="carteliax-copy"><span class="carteliax-live"><span class="launch-dot" aria-hidden="true"></span>PRODUCTO LANZADO</span><span class="badge">SAAS / PRODUCTO PROPIO · 2026</span><h3 id="project-cartaliax">Carteliax</h3><p>Cartas digitales para restaurantes: categorías, productos, precios, disponibilidad y códigos QR. Panel de administración y pagos recurrentes con Stripe.</p><p class="carteliax-extra">Una plataforma multi-tenant para gestionar imágenes, alérgenos, disponibilidad, idiomas y personalización visual, manteniendo un QR permanente.</p><div class="carteliax-tags" aria-label="Stack de Carteliax"><span>Nuxt</span><span>Vue 3</span><span>Tailwind CSS</span><span>Node.js</span><span>Express</span><span>Supabase</span></div><div class="launched-actions"><a class="carteliax-cta" href="https://carteliax.com" target="_blank" rel="noopener noreferrer">Explorar Carteliax <i data-lucide="arrow-up-right"></i></a><a class="study-link" href="#case-carteliax">Caso de estudio <i data-lucide="arrow-down-right"></i></a></div></div>
+          <div class="cartaliax-stage">
+            <div class="carteliax-site-preview"><img src="./assets/projects/carteliax-live.jpg" width="1440" height="960" loading="lazy" decoding="async" alt="Captura real de la web pública de Carteliax" /></div>
+            <div class="menu-window"><span class="menu-window-title"><i data-lucide="utensils"></i> Carta digital</span><span class="menu-rule"></span><div class="menu-layout"><span></span><span></span><span></span></div><span class="menu-caption">categorías / productos</span></div>
+            <div class="qr-node"><i data-lucide="qr-code"></i><span>QR</span></div>
+            <div class="admin-node"><i data-lucide="sliders-horizontal"></i><span>admin</span><span class="node-status"></span></div>
+            <span class="diagram-connection"></span>
+          </div>
+          <div class="product-code" aria-label="Funciones de Carteliax"><code><span>menu → categorías → productos</span><span>QR → carta digital</span><span>admin → disponibilidad</span><span>Stripe → suscripciones</span></code></div>
+        </article>
+        <div class="product-pair">
         <article class="project heroProject reveal" aria-labelledby="presuvoz-title">
-          <a class="project-cover-link" href="https://presuvoz.es" target="_blank" rel="noopener noreferrer" aria-labelledby="presuvoz-title"></a>
           <div class="projectText">
-            <span class="badge live">● LIVE PRODUCT</span>
+            <span class="badge">PROYECTO SAAS</span>
             <div class="meta">SAAS / AI · 2026</div>
             <h3 id="presuvoz-title">Presu<span>Voz</span></h3>
             <p>Generación de presupuestos mediante texto o voz con IA, historial, autenticación y pagos.</p>
             <p class="project-extra">De voz o texto a un presupuesto editable y exportable en PDF. Supabase para autenticación; Stripe para suscripciones.</p>
             <div class="tags"><b>Nuxt / Vue</b><b>Supabase</b><b>Groq</b><b>Whisper</b><b>Stripe</b></div>
           </div>
+          <div class="product-stage presu-stage">
           <div class="productUI">
             <div class="uiTop"><i></i><i></i><i></i><span>presupuesto_nuevo</span></div>
             <div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
@@ -480,17 +532,18 @@ infra: Git, GitHub, Linux, Vercel, Docker</pre>
               <button type="submit" aria-label="Generar presupuesto: abrir PresuVoz">Generar presupuesto →</button>
             </form>
           </div>
+          </div>
+          <div class="project-actionbar"><span>presuvoz.es</span><a class="project-cover-link" href="https://presuvoz.es" target="_blank" rel="noopener noreferrer" aria-label="Explorar PresuVoz (se abre en otra pestaña)">Explorar PresuVoz <i data-lucide="arrow-up-right"></i></a></div>
         </article>
-        <article class="product-extension reveal">
-          <div><span class="badge">SAAS / PRODUCTO PROPIO · 2026</span><h3 id="project-cartaliax">Cartaliax</h3><p>Cartas digitales para restaurantes: categorías, productos, precios, disponibilidad y códigos QR. Panel de administración y pagos recurrentes con Stripe.</p></div>
-          <div class="product-code" aria-label="Funciones de Cartaliax"><code>menu → categorías → productos<br />QR → carta digital<br />admin → disponibilidad<br />Stripe → suscripciones</code></div>
-        </article>
+
+        </div>
+        <div class="work-group" id="client-work"><p>Webs para negocios</p><span>Diseño, desarrollo y presencia digital</span></div>
         <div class="clientGrid">
           <a class="project client reveal" href="https://ramisautoescola.com" target="_blank" rel="noopener noreferrer"
             ><div class="num" aria-hidden="true">01</div>
             <span class="badge">CLIENT PROJECT</span>
             <div class="browser">
-              <div></div>
+              <div class="client-shot"><img src="./assets/projects/ramis.jpg" width="1280" height="850" loading="lazy" decoding="async" alt="Captura de la web de Autoescuela Ramis" /></div>
               <strong>AUTOESCOLA<br />RAMIS</strong><small>Web corporativa · SEO local · 3 idiomas</small>
             </div>
             <div class="clientFoot">
@@ -501,7 +554,7 @@ infra: Git, GitHub, Linux, Vercel, Docker</pre>
             ><div class="num" aria-hidden="true">02</div>
             <span class="badge pink">CLIENT PROJECT</span>
             <div class="browser beauty">
-              <div></div>
+              <div class="client-shot"><img src="./assets/projects/ciscar.jpg" width="1280" height="850" loading="lazy" decoding="async" alt="Captura de la web de María José Císcar" /></div>
               <strong>MARÍA JOSÉ<br />CÍSCAR</strong><small>Centro de estética · Reserva directa</small>
             </div>
             <div class="clientFoot">
@@ -510,40 +563,75 @@ infra: Git, GitHub, Linux, Vercel, Docker</pre>
             </div></a
           >
         </div>
+        <div class="work-group" id="project-collection"><p>Más proyectos</p><span>Aplicaciones, herramientas y exploración</span></div>
         <div class="projectGrid">
           <a class="smallProject reveal" href="https://tfg-daw-rfrw.vercel.app/" target="_blank" rel="noopener noreferrer"
-            ><span>03 · FULL STACK / MEVN</span>
+            ><div class="project-thumb"><img src="./assets/projects/ainhoa.jpg" width="1280" height="850" loading="lazy" decoding="async" alt="Captura de la aplicación Web Ainhoa" /><span class="thumb-open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span></div><span class="project-kind">03 · FULL STACK / MEVN</span>
             <h3 id="project-ainhoa">Web Ainhoa</h3>
             <p>Gestión de productos, inventario, usuarios y funcionalidades de negocio.</p>
             <b>MongoDB · Express · Vue · Node ↗</b></a
           ><a class="smallProject reveal" href="https://jordismt.github.io/GeneraBD_Jcasol/" target="_blank" rel="noopener noreferrer"
-            ><span>04 · DEVELOPER TOOL</span>
+            ><div class="project-thumb"><img src="./assets/projects/generabd.jpg" width="1280" height="850" loading="lazy" decoding="async" alt="Captura de la herramienta GeneraBD" /><span class="thumb-open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span></div><span class="project-kind">04 · DEVELOPER TOOL</span>
             <h3 id="project-generabd">GeneraBD</h3>
             <p>Generador de SQL y documentación automática para bases de datos.</p>
             <b>JavaScript · SQL ↗</b></a
           ><a class="smallProject reveal" href="https://look-luxe.vercel.app/" target="_blank" rel="noopener noreferrer"
-            ><span>05 · UI / WEB</span>
+            ><div class="project-thumb"><img src="./assets/projects/look-luxe.jpg" width="1280" height="850" loading="lazy" decoding="async" alt="Captura de la web Look&Luxe" /><span class="thumb-open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span></div><span class="project-kind">05 · UI / WEB</span>
             <h3 id="project-look-luxe">Look&Luxe</h3>
             <p>Concepto visual premium para un centro de estética.</p>
             <b>Frontend · UI/UX ↗</b></a
           ><a class="smallProject reveal" href="./projects/landingpages/techzone.html"
-            ><span>06 · E-COMMERCE</span>
+            ><div class="project-thumb"><img src="./assets/projects/techzone.jpg" width="1280" height="850" loading="lazy" decoding="async" alt="Captura de la demo de e-commerce TechZone" /><span class="thumb-open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span></div><span class="project-kind">06 · E-COMMERCE</span>
             <h3 id="project-techzone">TechZone</h3>
             <p>Concepto de e-commerce para hardware y productos tecnológicos.</p>
             <b>Frontend · Responsive ↗</b></a
           >
-          <article class="smallProject reveal">
-            <span>07 · MOBILE / SOFTWARE</span>
+          <article class="smallProject fittrack-card reveal">
+            <div class="project-thumb fittrack-thumb" aria-hidden="true"><div class="fittrack-device"><span class="device-speaker"></span><i data-lucide="activity"></i><div class="activity-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="device-home"></span></div><span class="native-label">Flutter / multiplataforma</span><i class="flutter-bracket" data-lucide="code-xml"></i></div>
+            <span class="project-kind">07 · MOBILE / SOFTWARE</span>
             <h3 id="project-fittrack">FitTrack</h3>
             <p>Aplicación multiplataforma para seguimiento de entrenamiento y progreso.</p>
             <b>Flutter · App development</b>
           </article>
-        </div>
-        <article class="product-extension reveal">
+        <article class="smallProject product-extension mysong-card reveal">
           <div><span class="badge">PROYECTO FINAL DAM · 2024</span><h3 id="project-mysong">MySong</h3><p>Una aplicación de escritorio conectada a una API REST para usuarios, canciones y listas, con reproducción de audio en streaming.</p><div class="tags light-tags"><b>Java</b><b>Spring Boot</b><b>PostgreSQL</b><b>Python</b><b>PySide6</b></div></div>
-          <div class="product-code"><code>desktop → API REST → PostgreSQL<br />usuarios / canciones / listas<br />audio → streaming</code></div>
+          <div class="product-code project-thumb song-thumb"><div class="song-visual" aria-hidden="true"><span class="song-disc"><i data-lucide="music-2"></i></span><div class="song-equalizer"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="song-output"><i data-lucide="headphones"></i></span></div><code>desktop → API REST → PostgreSQL<br />usuarios / canciones / listas<br />audio → streaming</code></div>
         </article>
+        </div>
+
         <div class="section-end reveal"><p>Productos SaaS, proyectos para negocios y aplicaciones de formación: distintas formas de llevar el desarrollo a la práctica.</p><a href="https://github.com/jordismt" target="_blank" rel="noopener noreferrer">Explorar mi GitHub ↗</a></div>
+      </section>
+      <section id="case-studies" class="section case-section">
+        <header class="sectionHead reveal">
+          <h2 class="section-heading"><span class="section-meta"><span>BUILD LOG / CASOS DE ESTUDIO</span><code>~/build-log</code></span><span class="section-title">Dos productos.<br /><em>Retos diferentes.</em></span></h2>
+        </header>
+        <p class="case-intro reveal">Resbix y Carteliax son dos SaaS reales que he desarrollado y lanzado en solitario en 2026. Aquí explico el problema, mi aportación y las decisiones técnicas de cada uno.</p>
+        <div class="case-directory" role="navigation" aria-label="Elegir caso de estudio"><a href="#case-resbix"><span class="case-mini-icon">Rx</span><span>Resbix<small>IA, reservas y gestión de negocios</small></span><i data-lucide="arrow-down-right"></i></a><a href="#case-carteliax"><span class="case-mini-icon carteliax-icon">C<span>.</span></span><span>Carteliax<small>Cartas digitales y QR permanente</small></span><i data-lucide="arrow-down-right"></i></a></div>
+        <article id="case-resbix" class="case-file case-resbix reveal" aria-labelledby="case-resbix-title">
+          <div class="case-filebar"><span><i data-lucide="git-branch"></i> build / resbix</span><span class="case-live"><span class="launch-dot" aria-hidden="true"></span>Lanzado · 2026</span></div>
+          <div class="case-overview">
+            <div class="case-summary"><span class="story-label">SAAS MULTI-TENANT / INTELIGENCIA ARTIFICIAL</span><h3 id="case-resbix-title">Resbix</h3><p class="case-challenge">Un agente de IA que conoce el contexto de cada negocio.</p><p>El reto va más allá de responder mensajes: cada empresa necesita gestionar sus propios clientes, reservas, servicios, empleados y configuraciones, con datos y funcionalidades separados.</p><dl class="case-facts"><div><dt>Mi rol</dt><dd>Diseño y desarrollo Full Stack en solitario</dd></div><div><dt>Producto</dt><dd>SaaS para la gestión de negocios</dd></div><div><dt>Estado</dt><dd>Desarrollado y lanzado en 2026</dd></div></dl><div class="story-actions"><a href="https://resbix.com" target="_blank" rel="noopener noreferrer">Abrir Resbix <i data-lucide="arrow-up-right"></i></a><a href="#resbix-title">Volver al proyecto <i data-lucide="arrow-up"></i></a></div></div>
+            <figure class="case-screenshot"><img src="./assets/projects/resbix-live.jpg" width="1440" height="960" loading="lazy" decoding="async" alt="Captura del sitio público de Resbix, con su presentación de gestión y reservas con IA" /><figcaption><span>resbix.com</span><span>Sitio público del producto</span></figcaption></figure>
+          </div>
+          <div class="case-content">
+            <div class="case-narrative"><span class="story-label">EL RETO TÉCNICO</span><h4>De una consulta a una reserva, con el contexto correcto.</h4><p>Integrar un agente con Groq capaz de responder consultas, conocer los servicios y precios de cada empresa, consultar disponibilidad y gestionar reservas. Ese contexto cambia de un negocio a otro.</p><p>Mi aportación incluye la integración de IA y WhatsApp mediante Evolution API, la autenticación y el aislamiento de datos con Supabase, y un panel de gestión cuyas funcionalidades dependen del plan contratado.</p><ul class="case-decisions"><li><i data-lucide="layers-3"></i><div><h5>Separación por negocio</h5><p>Clientes, reservas, servicios, empleados y configuración propios dentro de una plataforma multi-tenant.</p></div></li><li><i data-lucide="messages-square"></i><div><h5>IA conectada al producto</h5><p>Groq para el agente, contexto del negocio y gestión de reservas; Evolution API para la integración con WhatsApp.</p></div></li><li><i data-lucide="key-round"></i><div><h5>Autenticación y planes</h5><p>Supabase para autenticación y aislamiento de datos; Stripe y un panel con funcionalidades según el plan contratado.</p></div></li></ul></div>
+            <div class="case-system"><div class="system-heading"><i data-lucide="workflow"></i><span>Mapa del sistema</span></div><ol class="system-flow" aria-label="Capas de Resbix"><li><span>01 / PRODUCTO</span><b>Panel de gestión</b><small>JavaScript · contexto de cada negocio</small></li><li><span>02 / BACKEND</span><b>API y lógica del producto</b><small>Node.js · Express</small></li><li><span>03 / DATOS</span><b>Autenticación y aislamiento</b><small>Supabase</small></li></ol><div class="integration-grid"><div><i data-lucide="sparkles"></i><b>Groq</b><span>Agente IA</span></div><div><i data-lucide="messages-square"></i><b>Evolution API</b><span>WhatsApp</span></div><div><i data-lucide="credit-card"></i><b>Stripe</b><span>Planes</span></div></div><details class="case-notes"><summary>Ver los puntos de integración</summary><ul><li>El agente utiliza información de los servicios y precios del negocio.</li><li>Disponibilidad y reservas forman parte del flujo del producto.</li><li>WhatsApp se conecta mediante Evolution API.</li><li>Los datos y la configuración pertenecen a cada empresa.</li><li>El panel adapta sus funcionalidades al plan contratado.</li></ul></details></div>
+          </div>
+          <div class="case-stack" aria-label="Stack de Resbix"><span>STACK</span><b>Node.js</b><b>Express</b><b>JavaScript</b><b>Supabase</b><b>Groq</b><b>Stripe</b><b>Evolution API</b></div>
+        </article>
+        <article id="case-carteliax" class="case-file case-carteliax reveal" aria-labelledby="case-carteliax-title">
+          <div class="case-filebar"><span><i data-lucide="git-branch"></i> build / carteliax</span><span class="case-live"><span class="launch-dot" aria-hidden="true"></span>Lanzado · 2026</span></div>
+          <div class="case-overview">
+            <div class="case-summary"><span class="story-label">SAAS MULTI-TENANT / RESTAURACIÓN</span><h3 id="case-carteliax-title">Carteliax</h3><p class="case-challenge">La carta cambia. El QR permanece.</p><p>Restaurantes y bares necesitan crear y mantener sus cartas digitales sin conocimientos técnicos. El desafío es reunir toda esa gestión en un panel intuitivo y mantener estable el acceso público.</p><dl class="case-facts"><div><dt>Mi rol</dt><dd>Diseño y desarrollo Full Stack en solitario</dd></div><div><dt>Producto</dt><dd>SaaS de cartas digitales para restaurantes y bares</dd></div><div><dt>Estado</dt><dd>Desarrollado y lanzado en 2026</dd></div></dl><div class="story-actions"><a href="https://carteliax.com" target="_blank" rel="noopener noreferrer">Abrir Carteliax <i data-lucide="arrow-up-right"></i></a><a href="#project-cartaliax">Volver al proyecto <i data-lucide="arrow-up"></i></a></div></div>
+            <figure class="case-screenshot"><img src="./assets/projects/carteliax-live.jpg" width="1440" height="960" loading="lazy" decoding="async" alt="Captura del sitio público de Carteliax, con su presentación de web, carta digital y QR para restaurantes" /><figcaption><span>carteliax.com</span><span>Sitio público del producto</span></figcaption></figure>
+          </div>
+          <div class="case-content">
+            <div class="case-narrative"><span class="story-label">EL RETO TÉCNICO</span><h4>Una gestión sencilla para una carta que está viva.</h4><p>Diseñar un panel para administrar negocios, cartas, categorías y productos, manteniendo un código QR permanente aunque el contenido se modifique.</p><p>He desarrollado también la gestión de imágenes, alérgenos, disponibilidad, diferentes idiomas, plantillas y personalización visual dentro de una plataforma multi-tenant.</p><ul class="case-decisions"><li><i data-lucide="qr-code"></i><div><h5>Acceso público estable</h5><p>El QR conserva su destino mientras el negocio actualiza la carta; editar el contenido no exige reimprimirlo.</p></div></li><li><i data-lucide="sliders-horizontal"></i><div><h5>Un panel para el día a día</h5><p>Negocios, cartas, categorías y productos organizados para que la gestión no requiera conocimientos técnicos.</p></div></li><li><i data-lucide="languages"></i><div><h5>Contenido y presentación</h5><p>Imágenes, alérgenos, disponibilidad e idiomas, junto con plantillas y personalización visual.</p></div></li></ul></div>
+            <div class="case-system"><div class="system-heading"><i data-lucide="workflow"></i><span>Del panel a la carta</span></div><ol class="system-flow" aria-label="Capas de Carteliax"><li><span>01 / INTERFAZ</span><b>Panel de administración</b><small>Nuxt · Vue 3 · Tailwind CSS</small></li><li><span>02 / BACKEND</span><b>Negocios y contenido</b><small>Node.js · Express · Supabase</small></li><li><span>03 / PUBLICACIÓN</span><b>Carta digital actualizada</b><small>QR permanente · mismo acceso público</small></li></ol><div class="permanent-qr"><i data-lucide="qr-code"></i><div><b>Mismo QR</b><span>Productos, idiomas y diseño actualizables</span></div><i data-lucide="refresh-cw"></i></div><details class="case-notes"><summary>Ver el alcance del producto</summary><ul><li>Gestión de negocios, cartas, categorías y productos.</li><li>Imágenes, alérgenos y disponibilidad.</li><li>Diferentes idiomas para el contenido de la carta.</li><li>Plantillas y personalización visual.</li><li>Plataforma multi-tenant y código QR permanente.</li></ul></details></div>
+          </div>
+          <div class="case-stack" aria-label="Stack de Carteliax"><span>STACK</span><b>Nuxt</b><b>Vue 3</b><b>Tailwind CSS</b><b>Node.js</b><b>Express</b><b>Supabase</b></div>
+        </article>
+        <div class="case-conversation reveal"><div><span class="story-label">¿HABLAMOS DE PRODUCTO?</span><p>Si buscas un perfil que conecte interfaz, backend y datos, podemos hablar.</p></div><a href="#contact">Contactar <i data-lucide="arrow-up-right"></i></a></div>
       </section>
       <section id="journey" class="journey">
         <div class="journeyIntro reveal">
@@ -555,7 +643,7 @@ infra: Git, GitHub, Linux, Vercel, Docker</pre>
         </div>
         <div class="gitlog reveal">
           <h3 class="log-heading">Experiencia práctica</h3>
-          <div class="commit"><i></i><code>feature / products</code><span class="commit-date">nov. 2025 — actualidad</span><h4>Full Stack freelance</h4><p>Proyectos para negocios y productos propios. Tres sitios web remunerados; desarrollo de Resbix y Cartaliax.</p><p>Requisitos, implementación, APIs, bases de datos, autenticación, pruebas y puesta en producción.</p></div>
+          <div class="commit"><i></i><code>feature / products</code><span class="commit-date">nov. 2025 — actualidad</span><h4>Full Stack freelance</h4><p>Proyectos para negocios y productos propios. Tres sitios web remunerados; desarrollo de Resbix y Carteliax.</p><p>Requisitos, implementación, APIs, bases de datos, autenticación, pruebas y puesta en producción.</p></div>
           <div class="commit"><i></i><code>feature / web</code><span class="commit-date">mar. — may. 2025</span><h4>Gesdata Consulting</h4><p>Prácticas de desarrollo PHP / JavaScript. Aplicaciones con PHPRunner, nuevas funcionalidades y resolución de incidencias. Tablas, relaciones y consultas SQL con phpMyAdmin.</p></div>
           <div class="commit"><i></i><code>feature / wordpress</code><span class="commit-date">mar. — may. 2024</span><h4>Venalsol Smart Light</h4><p>Prácticas de desarrollo web con WordPress y Elementor. Contact Form 7, BetterDocs, adaptación responsive y personalización de estilos y PHP.</p></div>
           <div class="commit"><i></i><code>feature / systems</code><span class="commit-date">mar. — jun. 2021</span><h4>Técnico informático</h4><p>Prácticas en el Ayuntamiento de Benifairó de la Valldigna: mantenimiento y configuración de equipos, sistemas operativos y documentación.</p></div>
@@ -591,7 +679,7 @@ infra: Git, GitHub, Linux, Vercel, Docker</pre>
         <div class="process reveal"><div><span class="badge">WORKFLOW</span><h3>Cómo planteo un proyecto</h3></div><ol><li><b>01 · Entender</b><p>Objetivos, usuarios y alcance.</p></li><li><b>02 · Construir</b><p>Interfaz, lógica y datos conectados.</p></li><li><b>03 · Validar</b><p>Pruebas y corrección de errores.</p></li><li><b>04 · Publicar</b><p>Despliegue y puesta en producción.</p></li></ol></div>
         <div class="section-end reveal"><p>¿Buscas un desarrollador para tu equipo o tienes una idea que necesita desarrollo?</p><a href="#contact">Cuéntame qué necesitas ↗</a></div>
       </section>
-      <section class="playground section">
+      <section id="terminal" class="playground section">
         <header class="sectionHead light reveal">
           <h2 class="section-heading"><span class="section-meta"><span>TERMINAL / PLAYGROUND</span><code>~/terminal</code></span><span class="section-title">Prueba algunos<br /><em>comandos.</em></span></h2>
         </header>
@@ -605,9 +693,20 @@ infra: Git, GitHub, Linux, Vercel, Docker</pre>
           </div>
           <form id="termForm">
             <label for="termInput">jordi@portfolio:~$</label
-            ><input id="termInput" autocomplete="off" spellcheck="false" aria-label="Comando de terminal" aria-describedby="terminal-help" />
+            ><input id="termInput" autocomplete="off" autocapitalize="none" enterkeyhint="send" spellcheck="false" aria-label="Comando de terminal" aria-describedby="terminal-help terminal-shortcuts" />
+            <button class="term-run" type="submit" aria-label="Ejecutar comando">↵</button>
           </form>
+          <div class="terminal-tools"><span id="terminal-shortcuts"><kbd>↑</kbd><kbd>↓</kbd> historial <span>·</span> <kbd>Tab</kbd> completar</span><span id="terminalFeedback" role="status" aria-live="polite">bash · ready</span></div>
         </div>
+      </section>
+      <section id="faq" class="section faq-section">
+        <header class="sectionHead reveal"><h2 class="section-heading"><span class="section-meta"><span>FAQ / PARA CONOCERNOS MEJOR</span><code>~/questions</code></span><span class="section-title">Antes de<br /><em>hablar.</em></span></h2></header>
+        <div class="faq-layout"><p class="faq-intro reveal">Algunas respuestas sobre mi perfil, los productos que construyo y cómo contactar conmigo.</p><div class="faq-list reveal">
+          <details><summary>¿Buscas un equipo o aceptas proyectos freelance?<i data-lucide="plus" aria-hidden="true"></i></summary><p>Ambas opciones. Busco incorporarme a un equipo de desarrollo y también estoy abierto a proyectos freelance. Mi perfil combina frontend, APIs REST, bases de datos e integraciones.</p><a href="#contact">Hablemos de la oportunidad <i data-lucide="arrow-up-right"></i></a></details>
+          <details><summary>¿Qué productos has desarrollado y lanzado por tu cuenta?<i data-lucide="plus" aria-hidden="true"></i></summary><p>Resbix y Carteliax, dos SaaS multi-tenant desarrollados y lanzados en solitario en 2026. Puedes ver sus webs y conocer mi aportación y sus retos técnicos en los casos de estudio.</p><a href="#case-studies">Explorar los casos de estudio <i data-lucide="arrow-up-right"></i></a></details>
+          <details><summary>¿Dónde estás y contemplas trabajar en remoto?<i data-lucide="plus" aria-hidden="true"></i></summary><p>Estoy en Valencia. Contemplo oportunidades presenciales en Valencia y alrededores, y también trabajo en remoto.</p></details>
+          <details><summary>¿Dónde puedo revisar tu experiencia y tu código?<i data-lucide="plus" aria-hidden="true"></i></summary><p>En Journey encontrarás mi experiencia y formación. El CV reúne mi perfil profesional y en GitHub puedes explorar mis repositorios públicos.</p><div class="faq-links"><a href="#journey">Experiencia <i data-lucide="arrow-up-right"></i></a><a href="./docs/Jcasol_CV.pdf" target="_blank" rel="noopener noreferrer">CV <i data-lucide="file-text"></i></a><a href="https://github.com/jordismt" target="_blank" rel="noopener noreferrer">GitHub <i data-lucide="arrow-up-right"></i></a></div></details>
+        </div></div>
       </section>
       <section id="contact" class="contact">
         <div class="contactCopy reveal">
@@ -634,7 +733,7 @@ infra: Git, GitHub, Linux, Vercel, Docker</pre>
               name="message"
               required
               placeholder="Cuéntame qué tienes en mente..."></textarea></label
-          ><button type="submit">$ send_message <i data-lucide="arrow-up-right"></i></button>
+          ><button type="submit"><span class="send-label">$ send_message</span><span class="send-spinner" aria-hidden="true"></span><i data-lucide="arrow-up-right"></i></button>
           <p id="successMessage" role="status" aria-live="polite"></p>
         </form>
       </section>
@@ -643,7 +742,11 @@ infra: Git, GitHub, Linux, Vercel, Docker</pre>
       <b>JC.</b><span>Full Stack Developer · Valencia / Remote</span
       ><span>© <i id="year">2026</i> Jordi Casanova</span>
     </footer>
-    <div class="palette" id="palette">
+    <div class="workspace-dock" role="region" aria-label="Estado del entorno visual">
+      <div class="dock-location"><span class="dock-branch">⑂ main</span><span class="dock-separator" aria-hidden="true">/</span><span id="workspacePath">~/portfolio</span></div>
+      <div class="dock-controls"><button id="effectsToggle" type="button" aria-pressed="false" aria-label="Activar lluvia de código" hidden><span class="fx-led" aria-hidden="true"></span><span class="fx-label">FX off</span></button><span class="dock-progress" id="workspaceProgress" aria-hidden="true">00%</span><span class="dock-encoding" aria-hidden="true">UTF-8</span></div>
+    </div>
+    <div class="palette" id="palette" aria-hidden="true" inert>
       <div class="paletteBox" role="dialog" aria-modal="true" aria-label="Navegar por el portfolio">
         <div class="search">
           <i data-lucide="search"></i><input id="paletteInput" aria-label="Buscar sección" placeholder="Ir a una sección..." /><kbd
@@ -654,8 +757,12 @@ infra: Git, GitHub, Linux, Vercel, Docker</pre>
         ><a href="#projects">02 <b>Selected Work</b><span>Proyectos</span></a
         ><a href="#journey">03 <b>Journey</b><span>Formación</span></a
         ><a href="#contact">04 <b>Contact</b><span>Hablemos</span></a><a href="#services">05 <b>Services</b><span>Servicios y proceso</span></a>
+        <a href="#about">06 <b>About</b><span>Sobre mí</span></a><a href="#case-studies">07 <b>Cases</b><span>Casos de estudio · Resbix y Carteliax</span></a><a href="#faq">08 <b>FAQ</b><span>Preguntas frecuentes</span></a><a href="#terminal">09 <b>Terminal</b><span>Comandos interactivos</span></a>
+        <p class="palette-empty" role="status" hidden>Sin resultados. Prueba con «Stack», «Work» o «Contact».</p>
+        <div class="palette-help" aria-hidden="true"><span>↑ ↓ navegar</span><span>↵ abrir <span>·</span> esc cerrar</span></div>
       </div>
     </div>
     <script defer src="./script.js"></script>
+    <script defer src="./workspace.js"></script>
   </body>
 </html>
