@@ -90,9 +90,11 @@ function initializePortfolio() {
     ["", "answer"],
     ["$ cat stack.json", "prompt"],
     ["> {", "answer"],
-    ['>   frontend: ["Next.js", "Vue", "Nuxt", "TypeScript"],', "answer"],
+    ['>   frontend: ["Vue", "JavaScript"],', "answer"],
     ['>   backend: ["Node.js", "Express", "Spring Boot"],', "answer"],
-    ['>   data: ["Supabase", "PostgreSQL", "MongoDB"]', "answer"],
+    ['>   data: ["Supabase", "PostgreSQL", "MongoDB"],', "answer"],
+    ['>   ai: ["Groq"],', "answer"],
+    ['>   also: ["Next.js", "Nuxt", "TypeScript"]', "answer"],
     ["> }", "answer"],
     ["", "answer"],
     ["$ status", "prompt"],
@@ -128,7 +130,17 @@ function initializePortfolio() {
         }
         line.classList.remove("is-typing");
       } else {
-        ink.textContent = text || "\u00a0";
+        const tokens = /("[^"]*"|\b(?:true|false)\b|\b(?:frontend|backend|data|ai|also|available_for_work)(?=:))/g;
+        let offset = 0;
+        for (const match of text.matchAll(tokens)) {
+          ink.append(document.createTextNode(text.slice(offset, match.index)));
+          const token = document.createElement("span");
+          token.className = match[0].startsWith('"') ? "syntax-string" : "syntax-keyword";
+          token.textContent = match[0];
+          ink.append(token);
+          offset = match.index + match[0].length;
+        }
+        ink.append(document.createTextNode(text.slice(offset) || (text ? "" : "\u00a0")));
         enter(ink, 0, 4);
       }
     }
@@ -148,7 +160,11 @@ function initializePortfolio() {
           { transform: "translate3d(0,110%,0)" }, { transform: "none" },
         ], { duration: 950, delay: 80 + index * 110, fill: "backwards" });
       });
-      enter($(".terminalWrap"), 3, 30);
+      animate($(".developer-profile"), [
+        { opacity: .15, clipPath: "inset(0 0 100% 0 round 16px)", translate: "0 20px" },
+        { opacity: 1, clipPath: "inset(0 0 0 0 round 16px)", translate: "0 0" },
+      ], { duration: 800, delay: 130, fill: "backwards" });
+      enter($(".terminal"), 3, 20);
     }
     playHeroTerminal();
   });
@@ -263,18 +279,18 @@ function initializePortfolio() {
 
   const stackData = {
     front: [
-      "frontend.tsx",
+      "frontend.js",
 
       `export const frontend = {
   frameworks: [
-    "Next.js",
     "Vue 3",
-    "Nuxt"
+    "Nuxt",
+    "Next.js"
   ],
 
   languages: [
-    "TypeScript",
-    "JavaScript"
+    "JavaScript",
+    "TypeScript (básico)"
   ],
 
   ui: [
@@ -286,7 +302,9 @@ function initializePortfolio() {
     "Flutter"
   ],
 
-  focus: "interfaces that ship"
+  focus: "interfaces that ship",
+  // También Nuxt a nivel básico
+  main: "Vue.js + JavaScript"
 };`,
     ],
 
@@ -360,15 +378,82 @@ WHERE category IN (
 
   status: production-ready`,
     ],
+    cms: [
+      "wordpress.js",
+      `export const wordpress = {
+  cms: "WordPress",
+  builder: "Elementor",
+
+  plugins: [
+    "Contact Form 7",
+    "BetterDocs"
+  ],
+
+  customization: [
+    "CSS",
+    "PHP",
+    "Diseño responsive"
+  ],
+
+  experience: "Prácticas en Venalsol Smart Light",
+  focus: "Webs para negocios y contenido"
+};`,
+    ],
+    integrations: [
+      "integrations.js",
+      `export const integrations = {
+  ai: ["Groq", "Whisper"],
+
+  conversations: [
+    "Chatbots",
+    "WhatsApp / Evolution API"
+  ],
+
+  business: [
+    "CRM",
+    "Reservas",
+    "Calendarios"
+  ],
+
+  connections: ["APIs REST", "Webhooks"],
+  payments: "Stripe",
+  focus: "Integrar servicios en un mismo producto"
+};`,
+    ],
+  };
+
+  const stackAreas = {
+    front: { title: "Interfaces que conectan.", description: "De la web responsive a la aplicación.", icon: "panels-top-left", tags: ["Vue.js", "JavaScript", "HTML / CSS", "Tailwind", "Next.js", "Flutter", "TypeScript · básico", "Nuxt · básico"] },
+    back: { title: "La lógica detrás del producto.", description: "APIs, autenticación, pagos e integraciones.", icon: "server", tags: ["Node.js", "Express", "PHP", "Java", "Spring Boot", "Hibernate", "Groq", "Whisper", "Stripe"] },
+    data: { title: "Datos con acceso seguro.", description: "Bases de datos, autenticación y políticas de acceso.", icon: "database", tags: ["PostgreSQL", "Supabase", "MongoDB", "MySQL", "SQL", "Auth / RLS"] },
+    infra: { title: "Del repositorio a producción.", description: "Versiones, despliegue y entorno de trabajo.", icon: "cloud-upload", tags: ["Git", "GitHub", "Linux", "Vercel", "CI/CD", "Docker · básico"] },
+    cms: { title: "Webs que un negocio puede gestionar.", description: "WordPress y Elementor, con personalización responsive.", icon: "layout-template", tags: ["WordPress", "Elementor", "Contact Form 7", "BetterDocs", "CSS", "PHP"] },
+    integrations: { title: "Servicios que trabajan juntos.", description: "IA, conversaciones y procesos conectados al producto.", icon: "plug-zap", tags: ["IA / Groq", "Whisper", "Chatbots", "CRM", "WhatsApp", "Evolution API", "APIs REST", "Webhooks", "Reservas", "Calendarios", "Stripe"] },
+  };
+  const stackExamples = {
+    front: { href: "#case-carteliax", label: "Ver aplicado en Carteliax" },
+    back: { href: "#case-resbix", label: "Ver aplicado en Resbix" },
+    data: { href: "#case-carteliax", label: "Datos y acceso en Carteliax" },
+    infra: { href: "#projects", label: "Explorar productos publicados" },
+    cms: { href: "#journey", label: "Mi experiencia con WordPress" },
+    integrations: { href: "#case-resbix", label: "IA e integraciones en Resbix" },
   };
 
   /* Small safe tokenizer: source text always goes through textContent. */
   const fileName = $("#fileName");
   const codePanel = $("#codePanel");
   const stackTabs = $$(".tab");
-  const languages = { front: "TypeScript React", back: "JavaScript", data: "SQL", infra: "YAML" };
+  const stackCodeToggle = $("#stackCodeToggle");
+  const languages = { front: "JavaScript", back: "JavaScript", data: "SQL", infra: "YAML", cms: "JavaScript", integrations: "JavaScript" };
   let currentTab;
   let editorAnimation;
+  stackCodeToggle?.addEventListener("click", () => {
+    const expanded = stackCodeToggle.getAttribute("aria-expanded") !== "true";
+    stackCodeToggle.setAttribute("aria-expanded", String(expanded));
+    codePanel.dataset.expanded = String(expanded);
+    stackCodeToggle.querySelector("span").textContent = expanded ? "Contraer código" : "Ampliar código";
+    if (!expanded) stackCodeToggle.scrollIntoView({block:"nearest", behavior:scrollBehavior()});
+  });
   function highlightCode(source) {
     const fragment = document.createDocumentFragment();
     source.split("\n").forEach((text) => {
@@ -399,10 +484,36 @@ WHERE category IN (
       tab.classList.toggle("active", selected);
       tab.setAttribute("role", "tab");
       tab.setAttribute("aria-selected", String(selected));
-      tab.setAttribute("aria-controls", "codePanel");
+      tab.setAttribute("aria-controls", "stackPanel");
       tab.tabIndex = selected ? 0 : -1;
     });
     if (fileName) fileName.textContent = `${stackData[key][0]} ×`;
+    $$("[data-stack-open]").forEach((link) => {
+      if (link.dataset.stackOpen === key) link.setAttribute("aria-current", "true");
+      else link.removeAttribute("aria-current");
+    });
+    const area = stackAreas[key];
+    $("#stackPanel")?.setAttribute("aria-labelledby", `stack-tab-${key}`);
+    if (area && $(".stack-area-overview")) {
+      $("#stackAreaTitle").textContent = area.title;
+      $("#stackAreaDescription").textContent = area.description;
+      const icon = document.createElement("i");
+      icon.dataset.lucide = area.icon;
+      $("#stackAreaIcon").replaceChildren(icon);
+      $("#stackAreaTags").replaceChildren(...area.tags.map((text) => {
+        const tag = document.createElement("li");
+        tag.textContent = text;
+        return tag;
+      }));
+      $(".stack-area-overview").hidden = false;
+      $(".stack-code-label").hidden = false;
+      const exampleLink = $("#stackAreaLink");
+      if (exampleLink && stackExamples[key]) {
+        exampleLink.setAttribute("href", stackExamples[key].href);
+        exampleLink.querySelector("b").textContent = stackExamples[key].label;
+      }
+      initializeIcons();
+    }
     if (codePanel) {
       editorAnimation?.cancel();
       codePanel.replaceChildren(highlightCode(stackData[key][1]));
@@ -429,6 +540,19 @@ WHERE category IN (
       stackTabs[next].focus({ preventScroll: true });
     });
   });
+  $$("[data-stack-open]").forEach((link) => {
+    link.setAttribute("href", `#stack-tab-${link.dataset.stackOpen}`);
+    link.addEventListener("click", (event) => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      setTab(link.dataset.stackOpen, true);
+    });
+  });
+  function selectLinkedStackTab() {
+    const key = location.hash.replace(/^#stack-tab-/, "");
+    if (location.hash.startsWith("#stack-tab-") && stackData[key]) setTab(key);
+  }
+  window.addEventListener("hashchange", selectLinkedStackTab);
+  window.addEventListener("popstate", selectLinkedStackTab);
   function setTabOrientation() {
     $(".ideSide")?.setAttribute("aria-orientation", window.innerWidth <= 900 ? "horizontal" : "vertical");
   }
@@ -437,6 +561,23 @@ WHERE category IN (
   if (codePanel) {
     codePanel.style.setProperty("--code-lines", Math.max(...Object.values(stackData).map(([, source]) => source.split("\n").length)));
     setTab("front");
+    selectLinkedStackTab();
+    codePanel.addEventListener("pointermove", (event) => {
+      const line = event.target.closest(".code-line");
+      if (!line || line.classList.contains("is-active")) return;
+      codePanel.querySelector(".is-active")?.classList.remove("is-active");
+      line.classList.add("is-active");
+    }, { passive: true });
+    codePanel.addEventListener("keydown", (event) => {
+      if (!["ArrowDown", "ArrowUp"].includes(event.key)) return;
+      event.preventDefault();
+      const lines = [...codePanel.querySelectorAll(".code-line")];
+      const current = lines.findIndex((line) => line.classList.contains("is-active"));
+      const next = Math.max(0, Math.min(lines.length - 1, current + (event.key === "ArrowDown" ? 1 : -1)));
+      lines[current]?.classList.remove("is-active");
+      lines[next]?.classList.add("is-active");
+      lines[next]?.scrollIntoView({ block: "nearest", behavior: "instant" });
+    });
   }
 
   /* Command palette: reversible CSS transitions and predictable keyboard focus. */
@@ -538,7 +679,7 @@ WHERE category IN (
     about: "Jordi Casanova — Full Stack Developer · Valencia / Remote. DAM + DAW. Abierto a empleo y proyectos freelance.",
 
     stack:
-      "Next.js · Vue · Nuxt · TypeScript · Node.js · Express · Spring Boot · Supabase · PostgreSQL · MongoDB · Docker",
+      "Principal: Node.js · Express · Vue.js · JavaScript · Supabase. También: Next.js · Nuxt · TypeScript (básico) · Spring Boot · PostgreSQL · MongoDB · Docker (básico).",
 
     projects:
       "Resbix · Carteliax · MySong · PresuVoz · Autoescuela Ramis · María José Císcar · Web Ainhoa · GeneraBD · Look&Luxe · TechZone · FitTrack",
@@ -561,6 +702,12 @@ WHERE category IN (
   commands.resbix = "Abriendo Resbix — https://resbix.com";
   commands.carteliax = "Abriendo Carteliax — https://carteliax.com";
   commands.help += " · matrix · cases · faq · resbix · carteliax";
+  commands["git log"] = "2026: Resbix + Carteliax, productos propios lanzados. Antes: DAW, DAM, prácticas y proyectos reales. Cada commit tiene una historia: explora Journey.";
+  commands.architecture = "frontend → API REST → datos → integraciones. Resbix: JavaScript / Express / Supabase / Groq. Carteliax: Nuxt + Vue / Express / Supabase. Explora las capas en Casos de estudio.";
+  commands.coffee = "const coffee = await brew(); // Las buenas ideas también necesitan una pausa. ☕";
+  commands.pwd = "~/jordi-casanova/portfolio — estás dentro de mi workspace.";
+  commands["ls -la"] = "about/  stack/  projects/  build-log/  journey/  services/  terminal/  faq/  contact/";
+  commands.help += " · git log · architecture · coffee · pwd · ls -la";
   const terminalForm = $("#termForm");
   const terminalInput = $("#termInput");
   const terminalHistory = $("#termHistory");
@@ -628,6 +775,13 @@ WHERE category IN (
   });
   terminalInput?.addEventListener("keydown", (event) => {
     if (event.isComposing) return;
+    if (event.ctrlKey && event.key.toLowerCase() === "l") {
+      event.preventDefault();
+      terminalHistory.replaceChildren();
+      terminalInput.setAttribute("aria-describedby", "terminal-shortcuts");
+      feedback("bash · cleared", "success");
+    }
+    if (event.key === "Escape") { terminalInput.value = ""; completion = undefined; }
     if (event.key === "ArrowUp" || event.key === "ArrowDown") {
       event.preventDefault();
       if (historyIndex === commandHistory.length) historyDraft = terminalInput.value;
@@ -705,7 +859,8 @@ WHERE category IN (
     if (location.hash !== href) history.pushState(null, "", href);
     target.setAttribute("tabindex", "-1");
     target.focus({ preventScroll: true });
-    target.scrollIntoView({ behavior: scrollBehavior(), block: "start" });
+    if (target.id === "top") window.scrollTo({ top: 0, left: 0, behavior: scrollBehavior() });
+    else target.scrollIntoView({ behavior: scrollBehavior(), block: "start" });
   }
   $$('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (event) => {
@@ -719,12 +874,18 @@ WHERE category IN (
     });
   });
   // Manual initial restoration must not break intentional Back/Forward navigation.
+  let restorationFrame;
   window.addEventListener("popstate", () => {
+    cancelAnimationFrame(restorationFrame);
     const target = document.getElementById(location.hash.slice(1) || "top");
     if (!target) return;
     target.setAttribute("tabindex", "-1");
     target.focus({ preventScroll: true });
-    target.scrollIntoView({ behavior: "instant", block: "start" });
+    // Finish the history traversal before cancelling any compositor smooth scroll.
+    restorationFrame = requestAnimationFrame(() => {
+      if (target.id === "top") window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      else target.scrollIntoView({ behavior: "instant", block: "start" });
+    });
   });
 
   /* Continuous product previews sleep outside the viewport or in hidden tabs. */
@@ -738,7 +899,7 @@ WHERE category IN (
   document.addEventListener("visibilitychange", () => root.classList.toggle("page-paused", document.hidden));
 
   /* Card light and shallow physical depth; no idle requestAnimationFrame loop. */
-  const cards = $$(".rbx-card, .heroProject, .client, .smallProject, .product-extension, .skill-card");
+  const cards = $$(".rbx-card, .heroProject, .client, .smallProject, .product-extension");
   const resetCards = [];
   cards.forEach((card) => {
     card.classList.add("motion-card");

@@ -264,3 +264,69 @@
 @media (prefers-reduced-motion: reduce) {
   #projects .client-shot img, #projects .project-thumb > img, #projects .rbx-chat, #projects .productUI { transform: none !important; translate: none !important; }
 }
+
+/* Project explorer filters the original nodes; links and case studies stay put. */
+#projects [hidden] { display: none !important; }
+.project-explorer { margin: 0 0 36px; padding-block: 20px; border-block: 1px solid #2a3a51; }
+.explorer-heading { display: flex; align-items: center; gap: 10px; color: #dce9f7; font: 500 12px var(--mono); }
+.explorer-heading > svg { width: 16px; height: 16px; color: #76d7ed; }
+#explorerCount { margin-left: auto; color: #a4b6ce; font: 400 11px var(--mono); }
+.explorer-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.explorer-filters button { display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 10px 16px; background: transparent; color: #aebfd6; border: 1px solid #33465e; border-radius: 8px; font-size: 12px; cursor: pointer; transition: background-color .2s, color .2s; }
+.explorer-filters button > span { color: #9aaec7; font: 500 10px var(--mono); }
+.explorer-filters button[aria-pressed="true"] { color: #dff4ff; background: #17334b; border-color: #6499b8; }
+.explorer-filters button[aria-pressed="true"] > span { color: #a6dcf1; }
+.explorer-filters button:hover { background: #132840; color: #e2f0ff; }
+
+/* Reservation demo: a bounded, replayable sequence, never a live chat. */
+#projects .rbx-visual { gap: 18px; }
+#projects .rbx-chat-content { min-height: 300px; }
+#projects .rbx-bubble { font-size: 12px; line-height: 1.7; }
+#projects .rbx-visual.demo-enhanced .rbx-bubble, #projects .rbx-visual.demo-enhanced .rbx-typing { animation: none; }
+#projects .rbx-visual.demo-enhanced .rbx-typing { display: none; }
+#projects .rbx-visual.demo-enhanced.is-playing .rbx-typing { display: flex; }
+#projects .rbx-booking { display: flex; align-items: center; gap: 10px; padding: 12px; margin-top: 4px; border: 1px solid #456e63; border-radius: 8px; background: #1b3b35; color: #b8e9d6; font-size: 11px; }
+#projects .rbx-booking svg { width: 20px; height: 20px; flex-shrink: 0; }
+#projects .rbx-booking strong, #projects .rbx-booking small { display: block; }
+#projects .rbx-booking small { color: #b2ccbf; font-size: 9px; margin-top: 4px; }
+.reservation-flow { position: relative; display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 6px; margin-top: 6px; }
+.reservation-flow > span { display: grid; justify-items: center; gap: 8px; color: #a4aecb; font: 500 9px var(--mono); }
+.reservation-flow > span > svg { width: 18px; height: 18px; }
+.reservation-flow > svg { width: 12px; height: 12px; color: #7e88a9; }
+.reservation-flow > span[data-active="true"] { color: #d5cef9; }
+.reservation-flow > span[data-active="true"] > svg { color: #b5e5cf; }
+.demo-controls { position: relative; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; width: 100%; color: #a9b2cd; font-size: 10px; }
+.demo-controls button { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 8px 12px; border: 1px solid #505778; border-radius: 7px; background: #262c46; color: #e1dbff; font-size: 11px; cursor: pointer; }
+.demo-controls button > svg { width: 13px; height: 13px; }
+.demo-controls button:hover { background: #353b5b; }
+.demo-controls button:disabled { opacity: .65; cursor: wait; }
+
+/* Carteliax: the actual product capture leads; the route explains its mechanism. */
+#projects .carteliax-site-preview { position: relative; transition: transform .5s var(--ease-out); }
+#projects .carteliax-site-preview::before { content: "carteliax.com / sitio público"; display: block; padding: 10px 14px; background: #e4eee8; border-bottom: 1px solid #b2c8ba; color: #365646; font: 500 9px var(--mono); }
+#projects .menu-journey { grid-column: 1 / -1; margin-top: 8px; padding-top: 20px; border-top: 1px solid #3b5a53; }
+.menu-journey-tabs { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+.menu-journey-tabs button { min-height: 44px; min-width: 62px; padding: 10px 14px; border: 1px solid #466b60; border-radius: 7px; background: #162e2c; color: #b7d4c7; font-size: 12px; cursor: pointer; }
+.menu-journey-tabs button[aria-pressed="true"] { background: #c3e5cf; color: #15372c; border-color: #c3e5cf; }
+.menu-journey-tabs > svg { width: 14px; height: 14px; color: #9ab9aa; }
+#projects #menuJourneyText { font-size: 12px; line-height: 1.8; color: #b3cec2; margin: 16px 0 0; min-height: 66px; }
+#projects .cartaliax-stage[data-menu-step="1"] .qr-node { outline: 2px solid #c3e5cf; outline-offset: 4px; }
+#projects .cartaliax-stage[data-menu-step="2"] .carteliax-site-preview { transform: translateY(-5px); }
+#projects .cartaliax-stage[data-menu-step="0"] .admin-node { border-color: #b3d7c4; background: #24463c; }
+#projects .projectText h3, #projects .cartaliax-card h3, #projects .rbx-tagline, #projects .section-title { letter-spacing: -.04em; }
+@media (max-width: 560px) {
+  .explorer-heading { font-size: 11px; }
+  #explorerCount { font-size: 10px; }
+  .explorer-filters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .explorer-filters button { justify-content: space-between; padding: 10px 12px; font-size: 11px; }
+  #projects .rbx-chat-content { min-height: 330px; }
+  #projects .rbx-bubble { font-size: 12px; }
+  .reservation-flow > span { font-size: 8px; }
+  #projects .menu-journey-tabs button { min-width: 54px; padding-inline: 10px; font-size: 11px; }
+  #projects .launched-feature .cartaliax-stage { padding: 24px 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #projects .cartaliax-stage[data-menu-step="2"] .carteliax-site-preview { transform: none; }
+}
+/* The existing white PresuVoz preview needs its own accessible metadata color. */
+#projects .uiTop > span { color: #526479; }

@@ -30,6 +30,7 @@
     <link rel="shortcut icon" href="./img/favicon-32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png" />
     <link rel="preload" href="./assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="./assets/portrait-jcasol-cutout.webp" as="image" />
     <script async id="iconScript" src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
     <script async id="emailScript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <link rel="stylesheet" href="./style.css" />
@@ -282,41 +283,52 @@
         <div class="heroCopy reveal">
           <div class="path">~/portfolio <b>•</b> available_for_work</div>
           <h1 class="hero-title">
-            <span class="overline">FULL STACK DEVELOPER · VALENCIA / REMOTE</span>
+            <span class="overline">Full Stack Developer<span class="sr-only"> · VALENCIA / REMOTE</span></span>
             <span class="hero-name"><span class="name-mask"><span class="name-line">Jordi</span></span><span class="name-mask"><span class="name-line"><em>Casanova</em><span class="name-cursor" aria-hidden="true">_</span></span></span></span>
           </h1>
-          <p class="lead">
-            Como desarrollador Full Stack, construyo productos web completos: interfaces, APIs REST, bases de datos, autenticación, pagos e
-            integraciones con IA.
-          </p>
-          <p class="profile-note">Titulado en DAM y DAW. Experiencia en prácticas, webs para negocios y productos SaaS propios. Abierto a equipos de desarrollo y proyectos freelance.</p>
-          <div class="actions">
-            <a class="primary" href="#projects">Ver proyectos <i data-lucide="arrow-down-right"></i></a
-            ><a class="secondary" href="./docs/Jcasol_CV.pdf" aria-label="CV de Jordi Casanova (PDF)" target="_blank" rel="noopener noreferrer"
-              >CV <i data-lucide="file-text"></i
-            ></a>
+          <p class="hero-intro">Proyectos web e Integraciones con IA</p>
+          <div class="hero-highlights" aria-label="Perfil de un vistazo" role="group"><span><i data-lucide="map-pin" aria-hidden="true"></i>Valencia / remoto</span><span><i data-lucide="graduation-cap" aria-hidden="true"></i>DAM + DAW</span></div>
+          <div class="hero-actions">
+            <div class="actions">
+              <a class="primary" href="#projects"><i data-lucide="folder-open" aria-hidden="true"></i>Ver proyectos</a>
+              <a class="secondary" href="./docs/Jcasol_CV.pdf" aria-label="CV de Jordi Casanova (PDF)" target="_blank" rel="noopener noreferrer"><i data-lucide="file-text" aria-hidden="true"></i>CV</a>
+            </div>
+            <div class="hero-social" aria-label="Redes profesionales" role="group"><a href="https://github.com/jordismt" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Jordi Casanova" title="GitHub"><i data-lucide="github" aria-hidden="true"></i><span class="sr-only">GitHub ↗</span></a><a href="https://www.linkedin.com/in/jcasoldev/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Jordi Casanova" title="LinkedIn"><i data-lucide="linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn ↗</span></a></div>
           </div>
-          <div class="profile-links"><a href="#about">Sobre mí ↗</a>
-            <a href="#journey">Perfil y experiencia ↗</a>
-            <a href="#services">Servicios y proyectos freelance ↗</a>
-            <a href="https://github.com/jordismt" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-            <a href="https://www.linkedin.com/in/jcasoldev/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-          </div>
-          <div class="facts">
-            <span><b>STACK</b> Express · Vue · Node · Supabase · SpringBoot</span
-            ><span><b>FOCUS</b> Full Stack · SaaS · AI</span>
-          </div>
+          <div class="hero-builds"><span class="sr-only">De mi workspace a producción</span><a href="#resbix-title"><i data-lucide="bot" aria-hidden="true"></i>Resbix<i data-lucide="arrow-up-right" aria-hidden="true"></i></a><a href="#project-cartaliax"><i data-lucide="qr-code" aria-hidden="true"></i>Carteliax<i data-lucide="arrow-up-right" aria-hidden="true"></i></a><span class="builds-state"><span class="launch-dot" aria-hidden="true"></span>Lanzados</span></div>
+          <details class="hero-profile-details">
+            <summary><i data-lucide="user-round" aria-hidden="true"></i>Más sobre mí y mi stack<i class="details-chevron" data-lucide="chevron-down" aria-hidden="true"></i></summary>
+            <div class="hero-profile-content">
+              <p class="lead">
+                Como desarrollador Full Stack, construyo productos web completos: interfaces, APIs REST, bases de datos, autenticación, pagos e
+                integraciones con IA.
+              </p>
+              <p class="profile-note">Titulado en DAM y DAW. Experiencia en prácticas, webs para negocios y productos SaaS propios. Abierto a equipos de desarrollo y proyectos freelance.</p>
+              <div class="profile-links"><a href="#about"><i data-lucide="user-round" aria-hidden="true"></i>Sobre mí ↗</a>
+                <a href="#journey"><i data-lucide="git-branch" aria-hidden="true"></i>Perfil y experiencia ↗</a>
+                <a href="#services"><i data-lucide="briefcase-business" aria-hidden="true"></i>Servicios y proyectos freelance ↗</a>
+              </div>
+              <div class="facts">
+                <span><b>STACK</b> Node.js · Express · Vue.js · JavaScript · Supabase · SpringBoot</span
+                ><span><b>FOCUS</b> Full Stack · SaaS · AI</span>
+              </div>
+            </div>
+          </details>
         </div>
         <div class="terminalWrap reveal">
+          <figure class="developer-profile">
+            <div class="portrait-viewport"><img src="./assets/portrait-jcasol-cutout.webp" width="840" height="873" fetchpriority="high" decoding="async" alt="Jordi Casanova, desarrollador Full Stack en Valencia" /></div>
+            <figcaption class="sr-only">La persona detrás del código.</figcaption>
+          </figure>
           <div class="session-chrome" aria-hidden="true"><span><span class="session-dot"></span> profile.sh</span><span>~/workspace</span></div>
           <div class="terminal">
             <div class="termbar">
               <div><i></i><i></i><i></i></div>
               <span>jordi@portfolio:~</span><small>bash</small>
             </div>
-            <div class="termbody" id="heroTerm" aria-label="Perfil técnico de Jordi Casanova">
+            <div class="termbody" id="heroTerm" role="group" aria-label="Perfil técnico de Jordi Casanova">
               <div class="prompt">$ whoami</div><div class="answer">Jordi Casanova — Full Stack Developer</div>
-              <div class="prompt">$ cat stack.json</div><div class="answer">Vue · Nuxt · Next.js · TypeScript<br />Node.js · Express · Spring Boot<br />Supabase · PostgreSQL · MongoDB</div>
+              <div class="prompt">$ cat stack.json</div><div class="answer">Vue · Nuxt · Next.js · TypeScript<br />Node.js · Express · Spring Boot<br />Supabase · PostgreSQL · MongoDB<br />IA: Groq</div>
               <div class="prompt">$ status</div><div class="success">Empleo + proyectos freelance</div>
             </div>
           </div>
@@ -329,45 +341,80 @@
           <h2 class="section-heading"><span class="section-meta"><span>ABOUT / SOBRE MÍ</span><code>~/about</code></span><span class="section-title">Detrás del código,<br /><em>Jordi.</em></span></h2>
         </header>
         <div class="about-layout">
-          <div class="about-copy reveal">
-            <p class="about-intro">Soy Jordi Casanova, desarrollador Full Stack en Valencia, titulado en Desarrollo de Aplicaciones Web y Multiplataforma.</p>
-            <p>Mi trabajo conecta lo que se ve en pantalla con lo que ocurre detrás: interfaces, APIs REST, bases de datos, autenticación e integraciones. He pasado por prácticas en empresas, webs para negocios y el desarrollo de mis propios productos.</p>
-            <p>En 2026 he desarrollado y lanzado por mi cuenta <a href="https://resbix.com" target="_blank" rel="noopener noreferrer">Resbix</a> y <a href="https://carteliax.com" target="_blank" rel="noopener noreferrer">Carteliax</a>. En ambos me he encargado del producto completo: desde la interfaz y el backend hasta los datos y la puesta en producción.</p>
-            <p>Busco aportar esa visión de conjunto a un equipo de desarrollo, y también colaborar en proyectos freelance con necesidades concretas.</p>
+          <div class="about-copy reveal" id="about-story">
+            <div class="about-readme-heading"><i data-lucide="notebook-text" aria-hidden="true"></i><span>Mi historia, por partes.</span><span class="about-readme-hint">abre una nota<i data-lucide="corner-down-left" aria-hidden="true"></i></span></div>
+            <div class="about-notes">
+              <details class="about-note" name="about-notes" id="about-note-profile"><summary><span class="about-note-icon"><i data-lucide="user-round" aria-hidden="true"></i></span><span class="about-note-label"><b>La persona detrás del código</b><span>Full Stack · Valencia · DAM + DAW</span></span><i class="about-note-chevron" data-lucide="chevron-down" aria-hidden="true"></i></summary><div class="about-note-body"><p class="about-intro">Soy Jordi Casanova, desarrollador Full Stack en Valencia, titulado en Desarrollo de Aplicaciones Web y Multiplataforma.</p></div></details>
+              <details class="about-note" name="about-notes" id="about-note-build"><summary><span class="about-note-icon"><i data-lucide="workflow" aria-hidden="true"></i></span><span class="about-note-label"><b>Conectar todas las piezas</b><span>Interfaz, APIs, datos e integraciones</span></span><i class="about-note-chevron" data-lucide="chevron-down" aria-hidden="true"></i></summary><div class="about-note-body"><p>Mi trabajo conecta lo que se ve en pantalla con lo que ocurre detrás: interfaces, APIs REST, bases de datos, autenticación e integraciones. He pasado por prácticas en empresas, webs para negocios y el desarrollo de mis propios productos.</p></div></details>
+              <details class="about-note" name="about-notes" id="about-note-products"><summary><span class="about-note-icon"><i data-lucide="rocket" aria-hidden="true"></i></span><span class="about-note-label"><b>De la idea a producción</b><span>Resbix + Carteliax · lanzados en 2026</span></span><i class="about-note-chevron" data-lucide="chevron-down" aria-hidden="true"></i></summary><div class="about-note-body"><p>En 2026 he desarrollado y lanzado por mi cuenta <a href="https://resbix.com" target="_blank" rel="noopener noreferrer">Resbix</a> y <a href="https://carteliax.com" target="_blank" rel="noopener noreferrer">Carteliax</a>. En ambos me he encargado del producto completo: desde la interfaz y el backend hasta los datos y la puesta en producción.</p></div></details>
+              <details class="about-note" name="about-notes" id="about-note-next"><summary><span class="about-note-icon"><i data-lucide="handshake" aria-hidden="true"></i></span><span class="about-note-label"><b>El siguiente paso</b><span>Equipo de desarrollo y proyectos freelance</span></span><i class="about-note-chevron" data-lucide="chevron-down" aria-hidden="true"></i></summary><div class="about-note-body"><p>Busco aportar esa visión de conjunto a un equipo de desarrollo, y también colaborar en proyectos freelance con necesidades concretas.</p></div></details>
+            </div>
             <div class="story-actions"><a href="#case-studies">Ver cómo los he construido <i data-lucide="arrow-down-right"></i></a><a href="./docs/Jcasol_CV.pdf" target="_blank" rel="noopener noreferrer">Mi CV <i data-lucide="file-text"></i></a></div>
           </div>
-          <div class="profile-file reveal">
+          <div class="profile-file reveal" id="about-profile">
             <div class="file-chrome"><span class="file-lights" aria-hidden="true"><i></i><i></i><i></i></span><span>profile.yaml</span><span>UTF-8</span></div>
-            <div class="profile-identity"><span class="profile-monogram" aria-hidden="true">JC<span>_</span></span><div><h3>Jordi Casanova</h3><p>Full Stack Developer</p></div></div>
-            <dl class="profile-manifest"><div><dt>location</dt><dd>Valencia / remoto</dd></div><div><dt>education</dt><dd>DAM + DAW</dd></div><div><dt>build</dt><dd>Frontend → API → datos</dd></div><div><dt>focus</dt><dd>SaaS · APIs REST · producto</dd></div></dl>
-            <div class="profile-launched"><span class="story-label">PRODUCTOS LANZADOS / 2026</span><a href="https://resbix.com" target="_blank" rel="noopener noreferrer"><span class="launch-dot" aria-hidden="true"></span>Resbix <i data-lucide="arrow-up-right"></i></a><a href="https://carteliax.com" target="_blank" rel="noopener noreferrer"><span class="launch-dot" aria-hidden="true"></span>Carteliax <i data-lucide="arrow-up-right"></i></a></div>
+            <div class="profile-identity"><span class="profile-mark"><img src="./img/logo_jcasol.png" width="92" height="92" loading="lazy" decoding="async" alt="" /></span><div><h3>Jordi Casanova</h3><p>Full Stack Developer</p></div></div>
+            <div class="profile-views" role="tablist" aria-label="Explorar el perfil de Jordi" hidden><button type="button" role="tab" id="profile-tab-person" aria-controls="profileView" aria-selected="true" data-profile-view="person"><i data-lucide="user-round" aria-hidden="true"></i>Perfil</button><button type="button" role="tab" id="profile-tab-products" aria-controls="profileView" aria-selected="false" tabindex="-1" data-profile-view="products"><i data-lucide="boxes" aria-hidden="true"></i>Productos</button><button type="button" role="tab" id="profile-tab-next" aria-controls="profileView" aria-selected="false" tabindex="-1" data-profile-view="next"><i data-lucide="handshake" aria-hidden="true"></i>Colaborar</button></div>
+            <dl class="profile-manifest"><div><dt><i data-lucide="map-pin" aria-hidden="true"></i>location</dt><dd>Valencia / remoto</dd></div><div><dt><i data-lucide="graduation-cap" aria-hidden="true"></i>education</dt><dd>DAM + DAW</dd></div><div><dt><i data-lucide="workflow" aria-hidden="true"></i>build</dt><dd>Frontend → API → datos</dd></div><div><dt><i data-lucide="crosshair" aria-hidden="true"></i>focus</dt><dd>SaaS · APIs REST · producto</dd></div></dl>
+            <div class="profile-view" id="profileView" role="tabpanel" aria-labelledby="profile-tab-person" tabindex="0" hidden><div class="profile-view-path"><i data-lucide="braces" aria-hidden="true"></i><code id="profileViewPath">jordi / visión-de-producto</code></div><p id="profileViewTitle">Conectar todas las piezas.</p><div class="profile-build-path" aria-label="Capas que desarrollo" role="group"><span class="profile-build-node"><span class="profile-node-icon"><i data-lucide="panels-top-left" aria-hidden="true"></i></span><span class="profile-node-label">Interfaz</span></span><i data-lucide="arrow-right" aria-hidden="true"></i><span class="profile-build-node"><span class="profile-node-icon"><i data-lucide="braces" aria-hidden="true"></i></span><span class="profile-node-label">API</span></span><i data-lucide="arrow-right" aria-hidden="true"></i><span class="profile-build-node"><span class="profile-node-icon"><i data-lucide="database" aria-hidden="true"></i></span><span class="profile-node-label">Datos</span></span></div><p id="profileViewText">Lo que ves en pantalla y lo que ocurre detrás, dentro de un mismo producto.</p><a id="profileViewLink" href="#journey">Mi trayectoria <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div>
+            <div class="profile-launched"><span class="story-label"><i data-lucide="rocket" aria-hidden="true"></i>PRODUCTOS LANZADOS / 2026</span><a href="https://resbix.com" target="_blank" rel="noopener noreferrer"><i data-lucide="bot" aria-hidden="true"></i>Resbix <i data-lucide="arrow-up-right"></i></a><a href="https://carteliax.com" target="_blank" rel="noopener noreferrer"><i data-lucide="qr-code" aria-hidden="true"></i>Carteliax <i data-lucide="arrow-up-right"></i></a></div>
+            <div class="profile-statusbar"><span><i data-lucide="git-branch" aria-hidden="true"></i>main</span><span id="profileViewStatus">profile.yaml · lectura</span><span class="profile-status-dot" aria-hidden="true"></span></div>
           </div>
         </div>
+        <div class="about-handoff"><span><i data-lucide="corner-down-right" aria-hidden="true"></i>Del perfil a la práctica.</span><a href="#stack">Las herramientas con las que construyo <i data-lucide="arrow-down" aria-hidden="true"></i></a></div>
       </section>
       <section id="stack" class="section">
         <header class="sectionHead reveal">
           <h2 class="section-heading"><span class="section-meta"><span>01 / STACK · TECNOLOGÍAS</span><code>~/skills</code></span><span class="section-title">Herramientas que uso<br />para <em>construir.</em></span></h2>
         </header>
-        <div class="stack-summary">
-          <article class="skill-card reveal"><code>01 / FRONTEND</code><h3>Interfaces y aplicaciones</h3><p>Vue.js · JavaScript · HTML · CSS · Tailwind</p><small>También Next.js, Flutter y conocimientos básicos de TypeScript y Nuxt.</small></article>
-          <article class="skill-card reveal"><code>02 / BACKEND</code><h3>Lógica y APIs</h3><p>Node.js · Express.js · PHP · Java · Spring Boot</p><small>APIs REST, autenticación e integraciones con IA y pagos.</small></article>
-          <article class="skill-card reveal"><code>03 / DATA & DEPLOY</code><h3>Datos y producción</h3><p>PostgreSQL · Supabase · MongoDB · MySQL</p><small>SQL, RLS, Git, GitHub, Linux y Vercel. Docker: conocimientos básicos.</small></article>
+        <div class="stack-topology">
+        <div class="stack-primary">
+          <div class="stack-board-header"><h3>Mi stack principal</h3><span><i data-lucide="workflow" aria-hidden="true"></i>Una visión Full Stack</span></div>
+          <div class="stack-blueprint">
+            <svg class="stack-circuit" viewBox="0 0 1000 500" preserveAspectRatio="none" aria-hidden="true"><path d="M250 205 V227 Q250 250 275 250 H420 V280"/><path d="M740 370 H860 Q895 370 895 335 V205"/><path class="circuit-signal" d="M250 205 V227 Q250 250 275 250 H420 V280"/><path class="circuit-signal" d="M740 370 H860 Q895 370 895 335 V205"/><circle cx="250" cy="205" r="4"/><circle cx="895" cy="205" r="4"/></svg>
+            <a class="stack-station station-front" href="#codePanel" data-stack-open="front"><span class="stack-station-label"><i data-lucide="panels-top-left" aria-hidden="true"></i>Interfaz<code>frontend</code></span><span class="stack-station-brands"><span class="stack-brand"><img src="./assets/stack/vue.svg" width="56" height="56" alt="" loading="lazy" /><span data-stack-brand>Vue.js</span></span><span class="stack-brand"><img src="./assets/stack/javascript.svg" width="56" height="56" alt="" loading="lazy" /><span data-stack-brand>JavaScript</span></span></span><span class="stack-station-foot">Lo que ves y usas<i data-lucide="arrow-up-right" aria-hidden="true"></i></span></a>
+            <span class="stack-wire" aria-hidden="true"><span></span><i data-lucide="arrow-right"></i></span>
+            <a class="stack-station station-back" href="#codePanel" data-stack-open="back"><span class="stack-station-label"><i data-lucide="server" aria-hidden="true"></i>Lógica<code>backend</code></span><span class="stack-station-brands"><span class="stack-brand"><img src="./assets/stack/nodejs.svg" width="56" height="56" alt="" loading="lazy" /><span data-stack-brand>Node.js</span></span><span class="stack-brand"><img src="./assets/stack/express.svg" width="56" height="56" alt="" loading="lazy" /><span data-stack-brand>Express</span></span></span><span class="stack-station-foot">APIs y reglas del producto<i data-lucide="arrow-up-right" aria-hidden="true"></i></span></a>
+            <span class="stack-wire" aria-hidden="true"><span></span><i data-lucide="arrow-right"></i></span>
+            <a class="stack-station station-data" href="#codePanel" data-stack-open="data"><span class="stack-station-label"><i data-lucide="database" aria-hidden="true"></i>Datos<code>database</code></span><span class="stack-station-brands"><span class="stack-brand"><img src="./assets/stack/supabase.svg" width="56" height="56" alt="" loading="lazy" /><span data-stack-brand>Supabase</span></span></span><span class="stack-station-foot">Datos y autenticación<i data-lucide="arrow-up-right" aria-hidden="true"></i></span></a>
+          </div>
+          <div class="stack-board-footer"><span><i data-lucide="mouse-pointer-2" aria-hidden="true"></i>Explora cada capa</span><code>interfaz → API → datos</code><span>Un producto completo<i data-lucide="layers" aria-hidden="true"></i></span></div>
         </div>
+        <div class="stack-summary">
+          <article class="skill-card reveal"><i class="stack-area-icon" data-lucide="panels-top-left" aria-hidden="true"></i><code>01 / FRONTEND</code><h3>Interfaces y aplicaciones</h3><p>Vue.js · JavaScript · HTML · CSS · Tailwind</p><small>También Next.js, Flutter y conocimientos básicos de TypeScript y Nuxt.</small></article>
+          <article class="skill-card reveal"><i class="stack-area-icon" data-lucide="server" aria-hidden="true"></i><code>02 / BACKEND</code><h3>Lógica y APIs</h3><p>Node.js · Express.js · PHP · Java · Spring Boot</p><small>APIs REST, autenticación e integraciones con IA y pagos.</small></article>
+          <article class="skill-card reveal"><i class="stack-area-icon" data-lucide="database" aria-hidden="true"></i><code>03 / DATA & DEPLOY</code><h3>Datos y producción</h3><p>PostgreSQL · Supabase · MongoDB · MySQL</p><small>SQL, RLS, Git, GitHub, Linux y Vercel. Docker: conocimientos básicos.</small></article>
+        </div>
+        <div class="stack-solutions" aria-label="Más áreas de trabajo" role="group">
+          <a href="#codePanel" data-stack-open="cms"><span class="solution-logos"><img src="./assets/stack/wordpress.svg" width="28" height="28" alt="" loading="lazy" /><img src="./assets/stack/elementor.svg" width="28" height="28" alt="" loading="lazy" /></span><span><b>WordPress & Elementor</b><small>Webs para negocios, contenido y personalización.</small></span><i data-lucide="arrow-down-right" aria-hidden="true"></i></a>
+          <a href="#codePanel" data-stack-open="integrations"><span class="solution-logos"><i data-lucide="bot" aria-hidden="true"></i><i data-lucide="workflow" aria-hidden="true"></i></span><span><b>IA, chatbots & CRM</b><small>Conversaciones, reservas y servicios conectados.</small></span><i data-lucide="arrow-down-right" aria-hidden="true"></i></a>
+        </div>
+        </div>
+        <div class="stack-explorer-heading"><div><h3>Dentro de mi stack.</h3><p>Explora las herramientas, el código y dónde los aplico.</p></div><span><i data-lucide="keyboard" aria-hidden="true"></i>Flechas para explorar</span></div>
         <div class="ide reveal">
           <div class="ideSide" role="tablist" aria-label="Áreas del stack" aria-orientation="vertical">
-            <div class="ideTitle">EXPLORER</div>
-            <button class="tab active" data-tab="front">▾ frontend</button
-            ><button class="tab" data-tab="back">▾ backend</button
-            ><button class="tab" data-tab="data">▾ database</button
-            ><button class="tab" data-tab="infra">▾ infrastructure</button>
+            <div class="ideTitle"><i data-lucide="folder-open" aria-hidden="true"></i>EXPLORER</div>
+            <button type="button" class="tab active" id="stack-tab-front" data-tab="front"><i data-lucide="panels-top-left" aria-hidden="true"></i><span>frontend<small>Interfaces y apps</small></span><i class="stack-tab-arrow" data-lucide="chevron-right" aria-hidden="true"></i></button>
+            <button type="button" class="tab" id="stack-tab-back" data-tab="back"><i data-lucide="server" aria-hidden="true"></i><span>backend<small>Lógica y APIs</small></span><i class="stack-tab-arrow" data-lucide="chevron-right" aria-hidden="true"></i></button>
+            <button type="button" class="tab" id="stack-tab-data" data-tab="data"><i data-lucide="database" aria-hidden="true"></i><span>database<small>Datos y acceso</small></span><i class="stack-tab-arrow" data-lucide="chevron-right" aria-hidden="true"></i></button>
+            <button type="button" class="tab" id="stack-tab-infra" data-tab="infra"><i data-lucide="cloud-upload" aria-hidden="true"></i><span>infrastructure<small>Despliegue y versiones</small></span><i class="stack-tab-arrow" data-lucide="chevron-right" aria-hidden="true"></i></button>
+            <button type="button" class="tab" id="stack-tab-cms" data-tab="cms"><i data-lucide="layout-template" aria-hidden="true"></i><span>wordpress<small>WordPress y Elementor</small></span><i class="stack-tab-arrow" data-lucide="chevron-right" aria-hidden="true"></i></button>
+            <button type="button" class="tab" id="stack-tab-integrations" data-tab="integrations"><i data-lucide="plug-zap" aria-hidden="true"></i><span>integrations<small>IA, chatbots y CRM</small></span><i class="stack-tab-arrow" data-lucide="chevron-right" aria-hidden="true"></i></button>
           </div>
           <div class="editor">
-            <div class="tabs"><span id="fileName">frontend.tsx ×</span></div>
-            <pre id="codePanel" tabindex="0" role="tabpanel" aria-label="Código del stack">// Explora el stack por áreas
+            <div class="tabs"><span id="fileName">frontend.js ×</span><span class="editor-breadcrumb" aria-hidden="true">portfolio / stack</span></div>
+            <div id="stackPanel" role="tabpanel" aria-labelledby="stack-tab-front" tabindex="0">
+            <div class="stack-area-overview" hidden><div class="stack-overview-heading"><span id="stackAreaIcon" aria-hidden="true"><i data-lucide="panels-top-left"></i></span><div><h3 id="stackAreaTitle">Interfaces que conectan.</h3><p id="stackAreaDescription">De la web responsive a la aplicación.</p></div></div><ul id="stackAreaTags" aria-label="Tecnologías de esta área"></ul><a id="stackAreaLink" class="stack-area-proof" href="#case-carteliax"><span><small>En la práctica</small><b>Ver aplicado en Carteliax</b></span><i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div><div class="stack-code-pane"><div class="stack-code-label" hidden><i data-lucide="file-code-2" aria-hidden="true"></i><span>Código del stack</span><button id="stackCodeToggle" type="button" aria-expanded="false" aria-controls="codePanel"><i data-lucide="maximize-2" aria-hidden="true"></i><span>Ampliar código</span></button></div>
+            <pre id="codePanel" tabindex="0" role="group" aria-label="Código del stack">// Explora el stack por áreas
 frontend: Vue.js, Next.js, Nuxt, JavaScript, TypeScript, Tailwind, Flutter
 backend: Node.js, Express, PHP, Spring Boot
 data: Supabase, PostgreSQL, MongoDB, MySQL
-infra: Git, GitHub, Linux, Vercel, Docker</pre>
+infra: Git, GitHub, Linux, Vercel, Docker
+wordpress: WordPress, Elementor, Contact Form 7, BetterDocs, CSS, PHP
+integrations: IA, Groq, Whisper, chatbots, CRM, APIs REST, webhooks,
+  WhatsApp, Evolution API, reservas, calendarios, Stripe</pre>
+            </div>
+            </div>
             <div class="statusbar"><span>main*</span><span>UTF-8 &nbsp; TypeScript React</span></div>
           </div>
         </div>
@@ -388,6 +435,10 @@ infra: Git, GitHub, Linux, Vercel, Docker</pre>
             <a href="#project-collection"><span>Más proyectos</span><span>06 <i data-lucide="arrow-down-right"></i></span></a>
           </div>
         </header>
+        <div class="project-explorer" hidden>
+          <div class="explorer-heading"><i data-lucide="folder-open"></i><span>Project explorer</span><span id="explorerCount" role="status" aria-live="polite">11 proyectos</span></div>
+          <div class="explorer-filters" role="group" aria-label="Filtrar proyectos"><button type="button" data-filter="all" aria-pressed="true">Todos <span>11</span></button><button type="button" data-filter="saas" aria-pressed="false">SaaS <span>3</span></button><button type="button" data-filter="client" aria-pressed="false">Clientes <span>2</span></button><button type="button" data-filter="apps" aria-pressed="false">Apps y exploración <span>6</span></button></div>
+        </div>
         <div class="work-group" id="built-products"><p>Productos propios</p><span>SaaS · de la interfaz a la infraestructura</span></div>
 
         <!-- RESBIX — FEATURED PROJECT -->
@@ -462,7 +513,7 @@ infra: Git, GitHub, Linux, Vercel, Docker</pre>
                 <i data-lucide="ellipsis"></i>
               </div>
 
-              <div class="rbx-chat-content">
+              <div class="rbx-chat-content" role="group" aria-label="Ejemplo ilustrativo de conversación de reserva">
                 <div class="rbx-chat-date">HOY</div>
 
                 <div class="rbx-bubble rbx-user">Hola, ¿puedo reservar una cita para mañana?</div>
@@ -495,19 +546,25 @@ infra: Git, GitHub, Linux, Vercel, Docker</pre>
                 <span>Conversaciones automatizadas</span>
               </div>
             </div>
+            <div class="reservation-flow" role="group" aria-label="Proceso de reserva ilustrativo"><span data-reservation-step="0"><i data-lucide="message-circle"></i>Consulta</span><i data-lucide="chevron-right" aria-hidden="true"></i><span data-reservation-step="1"><i data-lucide="calendar-days"></i>Disponibilidad</span><i data-lucide="chevron-right" aria-hidden="true"></i><span data-reservation-step="2"><i data-lucide="calendar-check"></i>Reserva</span></div>
+            <div class="demo-controls"><span>Ejemplo de flujo · sin datos reales</span><button type="button" id="replayConversation" hidden><i data-lucide="rotate-ccw"></i>Repetir</button></div>
           </div>
         </article>
         <article class="product-extension cartaliax-card launched-feature reveal" aria-labelledby="project-cartaliax">
           <div class="project-windowbar" aria-hidden="true"><span class="window-lights"><i></i><i></i><i></i></span><span><i data-lucide="lock-keyhole"></i>carteliax.com</span><span>Digital menus</span></div>
-          <div class="carteliax-copy"><span class="carteliax-live"><span class="launch-dot" aria-hidden="true"></span>PRODUCTO LANZADO</span><span class="badge">SAAS / PRODUCTO PROPIO · 2026</span><h3 id="project-cartaliax">Carteliax</h3><p>Cartas digitales para restaurantes: categorías, productos, precios, disponibilidad y códigos QR. Panel de administración y pagos recurrentes con Stripe.</p><p class="carteliax-extra">Una plataforma multi-tenant para gestionar imágenes, alérgenos, disponibilidad, idiomas y personalización visual, manteniendo un QR permanente.</p><div class="carteliax-tags" aria-label="Stack de Carteliax"><span>Nuxt</span><span>Vue 3</span><span>Tailwind CSS</span><span>Node.js</span><span>Express</span><span>Supabase</span></div><div class="launched-actions"><a class="carteliax-cta" href="https://carteliax.com" target="_blank" rel="noopener noreferrer">Explorar Carteliax <i data-lucide="arrow-up-right"></i></a><a class="study-link" href="#case-carteliax">Caso de estudio <i data-lucide="arrow-down-right"></i></a></div></div>
+          <div class="carteliax-copy"><span class="carteliax-live"><span class="launch-dot" aria-hidden="true"></span>PRODUCTO LANZADO</span><span class="badge">SAAS / PRODUCTO PROPIO · 2026</span><h3 id="project-cartaliax">Carteliax</h3><p>Cartas digitales para restaurantes: categorías, productos, precios, disponibilidad y códigos QR. Panel de administración y pagos recurrentes con Stripe.</p><p class="carteliax-extra">Una plataforma multi-tenant para gestionar imágenes, alérgenos, disponibilidad, idiomas y personalización visual, manteniendo un QR permanente.</p><div class="carteliax-tags" role="group" aria-label="Stack de Carteliax"><span>Nuxt</span><span>Vue 3</span><span>Tailwind CSS</span><span>Node.js</span><span>Express</span><span>Supabase</span></div><div class="launched-actions"><a class="carteliax-cta" href="https://carteliax.com" target="_blank" rel="noopener noreferrer">Explorar Carteliax <i data-lucide="arrow-up-right"></i></a><a class="study-link" href="#case-carteliax">Caso de estudio <i data-lucide="arrow-down-right"></i></a></div></div>
           <div class="cartaliax-stage">
             <div class="carteliax-site-preview"><img src="./assets/projects/carteliax-live.jpg" width="1440" height="960" loading="lazy" decoding="async" alt="Captura real de la web pública de Carteliax" /></div>
             <div class="menu-window"><span class="menu-window-title"><i data-lucide="utensils"></i> Carta digital</span><span class="menu-rule"></span><div class="menu-layout"><span></span><span></span><span></span></div><span class="menu-caption">categorías / productos</span></div>
             <div class="qr-node"><i data-lucide="qr-code"></i><span>QR</span></div>
             <div class="admin-node"><i data-lucide="sliders-horizontal"></i><span>admin</span><span class="node-status"></span></div>
             <span class="diagram-connection"></span>
+            <div class="menu-journey" hidden>
+              <div class="menu-journey-tabs" role="group" aria-label="Explorar el recorrido de una carta digital"><button type="button" data-menu-step="0" aria-pressed="true">Carta</button><i data-lucide="chevron-right" aria-hidden="true"></i><button type="button" data-menu-step="1" aria-pressed="false">QR</button><i data-lucide="chevron-right" aria-hidden="true"></i><button type="button" data-menu-step="2" aria-pressed="false">Cliente</button></div>
+              <p id="menuJourneyText" role="status" aria-live="polite">El negocio gestiona categorías, productos y disponibilidad desde su panel.</p>
+            </div>
           </div>
-          <div class="product-code" aria-label="Funciones de Carteliax"><code><span>menu → categorías → productos</span><span>QR → carta digital</span><span>admin → disponibilidad</span><span>Stripe → suscripciones</span></code></div>
+          <div class="product-code" role="group" aria-label="Funciones de Carteliax"><code><span>menu → categorías → productos</span><span>QR → carta digital</span><span>admin → disponibilidad</span><span>Stripe → suscripciones</span></code></div>
         </article>
         <div class="product-pair">
         <article class="project heroProject reveal" aria-labelledby="presuvoz-title">
@@ -617,7 +674,7 @@ infra: Git, GitHub, Linux, Vercel, Docker</pre>
             <div class="case-narrative"><span class="story-label">EL RETO TÉCNICO</span><h4>De una consulta a una reserva, con el contexto correcto.</h4><p>Integrar un agente con Groq capaz de responder consultas, conocer los servicios y precios de cada empresa, consultar disponibilidad y gestionar reservas. Ese contexto cambia de un negocio a otro.</p><p>Mi aportación incluye la integración de IA y WhatsApp mediante Evolution API, la autenticación y el aislamiento de datos con Supabase, y un panel de gestión cuyas funcionalidades dependen del plan contratado.</p><ul class="case-decisions"><li><i data-lucide="layers-3"></i><div><h5>Separación por negocio</h5><p>Clientes, reservas, servicios, empleados y configuración propios dentro de una plataforma multi-tenant.</p></div></li><li><i data-lucide="messages-square"></i><div><h5>IA conectada al producto</h5><p>Groq para el agente, contexto del negocio y gestión de reservas; Evolution API para la integración con WhatsApp.</p></div></li><li><i data-lucide="key-round"></i><div><h5>Autenticación y planes</h5><p>Supabase para autenticación y aislamiento de datos; Stripe y un panel con funcionalidades según el plan contratado.</p></div></li></ul></div>
             <div class="case-system"><div class="system-heading"><i data-lucide="workflow"></i><span>Mapa del sistema</span></div><ol class="system-flow" aria-label="Capas de Resbix"><li><span>01 / PRODUCTO</span><b>Panel de gestión</b><small>JavaScript · contexto de cada negocio</small></li><li><span>02 / BACKEND</span><b>API y lógica del producto</b><small>Node.js · Express</small></li><li><span>03 / DATOS</span><b>Autenticación y aislamiento</b><small>Supabase</small></li></ol><div class="integration-grid"><div><i data-lucide="sparkles"></i><b>Groq</b><span>Agente IA</span></div><div><i data-lucide="messages-square"></i><b>Evolution API</b><span>WhatsApp</span></div><div><i data-lucide="credit-card"></i><b>Stripe</b><span>Planes</span></div></div><details class="case-notes"><summary>Ver los puntos de integración</summary><ul><li>El agente utiliza información de los servicios y precios del negocio.</li><li>Disponibilidad y reservas forman parte del flujo del producto.</li><li>WhatsApp se conecta mediante Evolution API.</li><li>Los datos y la configuración pertenecen a cada empresa.</li><li>El panel adapta sus funcionalidades al plan contratado.</li></ul></details></div>
           </div>
-          <div class="case-stack" aria-label="Stack de Resbix"><span>STACK</span><b>Node.js</b><b>Express</b><b>JavaScript</b><b>Supabase</b><b>Groq</b><b>Stripe</b><b>Evolution API</b></div>
+          <div class="case-stack" role="group" aria-label="Stack de Resbix"><span>STACK</span><b>Node.js</b><b>Express</b><b>JavaScript</b><b>Supabase</b><b>Groq</b><b>Stripe</b><b>Evolution API</b></div>
         </article>
         <article id="case-carteliax" class="case-file case-carteliax reveal" aria-labelledby="case-carteliax-title">
           <div class="case-filebar"><span><i data-lucide="git-branch"></i> build / carteliax</span><span class="case-live"><span class="launch-dot" aria-hidden="true"></span>Lanzado · 2026</span></div>
@@ -629,7 +686,7 @@ infra: Git, GitHub, Linux, Vercel, Docker</pre>
             <div class="case-narrative"><span class="story-label">EL RETO TÉCNICO</span><h4>Una gestión sencilla para una carta que está viva.</h4><p>Diseñar un panel para administrar negocios, cartas, categorías y productos, manteniendo un código QR permanente aunque el contenido se modifique.</p><p>He desarrollado también la gestión de imágenes, alérgenos, disponibilidad, diferentes idiomas, plantillas y personalización visual dentro de una plataforma multi-tenant.</p><ul class="case-decisions"><li><i data-lucide="qr-code"></i><div><h5>Acceso público estable</h5><p>El QR conserva su destino mientras el negocio actualiza la carta; editar el contenido no exige reimprimirlo.</p></div></li><li><i data-lucide="sliders-horizontal"></i><div><h5>Un panel para el día a día</h5><p>Negocios, cartas, categorías y productos organizados para que la gestión no requiera conocimientos técnicos.</p></div></li><li><i data-lucide="languages"></i><div><h5>Contenido y presentación</h5><p>Imágenes, alérgenos, disponibilidad e idiomas, junto con plantillas y personalización visual.</p></div></li></ul></div>
             <div class="case-system"><div class="system-heading"><i data-lucide="workflow"></i><span>Del panel a la carta</span></div><ol class="system-flow" aria-label="Capas de Carteliax"><li><span>01 / INTERFAZ</span><b>Panel de administración</b><small>Nuxt · Vue 3 · Tailwind CSS</small></li><li><span>02 / BACKEND</span><b>Negocios y contenido</b><small>Node.js · Express · Supabase</small></li><li><span>03 / PUBLICACIÓN</span><b>Carta digital actualizada</b><small>QR permanente · mismo acceso público</small></li></ol><div class="permanent-qr"><i data-lucide="qr-code"></i><div><b>Mismo QR</b><span>Productos, idiomas y diseño actualizables</span></div><i data-lucide="refresh-cw"></i></div><details class="case-notes"><summary>Ver el alcance del producto</summary><ul><li>Gestión de negocios, cartas, categorías y productos.</li><li>Imágenes, alérgenos y disponibilidad.</li><li>Diferentes idiomas para el contenido de la carta.</li><li>Plantillas y personalización visual.</li><li>Plataforma multi-tenant y código QR permanente.</li></ul></details></div>
           </div>
-          <div class="case-stack" aria-label="Stack de Carteliax"><span>STACK</span><b>Nuxt</b><b>Vue 3</b><b>Tailwind CSS</b><b>Node.js</b><b>Express</b><b>Supabase</b></div>
+          <div class="case-stack" role="group" aria-label="Stack de Carteliax"><span>STACK</span><b>Nuxt</b><b>Vue 3</b><b>Tailwind CSS</b><b>Node.js</b><b>Express</b><b>Supabase</b></div>
         </article>
         <div class="case-conversation reveal"><div><span class="story-label">¿HABLAMOS DE PRODUCTO?</span><p>Si buscas un perfil que conecte interfaz, backend y datos, podemos hablar.</p></div><a href="#contact">Contactar <i data-lucide="arrow-up-right"></i></a></div>
       </section>
@@ -697,6 +754,7 @@ infra: Git, GitHub, Linux, Vercel, Docker</pre>
             <button class="term-run" type="submit" aria-label="Ejecutar comando">↵</button>
           </form>
           <div class="terminal-tools"><span id="terminal-shortcuts"><kbd>↑</kbd><kbd>↓</kbd> historial <span>·</span> <kbd>Tab</kbd> completar</span><span id="terminalFeedback" role="status" aria-live="polite">bash · ready</span></div>
+          <div class="terminal-suggestions" hidden role="group" aria-label="Comandos rápidos"><button type="button" data-command="help">help</button><button type="button" data-command="git log">git log</button><button type="button" data-command="architecture">architecture</button><button type="button" data-command="coffee">coffee</button><span>o escribe tu propio comando</span></div>
         </div>
       </section>
       <section id="faq" class="section faq-section">
